@@ -5,7 +5,10 @@ class Program
     static void Main(string[] args)
     {
         string selection = "";
-        PromptGenerator random_prompt = new PromptGenerator();
+        PromptGenerator getPrompt = new PromptGenerator();
+        string _prompt;
+        string _entry;
+        Entry getEntry = new Entry();
         
         Console.WriteLine("Welcome to the Journal Program!");
         Console.WriteLine("Please select one of the following choices. \n1. Write \n2. Display \n3. Load \n4. Save \n5. Quit");
@@ -14,9 +17,9 @@ class Program
 
         if (selection == "1") 
         {
-            // code for Write entry
-            random_prompt.GenerateRandomPrompt();
-
+            // code to get random prompt
+            _prompt = getPrompt.GetPrompt();
+            _entry = getEntry.GetUserEntry();
         }
         else if (selection == "2") 
         {
