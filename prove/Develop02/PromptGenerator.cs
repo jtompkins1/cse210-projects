@@ -4,6 +4,7 @@ using System.Collections.Generic;
 public class PromptGenerator
 {
     public Random random = new Random();
+    public string _entry;
     public List<string> _prompts = new List<string>(){
         "What is one thing I'm looking forward to?",
         "What am I most grateful for today?", 
@@ -13,10 +14,13 @@ public class PromptGenerator
         "What was the most challenging thing I faced today?"
     };
 
-    public void GenerateRandomPrompt()
+    public string GenerateRandomPrompt()
     {
         int random_index = random.Next(_prompts.Count);
         Console.WriteLine(_prompts[random_index]);
+        _entry = Console.ReadLine();
+        return _entry;
+
     }
 
 
