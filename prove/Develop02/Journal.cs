@@ -11,6 +11,7 @@
 
 
 using System;
+using System.Collections.Generic;
 
 public class Journal
 {
@@ -20,18 +21,26 @@ public class Journal
 
 
 
-    public List<string> AddEntry()
+    public List<string> AddEntry(string entry)
     {
         //add users entry to _allEntries list
-        Entry entry = new Entry();
-        entry._allEntries.Add(_entry);
+        // Entry entry = new Entry();
+        // entry._allEntries.Add(_entry);
+        // return _allEntries;
+        _allEntries.Add(entry);
         return _allEntries;
     }
 
-    public void DisplayEntries()
+    public void DisplayEntries(List<string> _allEntries)
     {
         //code to display all Journal entries
-        Console.WriteLine(_allEntries);
+        foreach (var entry in _allEntries)
+
+        {
+            Console.WriteLine(entry);
+        }
+
+        // Console.WriteLine(string.Join(Environment.NewLine,_allEntries));
     }
 
     public void SaveToFile()
