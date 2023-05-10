@@ -2,18 +2,20 @@ using System;
 
 class Program
 {
+
     static void Main(string[] args)
     {
-        string selection = "";
+        Console.WriteLine("Welcome to the Journal Program!");
+        // string selection = "";
         PromptGenerator getPrompt = new PromptGenerator();
         string _prompt;
         string _entry;
         Entry getEntry = new Entry();
+        Menu selection = new Menu();
+
+        string selection = new Program.getSelection();
         
-        Console.WriteLine("Welcome to the Journal Program!");
-        Console.WriteLine("Please select one of the following choices. \n1. Write \n2. Display \n3. Load \n4. Save \n5. Quit");
-        Console.Write("What would you like to do? (Enter a number 1-5: ) ");
-        selection = Console.ReadLine();
+
 
         if (selection == "1") 
         {
@@ -24,6 +26,7 @@ class Program
         else if (selection == "2") 
         {
             // code for Display entries
+
 
         }
         else if (selection == "3") 

@@ -23,12 +23,15 @@ public class Journal
     public List<string> AddEntry()
     {
         //add users entry to _allEntries list
+        Entry entry = new Entry();
+        entry._allEntries.Add(_entry);
         return _allEntries;
     }
 
     public void DisplayEntries()
     {
         //code to display all Journal entries
+        Console.WriteLine(_allEntries);
     }
 
     public void SaveToFile()

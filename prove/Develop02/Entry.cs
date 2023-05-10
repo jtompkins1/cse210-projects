@@ -16,6 +16,7 @@ public class Entry
     public string _prompt;
     public string _entry;
     public string _date;
+    public List<string> _allEntries = new List<string>();
 
 
     public string GetUserEntry()
@@ -23,6 +24,5 @@ public class Entry
         _entry = Console.ReadLine();
         return _entry;
     }
-
-
 }
+
