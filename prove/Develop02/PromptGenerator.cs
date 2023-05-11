@@ -20,7 +20,7 @@ public class PromptGenerator
         "How did I see the hand of the Lord in my life today?\n> ",
         "What was the best part of my day?\n> ", 
         "What did I learn today?\n> ", 
-        "What was the most challenging thing I faced today\n> ?"
+        "What was the most challenging thing I faced today?\n> "
     };
 
     public string GetPrompt()
