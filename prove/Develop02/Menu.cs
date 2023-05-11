@@ -8,6 +8,7 @@ public class MenuSelection
     
     public string GetSelection()
     {
+        Console.WriteLine();
         Console.Write(_menu);
         _selection = Console.ReadLine();
         return _selection;

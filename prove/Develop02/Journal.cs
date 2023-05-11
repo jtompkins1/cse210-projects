@@ -34,6 +34,10 @@ public class Journal
     public void DisplayEntries(List<string> _allEntries)
     {
         //code to display all Journal entries
+
+        Console.WriteLine();
+        Console.WriteLine("My Journal Entries: ");
+
         foreach (var entry in _allEntries)
 
         {
