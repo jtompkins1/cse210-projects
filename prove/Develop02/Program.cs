@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-
 class Program
 {
 
@@ -12,6 +11,7 @@ class Program
         PromptGenerator getPrompt = new PromptGenerator();
         Entry getEntry = new Entry();
         Journal journal = new Journal();
+        // DateTime todaysDate = DateTime.Today;
 
         string selection;
         string _random;
@@ -19,6 +19,7 @@ class Program
         string _response;
         string _entry;
         string _date;
+        // string _date = getEntry.GetDate();
         List<string> _allEntries = new List<string>();
 
         Console.WriteLine("Welcome to the Journal Program!");
@@ -35,6 +36,8 @@ class Program
             _random = getPrompt.GetPrompt();
             _prompt = getEntry.DisplayPrompt();
             _response = getEntry.GetUserResponse();
+            // _date = todaysDate.ToShortDateString();
+            _date = getEntry.GetDate();
             _entry = getEntry.GetEntry(_date, _prompt, _response);
             _allEntries = journal.AddEntry(_entry);
         }
