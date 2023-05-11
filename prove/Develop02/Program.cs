@@ -45,12 +45,11 @@ class Program
         {
             // code for Display entries
             journal.DisplayEntries(_allEntries);
-
         }
         else if (selection == "3") 
         {
             // code for Load file
-
+            _nameFile = journal.LoadFile();
         }
         else if (selection == "4") 
         {

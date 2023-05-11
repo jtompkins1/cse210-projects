@@ -18,6 +18,7 @@ public class Journal
     public string _nameFile;
     public string _response;
     public string _entry;
+    public string _loadFile;
     public List<string> _allEntries = new List<string>();
 
     public List<string> AddEntry(string entry)
@@ -41,8 +42,8 @@ public class Journal
 
     public string SaveToFile(List<string> _allEntries)
     {
-        //saves entry to new file
-        Console.Write("Name a new .txt file to save: ");
+        //saves entry to file
+        Console.Write("Name a .txt file to save: ");
         _nameFile = Console.ReadLine();
         using (StreamWriter outputFile = new StreamWriter(_nameFile))
         {
@@ -56,9 +57,16 @@ public class Journal
 
     }
 
-    public void LoadFile()
+    public string LoadFile()
     {
         //load existing Journal file
+        Console.Write("Enter the name of your file: ");
+        _nameFile = Console.ReadLine();
+        _loadFile = File.ReadAllText(_nameFile);
+        Console.WriteLine(_loadFile);
+
+        return _nameFile;
+
     }
 
 }
