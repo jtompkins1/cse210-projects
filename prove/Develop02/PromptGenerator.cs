@@ -15,12 +15,12 @@ public class PromptGenerator
     public string _prompt;
     // public string _entry;
     public List<string> _prompts = new List<string>(){
-        "What is one thing I'm looking forward to?",
-        "What am I most grateful for today?", 
-        "How did I see the hand of the Lord in my life today?",
-        "What was the best part of my day?", 
-        "What did I learn today?", 
-        "What was the most challenging thing I faced today?"
+        "What is one thing I'm looking forward to?\n> ",
+        "What am I most grateful for today?\n> ", 
+        "How did I see the hand of the Lord in my life today?\n> ",
+        "What was the best part of my day?\n> ", 
+        "What did I learn today?\n> ", 
+        "What was the most challenging thing I faced today\n> ?"
     };
 
     public string GetPrompt()
