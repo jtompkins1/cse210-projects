@@ -16,7 +16,6 @@ using System.Collections.Generic;
 public class Journal
 {
     public string _nameFile;
-    public string _response;
     public string _entry;
     public string _loadFile;
     public List<string> _allEntries = new List<string>();

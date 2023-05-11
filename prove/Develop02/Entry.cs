@@ -18,7 +18,6 @@ public class Entry
     public string _response;
     public string _date;
     public string _entry;
-    public List<string> _allEntries = new List<string>();
 
 
     public string DisplayPrompt()
