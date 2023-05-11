@@ -24,7 +24,7 @@ public class Entry
     public string DisplayPrompt()
     {
         _prompt = getPrompt.GetPrompt();
-        Console.WriteLine(_prompt);
+        Console.Write(_prompt);
         return _prompt;
     }
     public string GetUserResponse()
@@ -34,8 +34,8 @@ public class Entry
     }
     public string GetDate()
     {
-        Console.Write("Enter today's date: ");
-        _date = Console.ReadLine();
+        DateTime date = DateTime.Now;
+        _date = date.ToShortDateString();
         return _date;
     }
     public string GetEntry(string _date, string _prompt, string _response)
