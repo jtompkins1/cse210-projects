@@ -13,16 +13,36 @@ using System;
 
 public class Entry
 {
+    PromptGenerator getPrompt = new PromptGenerator();
     public string _prompt;
-    public string _entry;
+    public string _response;
     public string _date;
+    public string _entry;
     public List<string> _allEntries = new List<string>();
 
 
-    public string GetUserEntry()
+    public string DisplayPrompt()
     {
-        _entry = Console.ReadLine();
+        _prompt = getPrompt.GetPrompt();
+        Console.WriteLine(_prompt);
+        return _prompt;
+    }
+    public string GetUserResponse()
+    {
+        _response = Console.ReadLine();
+        return _response;
+    }
+    public string GetDate()
+    {
+        Console.Write("Enter today's date: ");
+        _date = Console.ReadLine();
+        return _date;
+    }
+    public string GetEntry(string _date, string _prompt, string _response)
+    {
+        _entry = ($"{_date} | {_prompt} | {_response}");
         return _entry;
+
     }
 }
 

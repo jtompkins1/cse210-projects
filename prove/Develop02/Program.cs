@@ -7,16 +7,19 @@ class Program
     static void Main(string[] args)
     {
 
-        string selection;
+        
         MenuSelection getSelection = new MenuSelection();
         PromptGenerator getPrompt = new PromptGenerator();
-        string _prompt;
-        string _entry;
         Entry getEntry = new Entry();
         Journal journal = new Journal();
-        List<string> _allEntries = new List<string>();
 
-        
+        string selection;
+        string _random;
+        string _prompt;
+        string _response;
+        string _entry;
+        string _date;
+        List<string> _allEntries = new List<string>();
 
         Console.WriteLine("Welcome to the Journal Program!");
 
@@ -29,8 +32,11 @@ class Program
         if (selection == "1") 
         {
             // code to get random prompt, get user entry, add entry to journal
-            _prompt = getPrompt.GetPrompt();
-            _entry = getEntry.GetUserEntry();
+            _random = getPrompt.GetPrompt();
+            _prompt = getEntry.DisplayPrompt();
+            _response = getEntry.GetUserResponse();
+            _date = getEntry.GetDate();
+            _entry = getEntry.GetEntry(_date, _prompt, _response);
             _allEntries = journal.AddEntry(_entry);
         }
         else if (selection == "2") 
