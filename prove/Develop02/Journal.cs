@@ -16,17 +16,13 @@ using System.Collections.Generic;
 public class Journal
 {
     public string _nameFile;
+    public string _response;
     public string _entry;
     public List<string> _allEntries = new List<string>();
 
-
-
     public List<string> AddEntry(string entry)
     {
-        //add users entry to _allEntries list
-        // Entry entry = new Entry();
-        // entry._allEntries.Add(_entry);
-        // return _allEntries;
+        //add user entry to _allEntries list
         _allEntries.Add(entry);
         return _allEntries;
     }
@@ -34,22 +30,30 @@ public class Journal
     public void DisplayEntries(List<string> _allEntries)
     {
         //code to display all Journal entries
-
         Console.WriteLine();
         Console.WriteLine("My Journal Entries: ");
 
         foreach (var entry in _allEntries)
-
         {
             Console.WriteLine(entry);
         }
-
-        // Console.WriteLine(string.Join(Environment.NewLine,_allEntries));
     }
 
-    public void SaveToFile()
+    public string SaveToFile(List<string> _allEntries)
     {
-        //saves entry to file
+        //saves entry to new file
+        Console.Write("Name a new .txt file to save: ");
+        _nameFile = Console.ReadLine();
+        using (StreamWriter outputFile = new StreamWriter(_nameFile))
+        {
+            foreach (var entry in _allEntries)
+            {
+                outputFile.WriteLine(entry);
+            }
+            
+        }
+        return _nameFile;
+
     }
 
     public void LoadFile()

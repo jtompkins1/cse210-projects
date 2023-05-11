@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 class Program
 {
 
@@ -11,7 +12,6 @@ class Program
         PromptGenerator getPrompt = new PromptGenerator();
         Entry getEntry = new Entry();
         Journal journal = new Journal();
-        // DateTime todaysDate = DateTime.Today;
 
         string selection;
         string _random;
@@ -19,9 +19,10 @@ class Program
         string _response;
         string _entry;
         string _date;
-        // string _date = getEntry.GetDate();
+        string _nameFile;
         List<string> _allEntries = new List<string>();
 
+        Console.WriteLine();
         Console.WriteLine("Welcome to the Journal Program!");
 
         do
@@ -54,7 +55,7 @@ class Program
         else if (selection == "4") 
         {
             // code for Save file
-
+            _nameFile = journal.SaveToFile(_allEntries);
         }
         else if (selection == "5")
         {
