@@ -36,7 +36,6 @@ class Program
             _random = getPrompt.GetPrompt();
             _prompt = getEntry.DisplayPrompt();
             _response = getEntry.GetUserResponse();
-            // _date = todaysDate.ToShortDateString();
             _date = getEntry.GetDate();
             _entry = getEntry.GetEntry(_date, _prompt, _response);
             _allEntries = journal.AddEntry(_entry);

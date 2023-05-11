@@ -34,10 +34,8 @@ public class Entry
     }
     public string GetDate()
     {
-        // DateTime todaysDate = DateTime.Today;
-        // string _date = todaysDate.ToShortDateString();
-        Console.Write("Enter today's date: ");
-        _date = Console.ReadLine();
+        DateTime todaysDate = DateTime.Today;
+        _date = todaysDate.ToShortDateString();
         return _date;
     }
     public string GetEntry(string _date, string _prompt, string _response)
