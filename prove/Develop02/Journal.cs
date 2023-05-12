@@ -44,9 +44,11 @@ public class Journal
         // TODO:
             // currently writes over old entries if you load this file, then save new entries 
 
-
         Console.Write("Name a .txt file to save: ");
         _nameFile = Console.ReadLine();
+
+        Console.WriteLine("Saving to file...");
+
         using (StreamWriter outputFile = new StreamWriter(_nameFile))
         {
             foreach (var entry in _allEntries)
@@ -56,9 +58,7 @@ public class Journal
             
         }
         return _nameFile;
-
     }
-
     public string LoadFile()
     {
         //load existing Journal file
@@ -68,7 +68,5 @@ public class Journal
         Console.WriteLine(_loadFile);
 
         return _nameFile;
-
-    }
-
+    } 
 }

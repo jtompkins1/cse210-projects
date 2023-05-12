@@ -39,7 +39,7 @@ public class Entry
     }
     public string GetEntry(string _date, string _prompt, string _response)
     {
-        _entry = ($"{_date} | {_prompt} | {_response}");
+        _entry = ($"Date: {_date} | Prompt: {_prompt} | {_response}");
         return _entry;
 
     }

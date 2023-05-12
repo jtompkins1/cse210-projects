@@ -7,8 +7,7 @@ class Program
     static void Main(string[] args)
     {
 
-        
-        MenuSelection getSelection = new MenuSelection();
+        Menu getSelection = new Menu();
         PromptGenerator getPrompt = new PromptGenerator();
         Entry getEntry = new Entry();
         Journal journal = new Journal();
