@@ -41,7 +41,10 @@ public class Journal
 
     public string SaveToFile(List<string> _allEntries)
     {
-        //saves entry to file
+        // TODO:
+            // currently writes over old entries if you load this file, then save new entries 
+
+
         Console.Write("Name a .txt file to save: ");
         _nameFile = Console.ReadLine();
         using (StreamWriter outputFile = new StreamWriter(_nameFile))
