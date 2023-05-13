@@ -35,7 +35,8 @@ public class Journal
 
         Console.WriteLine("Saving to file...");
 
-        using (StreamWriter outputFile = File.AppendText(_nameFile))
+        using (var newLines = new FileStream(_nameFile, FileMode.Append))
+        using (var outputFile = new StreamWriter(newLines))
         {
             foreach (var entry in _allEntries)
             {
