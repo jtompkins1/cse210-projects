@@ -41,10 +41,11 @@ class Program
             _allEntries = journal.AddEntry(_entry);
 
         }
-        else if (selection == "2");
+        else if (selection == "2")
         {
-            // code to add a new prompt to the list
-            
+            // code to view list of prompts
+            getPrompt.ViewPrompts();
+
 
         }
         else if (selection == "3") 

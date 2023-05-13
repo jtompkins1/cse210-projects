@@ -13,8 +13,6 @@ public class PromptGenerator
 {
     public Random random = new Random();
     public string _prompt;
-    public string _newPrompt;
-    // public string _entry;
     public List<string> _prompts = new List<string>(){
         "What is one thing I'm looking forward to?\n> ",
         "What am I most grateful for today?\n> ", 
@@ -28,15 +26,16 @@ public class PromptGenerator
     {
         int random_index = random.Next(_prompts.Count);
         _prompt = _prompts[random_index];
-        
 
         return _prompt;
 
     }
-    public void AddPrompt()
+    public void ViewPrompts()
     {
-        Console.WriteLine("Enter a new prompt: ");
-        _newPrompt = Console.ReadLine();
-        _prompts.Add($"{_newPrompt}/n>");
+        foreach (string _prompt in _prompts);
+        {
+            Console.WriteLine(_prompt);
+        }
     }
+
 }
