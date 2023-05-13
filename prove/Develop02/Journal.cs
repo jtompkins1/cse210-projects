@@ -39,23 +39,19 @@ public class Journal
         }
     }
 
-    public string SaveToFile(List<string> _allEntries)
+    public string SaveToFile()
     {
-        // TODO:
-            // currently writes over old entries if you load this file, then save new entries 
-
         Console.Write("Name a .txt file to save: ");
         _nameFile = Console.ReadLine();
 
         Console.WriteLine("Saving to file...");
 
-        using (StreamWriter outputFile = new StreamWriter(_nameFile))
+        using (StreamWriter outputFile = File.AppendText(_nameFile))
         {
             foreach (var entry in _allEntries)
             {
                 outputFile.WriteLine(entry);
             }
-            
         }
         return _nameFile;
     }
