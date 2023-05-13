@@ -1,5 +1,17 @@
 using System;
 
+// Class: Entry
+// Attributes:
+    // _date : string
+    // _prompt : string
+    // _response : string
+    // _entry : string
+// Behaviors:
+    // DisplayPrompt() : string
+    // GetUserResponse() : string
+    // GetDate() : string
+    // GetEntry() : string
+
 public class Entry
 {
     PromptGenerator getPrompt = new PromptGenerator();

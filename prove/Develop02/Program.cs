@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+
+// Week 04 Prove: Journal Program
 class Program
 {
 

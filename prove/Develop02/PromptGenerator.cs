@@ -1,6 +1,13 @@
 using System;
 using System.Collections.Generic;
 
+// Class: PromptGenerator
+// Attributes:
+//     _prompt : string
+//     _prompts : List<string>
+// Behaviors:
+//     GetPrompt() : string
+//     ViewPrompts() : void
 public class PromptGenerator
 {
     public Random random = new Random();

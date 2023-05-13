@@ -1,5 +1,13 @@
 using System;
 
+// Class: Menu
+// Attributes: 
+//     _selection : string
+//     _menu : string
+// Behaviors:
+//     GetSelection() : string
+
+
 public class Menu
 {
     public string _selection;

@@ -1,6 +1,16 @@
 using System;
 using System.Collections.Generic;
-
+// Class: Journal
+// Attributes:
+//     _nameFile : string
+//     _entry : string
+//     _loadFile : string
+//     _allEntries : List<string>
+// Behaviors:
+//     AddEntry() : List<string>
+//     DisplayEntries() : void
+//     SaveToFile() : string
+//     LoadFile() : string
 public class Journal
 {
     public string _nameFile;
