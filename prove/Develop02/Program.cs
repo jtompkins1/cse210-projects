@@ -32,7 +32,6 @@ class Program
         if (selection == "1") 
         {
             // code to get random prompt, get user entry, add entry to journal
-            // code to get random prompt, get user entry, add entry to journal
             _random = getPrompt.GetPrompt();
             _prompt = getEntry.DisplayPrompt();
             _response = getEntry.GetUserResponse();
@@ -45,7 +44,6 @@ class Program
         {
             // code to view list of prompts
             getPrompt.ViewPrompts();
-
 
         }
         else if (selection == "3") 
