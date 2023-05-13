@@ -32,7 +32,9 @@ public class PromptGenerator
     public void ViewPrompts()
     {
         Console.WriteLine();
+        Console.ForegroundColor = ConsoleColor.Cyan;
         Console.WriteLine("Viewing list of prompts...");
+        Console.ResetColor();
         foreach (string _prompt in _prompts)
         {
             Console.WriteLine(_prompt);

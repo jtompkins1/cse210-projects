@@ -29,7 +29,9 @@ public class Journal
     {
         //code to display all Journal entries
         Console.WriteLine();
+        Console.ForegroundColor = ConsoleColor.Cyan;
         Console.WriteLine("Displaying entries... ");
+        Console.ResetColor();
 
         foreach (var entry in _allEntries)
         {
@@ -42,8 +44,9 @@ public class Journal
         Console.Write("Name a .txt file to save: ");
         _nameFile = Console.ReadLine();
         Console.WriteLine();
-
+        Console.ForegroundColor = ConsoleColor.Cyan;
         Console.WriteLine("Saving to file...");
+        Console.ResetColor();
 
         using (var newLines = new FileStream(_nameFile, FileMode.Append))
         using (var outputFile = new StreamWriter(newLines))
@@ -62,7 +65,9 @@ public class Journal
         _nameFile = Console.ReadLine();
         _loadFile = File.ReadAllText(_nameFile);
         Console.WriteLine();
+        Console.ForegroundColor = ConsoleColor.Cyan;
         Console.WriteLine($"Viewing {_nameFile}...");
+        Console.ResetColor();
         Console.WriteLine(_loadFile);
 
         return _nameFile;

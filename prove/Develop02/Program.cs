@@ -23,7 +23,9 @@ class Program
         string _nameFile;
         List<string> _allEntries = new List<string>();
         Console.WriteLine();
+        Console.ForegroundColor = ConsoleColor.Magenta;
         Console.WriteLine("Welcome to the Journal Program!");
+        Console.ResetColor();
 
         do
         {
@@ -67,13 +69,17 @@ class Program
         {
             // code for Quit (selection == "5")
             Console.WriteLine();
+            Console.ForegroundColor = ConsoleColor.DarkYellow;
             Console.WriteLine("Thank you for using the Journal Program. Goodbye!");
-            Console.WriteLine();
+            Console.ResetColor();
+
         }
         else
         {   
             Console.WriteLine();
+            Console.ForegroundColor = ConsoleColor.DarkRed;
             Console.WriteLine("Invalid Entry. Select an option number 1-5.");
+            Console.ResetColor();
         }
 
 
