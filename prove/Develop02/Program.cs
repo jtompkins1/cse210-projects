@@ -19,8 +19,7 @@ class Program
         string _entry;
         string _date;
         string _nameFile;
-        List<Entry> _allEntries = new List<Entry>();
-
+        List<string> _allEntries = new List<string>();
         Console.WriteLine();
         Console.WriteLine("Welcome to the Journal Program!");
 
@@ -33,18 +32,19 @@ class Program
         if (selection == "1") 
         {
             // code to get random prompt, get user entry, add entry to journal
+            // code to get random prompt, get user entry, add entry to journal
             _random = getPrompt.GetPrompt();
             _prompt = getEntry.DisplayPrompt();
             _response = getEntry.GetUserResponse();
             _date = getEntry.GetDate();
-            _entry = ($"Date: {_date} | Prompt: {_prompt} | {_response}");
-            journal.AddEntry(_entry);
+            _entry = getEntry.GetEntry(_date, _prompt, _response);
+            _allEntries = journal.AddEntry(_entry);
 
         }
         else if (selection == "2") 
         {
             // code for Display entries
-            journal.DisplayEntries();
+            journal.DisplayEntries(_allEntries);
         }
         else if (selection == "3") 
         {

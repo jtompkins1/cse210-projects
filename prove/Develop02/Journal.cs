@@ -18,51 +18,47 @@ public class Journal
     public string _nameFile;
     public string _entry;
     public string _loadFile;
-    public List<Entry> _allEntries = new List<Entry>();
-    public List<string> _stringEntries = new List<string>();
-    Entry addEntry = new Entry();
-    
+    public List<string> _allEntries = new List<string>();
 
-    public void AddEntry(string entry)
+    public List<string> AddEntry(string entry)
     {
-        //add new entries to _allEntries list
-        _entry = addEntry.CombineEntryElements();
-        _stringEntries.Add(_entry);
-
+        //add user entry to _allEntries list
+        _allEntries.Add(entry);
+        return _allEntries;
     }
 
-    public void DisplayEntries()
+    public void DisplayEntries(List<string> _allEntries)
     {
         //code to display all Journal entries
         Console.WriteLine();
         Console.WriteLine("My Journal Entries: ");
 
-        foreach (Entry entry in _allEntries)
+        foreach (var entry in _allEntries)
         {
-            entry.CombineEntryElements();
+            Console.WriteLine(entry);
         }
     }
 
-    // public string SaveToFile(List<string> _allEntries)
-    // {
-    //     // TODO:
-    //         // currently writes over old entries if you load this file, then save new entries 
+    public string SaveToFile(List<string> _allEntries)
+    {
+        // TODO:
+            // currently writes over old entries if you load this file, then save new entries 
 
-    //     Console.Write("Name a .txt file to save: ");
-    //     _nameFile = Console.ReadLine();
+        Console.Write("Name a .txt file to save: ");
+        _nameFile = Console.ReadLine();
 
-    //     Console.WriteLine("Saving to file...");
+        Console.WriteLine("Saving to file...");
 
-    //     using (StreamWriter outputFile = new StreamWriter(_nameFile))
-    //     {
-    //         foreach (var entry in _allEntries)
-    //         {
-    //             outputFile.WriteLine(entry);
-    //         }
+        using (StreamWriter outputFile = new StreamWriter(_nameFile))
+        {
+            foreach (var entry in _allEntries)
+            {
+                outputFile.WriteLine(entry);
+            }
             
-    //     }
-    //     return _nameFile;
-    // }
+        }
+        return _nameFile;
+    }
     public string LoadFile()
     {
         //load existing Journal file
