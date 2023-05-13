@@ -1,14 +1,3 @@
-// Class: Entry
-// Attributes:
-
-// * _date : string
-// * _response : string
-// * _prompt: string
-
-// Behaviors:
-// Response(): string
-// Display(): string
-
 using System;
 
 public class Entry
@@ -23,7 +12,7 @@ public class Entry
     public string DisplayPrompt()
     {
         _prompt = getPrompt.GetPrompt();
-        Console.Write(_prompt);
+        Console.Write($"{_prompt}\n>");
         return _prompt;
     }
     public string GetUserResponse()

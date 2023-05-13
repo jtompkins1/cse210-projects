@@ -64,10 +64,13 @@ class Program
         else if (selection == "6")
         {
             // code for Quit (selection == "5")
+            Console.WriteLine();
             Console.WriteLine("Thank you for using the Journal Program. Goodbye!");
+            Console.WriteLine();
         }
         else
-        {
+        {   
+            Console.WriteLine();
             Console.WriteLine("Invalid Entry. Select an option number 1-5.");
         }
 

@@ -1,15 +1,3 @@
-//Class: Journal
-// Attributes:
-// * _nameFile : string
-// * _entries: list
-
-// Behaviors:
-// DisplayEntries(): string
-// AddEntry(): void
-// SaveToFile(): void
-// LoadFile(): void
-
-
 using System;
 using System.Collections.Generic;
 
@@ -31,7 +19,7 @@ public class Journal
     {
         //code to display all Journal entries
         Console.WriteLine();
-        Console.WriteLine("My Journal Entries: ");
+        Console.WriteLine("Displaying entries... ");
 
         foreach (var entry in _allEntries)
         {
@@ -43,6 +31,7 @@ public class Journal
     {
         Console.Write("Name a .txt file to save: ");
         _nameFile = Console.ReadLine();
+        Console.WriteLine();
 
         Console.WriteLine("Saving to file...");
 
@@ -61,6 +50,8 @@ public class Journal
         Console.Write("Enter the name of your file: ");
         _nameFile = Console.ReadLine();
         _loadFile = File.ReadAllText(_nameFile);
+        Console.WriteLine();
+        Console.WriteLine($"Viewing {_nameFile}...");
         Console.WriteLine(_loadFile);
 
         return _nameFile;
