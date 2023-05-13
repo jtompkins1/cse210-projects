@@ -32,7 +32,7 @@ public class PromptGenerator
     }
     public void ViewPrompts()
     {
-        foreach (string _prompt in _prompts);
+        foreach (string _prompt in _prompts)
         {
             Console.WriteLine(_prompt);
         }
