@@ -1,14 +1,3 @@
-// Class: Entry
-// Attributes:
-
-// * _date : string
-// * _response : string
-// * _prompt: string
-
-// Behaviors:
-// Response(): string
-// Display(): string
-
 using System;
 
 public class Entry
@@ -37,11 +26,26 @@ public class Entry
         _date = todaysDate.ToShortDateString();
         return _date;
     }
-    public string GetEntry(string _date, string _prompt, string _response)
+    public string CombineEntryElements()
     {
         _entry = ($"Date: {_date} | Prompt: {_prompt} | {_response}");
+        Console.WriteLine(_entry);
+
         return _entry;
 
     }
+
+    
 }
+// Class: Entry
+// Attributes:
+
+// * _date : string
+// * _response : string
+// * _prompt: string
+
+// Behaviors:
+// Response(): string
+// Display(): string
+
 
