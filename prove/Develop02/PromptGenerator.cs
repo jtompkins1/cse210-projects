@@ -13,6 +13,7 @@ public class PromptGenerator
 {
     public Random random = new Random();
     public string _prompt;
+    public string _newPrompt;
     // public string _entry;
     public List<string> _prompts = new List<string>(){
         "What is one thing I'm looking forward to?\n> ",
@@ -32,7 +33,10 @@ public class PromptGenerator
         return _prompt;
 
     }
-
-
-    
+    public void AddPrompt()
+    {
+        Console.WriteLine("Enter a new prompt: ");
+        _newPrompt = Console.ReadLine();
+        _prompts.Add($"{_newPrompt}/n>");
+    }
 }

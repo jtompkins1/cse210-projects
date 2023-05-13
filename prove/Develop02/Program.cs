@@ -41,22 +41,28 @@ class Program
             _allEntries = journal.AddEntry(_entry);
 
         }
-        else if (selection == "2") 
+        else if (selection == "2");
+        {
+            // code to add a new prompt to the list
+            
+
+        }
+        else if (selection == "3") 
         {
             // code for Display entries
             journal.DisplayEntries(_allEntries);
         }
-        else if (selection == "3") 
+        else if (selection == "4") 
         {
             // code for Load file
             _nameFile = journal.LoadFile();
         }
-        else if (selection == "4") 
+        else if (selection == "5") 
         {
             // code for Save file
-            // _nameFile = journal.SaveToFile();
+            _nameFile = journal.SaveToFile();
         }
-        else if (selection == "5")
+        else if (selection == "6")
         {
             // code for Quit (selection == "5")
             Console.WriteLine("Thank you for using the Journal Program. Goodbye!");
@@ -67,7 +73,7 @@ class Program
         }
 
 
-        } while (selection != "5");
+        } while (selection != "6");
 
 
     }
