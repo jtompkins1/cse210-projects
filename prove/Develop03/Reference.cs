@@ -1,19 +1,27 @@
 using System;
-
+using System.Collections.Generic;
 
 public class Reference
 {
-    private string _reference;
-    private string _book = "Moroni";
-    private int _chapter = 10;
-    private int _startVerse = 3;
-    private int _endVerse = 5;
+    private string _book;
+    private int _chapter;
+    private int _startVerse;
+    private int _endVerse;
 
-    public Reference(string book, int chapter, int startVerse)
+    public Reference()
+    {
+        _book = "Matthew";
+        _chapter = 11;
+        _startVerse = 28;
+        _endVerse = 30;
+
+    }
+    public Reference(string book, int chapter, int verse)
     {
         _book = book;
         _chapter = chapter;
-        _startVerse = startVerse;
+        _startVerse = verse;
+        _endVerse = verse;
     }
     public Reference(string book, int chapter, int startVerse, int endVerse)
     {
@@ -23,54 +31,19 @@ public class Reference
         _endVerse = endVerse;
 
     }
-    public string GetBook()
-    {
-        return _book;
-    } 
-    public void SetBook(string book)
-    {
-        _book = book;
-    } 
-    public int GetChapter() 
-    {
-        return _chapter;
-    } 
-    public void SetChapter(int chapter)
-    {
-        _chapter = chapter;
-    }
-    public int GetStartVerse()
-    {
-        return _startVerse;
-    }
-    public void SetStartVerse(int startVerse)
-    {
-        _startVerse = startVerse;
-    }
-    public int GetEndVerse()
-    {
-        return _endVerse;
-    }
-    public void SetEndVerse(int endVerse)
-    {
-        _endVerse = endVerse;
-    }
 
-    public string GetMultipleReference()
+    public string GetReferenceString()
     {
-        return _reference;
-    }
-    public void SetMultipleReference(string book, int chapter, int startVerse, int endVerse)
-    {
-        _reference = ($"{_book} {_chapter}: {_startVerse}-{_endVerse}");
-    }
-    public string GetSimpleReference()
-    {
-        return _reference;
-    }
-    public void SetSimpleReference(string book, int chapter, int startVerse)
-    {
-        _reference = ($"{_book} {_chapter}: {_startVerse}");
+        if (_startVerse == _endVerse)
+        {
+            string r = ($"{_book} {_chapter}: {_startVerse}");
+            return r;
+        }
+        else
+        {
+            string r = ($"{_book} {_chapter}: {_startVerse}-{_endVerse}");
+            return r;
+        }
     }
 
 
