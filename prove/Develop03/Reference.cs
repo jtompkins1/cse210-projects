@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 
 public class Reference
 {
@@ -31,21 +30,5 @@ public class Reference
         _endVerse = endVerse;
 
     }
-
-    public string GetReferenceString()
-    {
-        if (_startVerse == _endVerse)
-        {
-            string r = ($"{_book} {_chapter}: {_startVerse}");
-            return r;
-        }
-        else
-        {
-            string r = ($"{_book} {_chapter}: {_startVerse}-{_endVerse}");
-            return r;
-        }
-    }
-
-
 
 }
