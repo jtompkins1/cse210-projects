@@ -19,6 +19,9 @@ class Program
         Console.WriteLine(s2.GetScripture());
         Console.WriteLine();
 
+        Scripture s3 = new Scripture();
+        Console.WriteLine(s3.GetScripture());
+
 
 
         // do
