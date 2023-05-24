@@ -1,33 +1,36 @@
 using System;
 
 public class Scripture
-{
+{   
     private string _scripture;
     private Reference _reference;
     private string _text;
-    public Scripture(string text)
+    public Scripture(string text, Reference reference)
     {
-        _reference = new Reference("Matthew", 11, 28, 30);
-        _text = "Come unto me, all ye that labour and are heavy laden, and I will give you rest. Take my yoke upon you, and learn of me; for I am meek and lowly in heart: and ye shall find rest unto your souls. For my yoke is easy, and my burden is light.";
+        _reference = reference;
+        _text = text;
+
     }
-    public Scripture(string text, Reference _reference)
+    public Scripture(Reference reference, string text)
     {
-        _reference = new Reference();
+        _reference = reference;
         _text = text;
     }
-    public string GetText()
+    // public string GetText()
+    // {
+    //     return _text;
+    // }
+    // public void SetText(string text)
+    // {
+    //     _text = text;
+    // }
+    public string GetScripture()
     {
-        return _text;
+        return _scripture;
     }
-    public void SetText(string text)
+    public void SetScripture(Reference reference, string text)
     {
-        _text = text;
+        _scripture = ($"{_reference} {_text}");
     }
-
-
-
-
-
-
 
 }
