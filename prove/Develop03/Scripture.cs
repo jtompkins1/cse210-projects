@@ -30,7 +30,15 @@ public class Scripture
     }
     public void SetScripture(Reference reference, string text)
     {
-        _scripture = ($"{_reference} {_text}");
+        if (_reference.GetStartVerse() == _reference.GetEndVerse())
+        {
+            _scripture = ($"{_reference.GetBook()} {_reference.GetChapter()}: {_reference.GetStartVerse()} {_text}");
+        }
+        else
+        {
+            _scripture = ($"{_reference.GetBook()} {_reference.GetChapter()}: {_reference.GetStartVerse()}-{_reference.GetEndVerse()} {_text}");
+        }
+        
     }
 
 }
