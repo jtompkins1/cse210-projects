@@ -5,6 +5,12 @@ class Program
     static void Main(string[] args)
     {
 
+        Fraction f = new Fraction();
+        f.SetTop(3);
+        f.SetBottom(8);
+        Console.WriteLine(f.GetFractionString());
+        Console.WriteLine(f.GetDecimalValue());
+
         Fraction f1 = new Fraction();
         Console.WriteLine(f1.GetFractionString());
         Console.WriteLine(f1.GetDecimalValue());

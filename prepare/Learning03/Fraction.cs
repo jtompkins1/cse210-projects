@@ -5,6 +5,22 @@ public class Fraction
     private int _top;
     private int _bottom;
 
+    public int GetTop()
+    {
+        return _top;
+    }
+    public void SetTop(int top)
+    {
+        _top = top;
+    }
+    public int GetBottom()
+    {
+        return _bottom;
+    }
+    public void SetBottom(int bottom)
+    {
+        _bottom = bottom;
+    }
     public Fraction()
     {
         _top = 1;
