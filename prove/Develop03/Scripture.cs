@@ -6,8 +6,8 @@ public class Scripture
     private Reference _reference;
     private string _text;
     private List<Word> _words;
-    private int _randomWord;
-    private Random _random = new Random();
+    private string _randomWord;
+    // private Random _random = new Random();
 
     public Scripture()
     {
@@ -16,7 +16,7 @@ public class Scripture
         SetScripture(_reference, _text);
 
         _words = new List<Word>();
-        string [] words = _text.Split(" ");
+        string[] words = _text.Split(" ");
         foreach (string word in words)
         {
             _words.Add(new Word(word));
@@ -30,7 +30,7 @@ public class Scripture
         SetScripture(reference, _text);
 
         _words = new List<Word>();
-        string [] words = _text.Split(" ");
+        string[] words = _text.Split(" ");
         foreach (string word in words)
         {
             _words.Add(new Word(word));
@@ -44,7 +44,7 @@ public class Scripture
         SetScripture(reference, text);
 
         _words = new List<Word>();
-        string [] words = _text.Split(" ");
+        string[] words = _text.Split(" ");
         foreach (string word in words)
         {
             _words.Add(new Word(word));
@@ -74,20 +74,39 @@ public class Scripture
     //     }while (_words[_randomWord].GetIsHidden());
     //     _words[_randomWord].GetIsHidden();
     // }
-    public string getHiddenWords()
+    // public string GetHiddenWords()
+    // {
+    //     string[] words = _text.Split(' ');
+    //     int index = _random.Next(0, words.Length);
+ 
+    //     string hiddenWord = words[index];
+    //     _words.Add(new Word(hiddenWord));
+ 
+    //     words[index] = "_____"; // Placeholder for hidden word
+ 
+    //     return string.Join(' ', words);
+    // }
+    public string GetRandomWord()
     {
-        string[] _words = _text.Split(' ');
- 
-        Random random = new Random();
-        int index = random.Next(0, _words.Length);
- 
-        string hiddenWord = _words[index];
-        _words.Add(new Word(hiddenWord));
- 
-        _words[index] = "_____"; // Placeholder for hidden word
- 
-       return  _text = string.Join(' ', _words);
+        return _randomWord;
     }
+    public void SetRandomWord()
+    {
+        // put each word from text into a list
+        _words = new List<Word>();
+        string[] words = _text.Split(" ");
+        foreach (string word in words)
+        {
+            _words.Add(new Word(word));
+        }
+
+        // select random words
+        Random _random = new Random();
+        int index = _random.Next(_words.Count);
+        _randomWord = _words[index].ToString();
+
+    }
+
 
 
 }
