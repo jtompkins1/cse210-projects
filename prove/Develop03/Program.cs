@@ -4,7 +4,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        // string userInput;
+        string userInput;
         // string renderedText;
         // bool isCompletelyHidden;
         
@@ -23,15 +23,20 @@ class Program
         Console.WriteLine(scripture.GetScripture());
         Console.WriteLine();
 
+        do
+        {
+            Console.WriteLine("Press enter to continue or 'quit' to finish: ");
+            userInput = Console.ReadLine();
+            Console.Clear();
+            // Display rendered text
 
 
-        // do
-        // {
 
-            
 
+        }while (userInput != "quit");
         // }while (userInput != "quit" || renderedText == isCompletelyHidden);
 
+        Console.WriteLine("Thank you for using the Scripture Memorizer");
 
     }
 }
