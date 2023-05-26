@@ -1,5 +1,5 @@
 using System;
-
+using System.Collections.Generic;
 public class Scripture
 {   
     private string _scripture;
@@ -74,20 +74,20 @@ public class Scripture
     //     }while (_words[_randomWord].GetIsHidden());
     //     _words[_randomWord].GetIsHidden();
     // }
-    // public string getHiddenWords()
-    // {
-    //     string[] words = _text.Split(' ');
+    public string getHiddenWords()
+    {
+        string[] _words = _text.Split(' ');
  
-    //     Random random = new Random();
-    //     int index = random.Next(0, words.Length);
+        Random random = new Random();
+        int index = random.Next(0, _words.Length);
  
-    //     string palabraoculta = words[index];
-    //     _hidden.Add(palabraoculta);
+        string hiddenWord = _words[index];
+        _words.Add(new Word(hiddenWord));
  
-    //     words[index] = "_____"; // Placeholder for hidden word
+        _words[index] = "_____"; // Placeholder for hidden word
  
-    //    return  _text = string.Join(' ', words);
-    // }
+       return  _text = string.Join(' ', _words);
+    }
 
 
 }
