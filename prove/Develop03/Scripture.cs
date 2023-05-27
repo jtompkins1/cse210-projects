@@ -72,6 +72,7 @@ public class Scripture
     public void SetHiddenWord()
     {
         // randomly select 4 words to hide
+        // https://softdevpractice.com/blog/enumerable-range-by-example/
         foreach (int i in Enumerable.Range(0,4))
         {
             // select random words
