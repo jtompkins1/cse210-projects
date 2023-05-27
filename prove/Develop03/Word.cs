@@ -9,20 +9,18 @@ public class Word
     {
         _text = text;
     }
-    public bool GetHiddenStatus()
+    // public bool GetIsHidden()
+    // {
+    //     return _hidden;
+    // }
+    public bool IsHidden()
     {
-        return _hidden;
-    }
-    public void SetHiddenStatus(string text)
-    {
-        if (text.Contains("_"))
+        if (!_text.Contains("_"))
         {
-            _hidden = true;
+            return false;
         }
-        else
-        {
-            _hidden = false;
-        }
+        return true;
+
     }
     // public bool Shown()
     // {
