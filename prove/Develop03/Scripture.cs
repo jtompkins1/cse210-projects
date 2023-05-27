@@ -72,25 +72,31 @@ public class Scripture
     {
         // randomly select 4 words to hide
         // https://softdevpractice.com/blog/enumerable-range-by-example/
-        foreach (int i in Enumerable.Range(0,4))
+        Random _random = new Random();
+        // keep track of number of random words chosen each loop
+        List<int> selectedWords = new List<int>();
+
+        while (selectedWords.Count < 4)
+        // foreach (int i in Enumerable.Range(0,4))
         {
             // select random words
-            Random _random = new Random();
+
             int index = _random.Next(_words.Count);
             Word _randomWord = _words[index];
 
-            // if random word does not contain "_"
-            // bool check = _randomWord.Contains("_");
-            if (_randomWord.GetHiddenStatus() == true)
+            // check if random word is already hidden
+            if (_randomWord.GetHiddenStatus() == true && selectedWords.Contains(index))
             {
                 // https://www.tutorialspoint.com/csharp/csharp_continue_statement.htm#:~:text=The%20continue%20statement%20in%20C%23,of%20the%20loop%20to%20execute.
                 continue;
             }
             else
             {
+                selectedWords.Add(index);
                 // replace each letter in the word with _
                 // https://www.programiz.com/csharp-programming/library/string/replace
-                _hiddenWord = _randomWord.GetIsHidden().Replace(_randomWord.GetIsHidden(), new string('_', _randomWord.GetIsHidden().Length));
+                string rw = _randomWord.GetIsHidden();
+                _hiddenWord = rw.Replace(rw, new string('_', rw.Length));
                 // store hidden status in Word class
                 _randomWord.SetIsHidden(_hiddenWord);
             }

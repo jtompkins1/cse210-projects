@@ -26,7 +26,7 @@ public class Word
     }
     public void SetHiddenStatus(string text)
     {
-        if (_text.Contains("_"))
+        if (text.Contains("_"))
         {
             _hidden = true;
         }
