@@ -71,16 +71,20 @@ public class Scripture
     }
     public void SetHiddenWord()
     {
-        foreach (int i in Enumerable.Range(0,3))
+        // randomly select 4 words to hide
+        foreach (int i in Enumerable.Range(0,4))
         {
             // select random words
             Random _random = new Random();
             int index = _random.Next(_words.Count);
             Word _randomWord = _words[index];
             // replace each letter in the word with _
-            _hiddenWord = Regex.Replace(_randomWord.ToString(), ".", "_");
+            // https://learn.microsoft.com/en-us/dotnet/api/system.string.replace?view=net-7.0
+            _hiddenWord = _randomWord.GetIsHidden().Replace(_randomWord.GetIsHidden(), new string('_', _randomWord.GetIsHidden().Length));
+            // store hidden status in Word class
             _randomWord.SetIsHidden(_hiddenWord);
         }
+
     }
     public string GetRenderedText()
     {
