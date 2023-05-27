@@ -15,12 +15,12 @@ public class Scripture
         _text = "O be wise; what can I say more?";
         SetScripture(_reference, _text);
 
-        _words = new List<Word>();
-        string[] words = _text.Split(" ");
-        foreach (string word in words)
-        {
-            _words.Add(new Word(word));
-        }
+        // _words = new List<Word>();
+        // string[] words = _text.Split(" ");
+        // foreach (string word in words)
+        // {
+        //     _words.Add(new Word(word));
+        // }
     }
     public Scripture(Reference reference, string text)
     {
@@ -28,19 +28,19 @@ public class Scripture
         _text = text;
         SetScripture(reference, text);
 
-        _words = new List<Word>();
-        string[] words = _text.Split(" ");
-        foreach (string word in words)
-        {
-            _words.Add(new Word(word));
-        }
+        // _words = new List<Word>();
+        // string[] words = _text.Split(" ");
+        // foreach (string word in words)
+        // {
+        //     _words.Add(new Word(word));
+        // }
     }
     public string GetScripture()
     {
         return _scripture;
     }
     //set initial scripture prior to hiding words
-    public void SetScripture(Reference _reference, string text)
+    private void SetScripture(Reference _reference, string text)
     {
         if (_reference.GetStartVerse() == _reference.GetEndVerse())
         {
@@ -49,6 +49,12 @@ public class Scripture
         else
         {
             _scripture = ($"{_reference.GetBook()} {_reference.GetChapter()}:{_reference.GetStartVerse()}-{_reference.GetEndVerse()} {_text}");
+        }
+        _words = new List<Word>();
+        string[] words = _text.Split(" ");
+        foreach (string word in words)
+        {
+            _words.Add(new Word(word));
         }
     }
     public string GetHiddenWord()
