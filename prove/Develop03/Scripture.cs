@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 public class Scripture
 {   
     private string _scripture;
@@ -7,7 +8,8 @@ public class Scripture
     private string _text;
     private List<Word> _words;
     private string _randomWord;
-    // private Random _random = new Random();
+    // private string _hiddenWord;
+    private string _renderedText;
 
     public Scripture()
     {
@@ -66,31 +68,7 @@ public class Scripture
         }
         
     }
-    // public void HideRandomWords()
-    // {
-    //     do
-    //     {
-    //         _randomWord = new Random.Random(_words.Count);
-    //     }while (_words[_randomWord].GetIsHidden());
-    //     _words[_randomWord].GetIsHidden();
-    // }
-    // public string GetHiddenWords()
-    // {
-    //     string[] words = _text.Split(' ');
-    //     int index = _random.Next(0, words.Length);
- 
-    //     string hiddenWord = words[index];
-    //     _words.Add(new Word(hiddenWord));
- 
-    //     words[index] = "_____"; // Placeholder for hidden word
- 
-    //     return string.Join(' ', words);
-    // }
-    public string GetRandomWord()
-    {
-        return _randomWord;
-    }
-    public void SetRandomWord()
+    public void HideWords()
     {
         // put each word from text into a list
         _words = new List<Word>();
@@ -104,6 +82,18 @@ public class Scripture
         Random _random = new Random();
         int index = _random.Next(_words.Count);
         _randomWord = _words[index].ToString();
+        // replace each letter in the word with _
+        Regex.Replace(_randomWord, ".", "_");
+
+    }
+    public string GetRenderedText()
+    {
+        return _renderedText;
+    }
+    public void SetRenderedText()
+    {
+        HideWords();
+        _renderedText = string.Join(" ", _words);
 
     }
 
