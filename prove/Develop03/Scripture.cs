@@ -70,39 +70,67 @@ public class Scripture
     }
     public void SetHiddenWord()
     {
+        Random _random = new Random();
         // randomly select 4 words to hide
         // https://softdevpractice.com/blog/enumerable-range-by-example/
-        Random _random = new Random();
-        // keep track of number of random words chosen each loop
-        List<int> selectedWords = new List<int>();
-
-        while (selectedWords.Count < 4)
-        // foreach (int i in Enumerable.Range(0,4))
+        foreach (int i in Enumerable.Range(0,4))
         {
             // select random words
-
             int index = _random.Next(_words.Count);
             Word _randomWord = _words[index];
-
-            // check if random word is already hidden
-            if (_randomWord.GetHiddenStatus() == true && selectedWords.Contains(index))
-            {
-                // https://www.tutorialspoint.com/csharp/csharp_continue_statement.htm#:~:text=The%20continue%20statement%20in%20C%23,of%20the%20loop%20to%20execute.
-                continue;
-            }
-            else
-            {
-                selectedWords.Add(index);
-                // replace each letter in the word with _
-                // https://www.programiz.com/csharp-programming/library/string/replace
-                string rw = _randomWord.GetIsHidden();
-                _hiddenWord = rw.Replace(rw, new string('_', rw.Length));
-                // store hidden status in Word class
-                _randomWord.SetIsHidden(_hiddenWord);
-            }
+            // replace each letter in the word with _
+            // https://learn.microsoft.com/en-us/dotnet/api/system.string.replace?view=net-7.0
+            _hiddenWord = _randomWord.GetIsHidden().Replace(_randomWord.GetIsHidden(), new string('_', _randomWord.GetIsHidden().Length));
+            // store hidden status in Word class
+            _randomWord.SetIsHidden(_hiddenWord);
         }
-
     }
+    // public void SetHiddenWord()
+    // {
+    //     // randomly select 4 words to hide
+    //     // https://softdevpractice.com/blog/enumerable-range-by-example/
+    //     Random _random = new Random();
+    //     // List<Word> _remainingWords = _words.Where(word => !word.GetHiddenStatus()).ToList();
+    //     // List<Word> _selectedWords = new List<Word>();
+    //     // // keep track of number of random words chosen each loop
+ 
+    //     // while (_selectedWords.Count < 4 && _remainingWords.Count > 0)
+    //     foreach (int i in Enumerable.Range(0,4))
+    //     {
+    //         // select random words
+    //         int index = _random.Next(_remainingWords.Count);
+    //         Word _randomWord = _remainingWords[index];
+    //         _selectedWords.Add(_randomWord);
+    //         _remainingWords.RemoveAt(index);
+
+    //         string rw = _randomWord.SetHiddenStatus(_randomWord.GetIsHidden());
+    //         _hiddenWord = rw.Replace(rw, new string('_', rw.Length));
+    
+
+
+    //         // check if random word is already hidden
+    //         if (_randomWord.GetHiddenStatus() == false && !_selectedWords.Contains(index))
+    //         {
+    //             _selectedWords.Add(index);
+    //             // replace each letter in the word with _
+    //             // https://www.programiz.com/csharp-programming/library/string/replace
+    //             string rw = _randomWord.GetIsHidden();
+    //             _hiddenWord = rw.Replace(rw, new string('_', rw.Length));
+    //             // store hidden status in Word class
+    //             _randomWord.SetIsHidden(_hiddenWord);
+
+    //         }
+    //         if (_selectedWords.Count >= _words.Count)
+    //         {
+    //             // https://www.tutorialspoint.com/csharp/csharp_continue_statementhtm#:~:text=The%20continue%20statement%20in%20C%23,of%20the%20loop%20to%20execute.
+    //             // continue;
+    //             // https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/statements/jump-statements
+    //             break;
+
+    //         }
+    //     }
+
+    // }
     public string GetRenderedText()
     {
         return _renderedText;
@@ -128,6 +156,7 @@ public class Scripture
     //set scripture including hidden words
     public void SetHiddenScripture()
     {
+        // SetHiddenWord();
         SetRenderedText();
         if (_reference.GetStartVerse() == _reference.GetEndVerse())
         {
@@ -138,4 +167,21 @@ public class Scripture
             _hiddenScripture = ($"{_reference.GetBook()} {_reference.GetChapter()}:{_reference.GetStartVerse()}-{_reference.GetEndVerse()} {_renderedText}");
         }
     }
+    public bool IsCompletelyHidden()
+    {
+        SetRenderedText();
+        GetRenderedText();
+        foreach (item in withHiddenWords)
+        {
+            if (all items == "_")
+            {
+                return true;
+            }
+        }
+        else
+        {
+            return false;
+        }
+    }
+
 }

@@ -15,14 +15,15 @@ class Program
         // Console.WriteLine(s1.GetScripture());
 
         // Simple reference
-        // Reference r2 = new Reference("John", 3, 16);
-        // Scripture s2 = new Scripture(r2, "For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life.");
-        // Console.WriteLine(s2.GetScripture());
+        Reference r2 = new Reference("John", 3, 16);
+        Scripture scripture = new Scripture(r2, "For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life.");
+        Console.WriteLine(scripture.GetScripture());
 
         // get default scripture reference and text
-        Scripture scripture = new Scripture();
-        Console.WriteLine(scripture.GetScripture());
-        Console.WriteLine();
+        // Scripture scripture = new Scripture();
+        // Console.WriteLine();
+        // Console.WriteLine(scripture.GetScripture());
+        // Console.WriteLine();
 
         do
         {
@@ -34,8 +35,8 @@ class Program
             Console.WriteLine(scripture.GetHiddenScripture());
 
 
-        }while (userInput != "quit");
-        // }while (userInput != "quit" || renderedText == isCompletelyHidden);
+        // }while (userInput != "quit");
+        }while (userInput != "quit" || renderedText == IsCompletelyHidden());
 
         Console.WriteLine("Thank you for using the Scripture Memorizer");
 
