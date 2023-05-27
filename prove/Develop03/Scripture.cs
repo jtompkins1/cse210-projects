@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Text.RegularExpressions;
 public class Scripture
 {   
     private string _scripture;
@@ -80,7 +79,7 @@ public class Scripture
             int index = _random.Next(_words.Count);
             Word _randomWord = _words[index];
             // replace each letter in the word with _
-            // https://learn.microsoft.com/en-us/dotnet/api/system.string.replace?view=net-7.0
+            // https://www.programiz.com/csharp-programming/library/string/replace
             _hiddenWord = _randomWord.GetIsHidden().Replace(_randomWord.GetIsHidden(), new string('_', _randomWord.GetIsHidden().Length));
             // store hidden status in Word class
             _randomWord.SetIsHidden(_hiddenWord);
