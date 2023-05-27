@@ -8,8 +8,9 @@ public class Scripture
     private string _text;
     private List<Word> _words;
     private string _randomWord;
-    // private string _hiddenWord;
+    private string _hiddenWord;
     private string _renderedText;
+    private string _renderedScripture;
 
     public Scripture()
     {
@@ -81,22 +82,39 @@ public class Scripture
         // select random words
         Random _random = new Random();
         int index = _random.Next(_words.Count);
-        _randomWord = _words[index].ToString();
+        Word _randomWord = _words[index];
         // replace each letter in the word with _
-        Regex.Replace(_randomWord, ".", "_");
+        _hiddenWord = Regex.Replace(_randomWord.ToString(), ".", "_");
+        _randomWord.SetIsHidden(_hiddenWord);
+
+        // join words to string
+        _renderedText = string.Join(" ", words);
 
     }
     public string GetRenderedText()
     {
         return _renderedText;
     }
-    public void SetRenderedText()
+    public void SetRenderedText(string[] words)
     {
         HideWords();
-        _renderedText = string.Join(" ", _words);
+        _renderedText = string.Join(" ", words);
 
     }
+    public string GetRenderedScripture()
+    {
+        return _renderedScripture;
+    }
+    public void SetRenderedScripture(Reference reference, string renderedText)
+    {
+        SetScripture(reference, renderedText);
+        _renderedScripture = GetScripture();
+    }
+    // public void DisplayRenderedScripture(Reference reference, string renderedText)
+    // {
+    //     _renderedScripture = GetRenderedScripture();
 
+    // }
 
 
 }

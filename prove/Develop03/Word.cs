@@ -10,21 +10,13 @@ public class Word
         _text = text;
         _hidden = false;
     }
-    public bool GetIsHidden()
+    public string GetIsHidden()
     {
-        return _hidden;
+        return _text;
     }
-    public void SetIsHidden()
+    public void SetIsHidden(string text)
     {
-        _hidden = true;
-    }
-    public bool GetIsShown()
-    {
-        return _hidden;
-    }
-    public void SetIsShown()
-    {
-        _hidden = false;
+        _text = text;
     }
 
 

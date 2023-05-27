@@ -5,6 +5,7 @@ class Program
     static void Main(string[] args)
     {
         string userInput;
+
         // string renderedText;
         // bool isCompletelyHidden;
         
@@ -29,6 +30,11 @@ class Program
             userInput = Console.ReadLine();
             Console.Clear();
             // Display rendered text
+            Scripture renderedScripture = new Scripture();
+            string s2 = renderedScripture.GetRenderedScripture();
+            Console.WriteLine(s2);
+
+            
 
 
 
