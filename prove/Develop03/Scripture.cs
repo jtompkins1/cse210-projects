@@ -11,22 +11,9 @@ public class Scripture
     private string _hiddenScripture;
     public Scripture()
     {
-        _reference = new Reference("Matthew", 11, 28, 30);
-        _text = "Come unto me, all ye that labour and are heavy laden, and I will give you rest. Take my yoke upon you, and learn of me; for I am meek and lowly in heart: and ye shall find rest unto your souls. For my yoke is easy, and my burden is light.";
+        _reference = new Reference("Jacob", 6, 12);
+        _text = "O be wise; what can I say more?";
         SetScripture(_reference, _text);
-
-        _words = new List<Word>();
-        string[] words = _text.Split(" ");
-        foreach (string word in words)
-        {
-            _words.Add(new Word(word));
-        }
-    }
-    public Scripture(Reference reference)
-    {
-        _reference = reference;
-        _text = "Come unto me, all ye that labour and are heavy laden, and I will give you rest. Take my yoke upon you, and learn of me; for I am meek and lowly in heart: and ye shall find rest unto your souls. For my yoke is easy, and my burden is light.";
-        SetScripture(reference, _text);
 
         _words = new List<Word>();
         string[] words = _text.Split(" ");
@@ -124,18 +111,14 @@ public class Scripture
     public bool IsCompletelyHidden()
     {
         SetRenderedText();
-        GetRenderedText();
-        foreach (item in withHiddenWords)
+        foreach (string word in _renderedText.Split(" "))
         {
-            if (all items == "_")
+            if (word != "_")
             {
-                return true;
+                return false;
             }
         }
-        else
-        {
-            return false;
-        }
+        return true;
     }
 
 }

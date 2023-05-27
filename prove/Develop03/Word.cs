@@ -8,18 +8,7 @@ public class Word
     public Word(string text)
     {
         _text = text;
-
-        // if (_text.Contains ("_"))
-        // {
-        //     _hidden = true;
-
-        // }else
-        // {
-        //     _hidden = false;
-        // }
-
     }
-
     public bool GetHiddenStatus()
     {
         return _hidden;
@@ -34,7 +23,6 @@ public class Word
         {
             _hidden = false;
         }
-
     }
     // public bool Shown()
     // {
@@ -45,7 +33,6 @@ public class Word
     //     }
     //     return _hidden;
     // }
-
     public string GetIsHidden()
     {
         return _text;
