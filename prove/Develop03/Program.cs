@@ -28,8 +28,6 @@ class Program
 
         do
         {
-
-
             Console.WriteLine("Press enter to continue or 'quit' to finish: ");
             userInput = Console.ReadLine();
             Console.Clear();
