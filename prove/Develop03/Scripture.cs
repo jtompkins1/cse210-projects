@@ -113,10 +113,14 @@ public class Scripture
         SetRenderedText();
         foreach (string word in _renderedText.Split(" "))
         {
-            if (word != "_")
+            foreach (char letter in word)
+            {
+            if (letter.ToString() != "_")
             {
                 return false;
             }
+            }
+
         }
         return true;
     }
