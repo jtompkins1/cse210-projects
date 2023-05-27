@@ -7,23 +7,31 @@ public class Reference
     private int _endVerse;
     public Reference(string book, int chapter, int verse)
     {
-        _book = book;
-        _chapter = chapter;
-        _startVerse = verse;
-        _endVerse = verse;
+        // _book = book;
+        // _chapter = chapter;
+        // _startVerse = verse;
+        // _endVerse = verse;
+        SetBook(book);
+        SetChapter(chapter);
+        SetStartVerse(verse);
+        SetEndVerse(verse);
     }
     public Reference(string book, int chapter, int startVerse, int endVerse)
     {
-        _book = book;
-        _chapter = chapter;
-        _startVerse = startVerse;
-        _endVerse = endVerse;
+        // _book = book;
+        // _chapter = chapter;
+        // _startVerse = startVerse;
+        // _endVerse = endVerse;
+        SetBook(book);
+        SetChapter(chapter);
+        SetStartVerse(startVerse);
+        SetEndVerse(endVerse);
     }
     public string GetBook()
     {
         return _book;
     }
-    public void SetBook(string book)
+    private void SetBook(string book)
     {
         _book = book;
     }
@@ -31,7 +39,7 @@ public class Reference
     {
         return _chapter;
     }
-    public void SetChapter(int chapter)
+    private void SetChapter(int chapter)
     {
         _chapter = chapter;
     }
@@ -39,7 +47,7 @@ public class Reference
     {
         return _startVerse;
     }
-    public void SetStartVerse(int startVerse)
+    private void SetStartVerse(int startVerse)
     {
         _startVerse = startVerse;
     }
@@ -47,7 +55,7 @@ public class Reference
     {
         return _endVerse;
     }
-    public void SetEndVerse(int endVerse)
+    private void SetEndVerse(int endVerse)
     {
         _endVerse = endVerse;
     }

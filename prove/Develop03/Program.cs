@@ -46,7 +46,8 @@ class Program
         // || !scripture.IsCompletelyHidden());
 
         Console.Clear();
-        Console.WriteLine("Thank you for using the Scripture Memorizer");
+        Console.WriteLine("Thank you for using the Scripture Memorizer!");
+        Console.WriteLine();
 
     }
 }
