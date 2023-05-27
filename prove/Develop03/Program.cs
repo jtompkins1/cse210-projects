@@ -30,13 +30,8 @@ class Program
             userInput = Console.ReadLine();
             Console.Clear();
             // Display rendered text
-            Scripture renderedScripture = new Scripture();
-            string s2 = renderedScripture.GetRenderedScripture();
-            Console.WriteLine(s2);
-
-            
-
-
+            scripture.SetHiddenScripture();
+            Console.WriteLine(scripture.GetHiddenScripture());
 
 
         }while (userInput != "quit");

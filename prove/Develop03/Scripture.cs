@@ -7,11 +7,9 @@ public class Scripture
     private Reference _reference;
     private string _text;
     private List<Word> _words;
-    private string _randomWord;
     private string _hiddenWord;
     private string _renderedText;
-    private string _renderedScripture;
-
+    private string _hiddenScripture;
     public Scripture()
     {
         _reference = new Reference("Matthew", 11, 28, 30);
@@ -24,7 +22,6 @@ public class Scripture
         {
             _words.Add(new Word(word));
         }
-
     }
     public Scripture(Reference reference)
     {
@@ -39,7 +36,6 @@ public class Scripture
             _words.Add(new Word(word));
         }
     }
-
     public Scripture(Reference reference, string text)
     {
         _reference = reference;
@@ -57,7 +53,8 @@ public class Scripture
     {
         return _scripture;
     }
-    public void SetScripture(Reference reference, string text)
+    //set initial scripture prior to hiding words
+    public void SetScripture(Reference _reference, string text)
     {
         if (_reference.GetStartVerse() == _reference.GetEndVerse())
         {
@@ -67,54 +64,57 @@ public class Scripture
         {
             _scripture = ($"{_reference.GetBook()} {_reference.GetChapter()}:{_reference.GetStartVerse()}-{_reference.GetEndVerse()} {_text}");
         }
-        
     }
-    public void HideWords()
+    public string GetHiddenWord()
     {
-        // put each word from text into a list
-        _words = new List<Word>();
-        string[] words = _text.Split(" ");
-        foreach (string word in words)
+        return _hiddenWord;
+    }
+    public void SetHiddenWord()
+    {
+        foreach (int i in Enumerable.Range(0,3))
         {
-            _words.Add(new Word(word));
+            // select random words
+            Random _random = new Random();
+            int index = _random.Next(_words.Count);
+            Word _randomWord = _words[index];
+            // replace each letter in the word with _
+            _hiddenWord = Regex.Replace(_randomWord.ToString(), ".", "_");
+            _randomWord.SetIsHidden(_hiddenWord);
         }
-
-        // select random words
-        Random _random = new Random();
-        int index = _random.Next(_words.Count);
-        Word _randomWord = _words[index];
-        // replace each letter in the word with _
-        _hiddenWord = Regex.Replace(_randomWord.ToString(), ".", "_");
-        _randomWord.SetIsHidden(_hiddenWord);
-
-        // join words to string
-        _renderedText = string.Join(" ", words);
-
     }
     public string GetRenderedText()
     {
         return _renderedText;
     }
-    public void SetRenderedText(string[] words)
+    // set text of scripture verses with hidden words
+    public void SetRenderedText()
     {
-        HideWords();
-        _renderedText = string.Join(" ", words);
+        SetHiddenWord();
 
+        List<string> withHiddenWords = new List<string>();
+        foreach (Word word in _words)
+        {
+            withHiddenWords.Add(word.GetIsHidden());
+        }
+
+        // join words to string
+        _renderedText = string.Join(" ", withHiddenWords);
     }
-    public string GetRenderedScripture()
+    public string GetHiddenScripture()
     {
-        return _renderedScripture;
+        return _hiddenScripture;
     }
-    public void SetRenderedScripture(Reference reference, string renderedText)
+    //set scripture including hidden words
+    public void SetHiddenScripture()
     {
-        SetScripture(reference, renderedText);
-        _renderedScripture = GetScripture();
+        SetRenderedText();
+        if (_reference.GetStartVerse() == _reference.GetEndVerse())
+        {
+            _hiddenScripture = ($"{_reference.GetBook()} {_reference.GetChapter()}:{_reference.GetStartVerse()} {_renderedText}");
+        }
+        else
+        {
+            _hiddenScripture = ($"{_reference.GetBook()} {_reference.GetChapter()}:{_reference.GetStartVerse()}-{_reference.GetEndVerse()} {_renderedText}");
+        }
     }
-    // public void DisplayRenderedScripture(Reference reference, string renderedText)
-    // {
-    //     _renderedScripture = GetRenderedScripture();
-
-    // }
-
-
 }

@@ -3,12 +3,12 @@ using System.Collections.Generic;
 public class Word
 {
     private string _text;
-    private bool _hidden;
+    // private bool _hidden;
 
     public Word(string text)
     {
         _text = text;
-        _hidden = false;
+        // _hidden = false;
     }
     public string GetIsHidden()
     {
