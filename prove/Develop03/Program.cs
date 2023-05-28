@@ -4,7 +4,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        string userInput;
+        string _userInput;
 
         // get Default scripture reference and text (Jacob 6:12)
         // Scripture scripture = new Scripture();
@@ -29,7 +29,7 @@ class Program
         do
         {
             Console.WriteLine("Press enter to continue or 'quit' to finish: ");
-            userInput = Console.ReadLine();
+            _userInput = Console.ReadLine();
             Console.Clear();
 
             // Display rendered text
@@ -39,10 +39,10 @@ class Program
 
             if (scripture.IsCompletelyHidden())
             {
-                userInput = "quit";
+                _userInput = "quit";
             }
 
-        }while (userInput != "quit");
+        }while (_userInput != "quit");
         // || !scripture.IsCompletelyHidden());
 
         Console.Clear();
