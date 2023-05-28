@@ -7,10 +7,6 @@ public class Reference
     private int _endVerse;
     public Reference(string book, int chapter, int verse)
     {
-        // _book = book;
-        // _chapter = chapter;
-        // _startVerse = verse;
-        // _endVerse = verse;
         SetBook(book);
         SetChapter(chapter);
         SetStartVerse(verse);
@@ -18,10 +14,6 @@ public class Reference
     }
     public Reference(string book, int chapter, int startVerse, int endVerse)
     {
-        // _book = book;
-        // _chapter = chapter;
-        // _startVerse = startVerse;
-        // _endVerse = endVerse;
         SetBook(book);
         SetChapter(chapter);
         SetStartVerse(startVerse);

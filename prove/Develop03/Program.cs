@@ -13,18 +13,18 @@ class Program
         // Console.WriteLine();
 
         // Simple reference and text
-        Reference reference = new Reference("John", 3, 16);
-        Scripture scripture = new Scripture(reference, "For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life.");
-        Console.WriteLine();
-        Console.WriteLine(scripture.GetScripture());
-        Console.WriteLine();
-
-        // Complex Reference and text
-        // Reference reference = new Reference("Matthew", 11, 28, 30);
-        // Scripture scripture = new Scripture(reference, "Come unto me, all ye that labour and are heavy laden, and I will give you rest. Take my yoke upon you, and learn of me; for I am meek and lowly in heart: and ye shall find rest unto your souls. For my yoke is easy, and my burden is light.");
+        // Reference reference = new Reference("John", 3, 16);
+        // Scripture scripture = new Scripture(reference, "For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life.");
         // Console.WriteLine();
         // Console.WriteLine(scripture.GetScripture());
         // Console.WriteLine();
+
+        // Complex Reference and text
+        Reference reference = new Reference("Matthew", 11, 28, 30);
+        Scripture scripture = new Scripture(reference, "Come unto me, all ye that labour and are heavy laden, and I will give you rest. Take my yoke upon you, and learn of me; for I am meek and lowly in heart: and ye shall find rest unto your souls. For my yoke is easy, and my burden is light.");
+        Console.WriteLine();
+        Console.WriteLine(scripture.GetScripture());
+        Console.WriteLine();
 
         do
         {

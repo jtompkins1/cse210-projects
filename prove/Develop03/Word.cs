@@ -24,15 +24,15 @@ public class Word
             _hidden = false;
         }
     }
-    // public bool Shown()
-    // {
-    //     // https://stackoverflow.com/questions/6177352/c-sharp-string-does-not-contain-possible
-    //     if(!_text.Contains("_"))
-    //     {
-    //         _hidden = false;
-    //     }
-    //     return _hidden;
-    // }
+    public bool Shown()
+    {
+        // https://stackoverflow.com/questions/6177352/c-sharp-string-does-not-contain-possible
+        if(!_text.Contains("_"))
+        {
+            _hidden = false;
+        }
+        return _hidden;
+    }
     public string GetIsHidden()
     {
         return _text;
@@ -41,7 +41,4 @@ public class Word
     {
         _text = text;
     }
-
-
-
 }
