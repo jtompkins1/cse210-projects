@@ -15,12 +15,12 @@ public class Scripture
         _text = "O be wise; what can I say more?";
         SetScripture(_reference, _text);
 
-        // _words = new List<Word>();
-        // string[] words = _text.Split(" ");
-        // foreach (string word in words)
-        // {
-        //     _words.Add(new Word(word));
-        // }
+        _words = new List<Word>();
+        string[] words = _text.Split(" ");
+        foreach (string word in words)
+        {
+            _words.Add(new Word(word));
+        }
     }
     public Scripture(Reference reference, string text)
     {
@@ -28,12 +28,12 @@ public class Scripture
         _text = text;
         SetScripture(reference, text);
 
-        // _words = new List<Word>();
-        // string[] words = _text.Split(" ");
-        // foreach (string word in words)
-        // {
-        //     _words.Add(new Word(word));
-        // }
+        _words = new List<Word>();
+        string[] words = _text.Split(" ");
+        foreach (string word in words)
+        {
+            _words.Add(new Word(word));
+        }
     }
     public string GetScripture()
     {
@@ -50,12 +50,6 @@ public class Scripture
         {
             _scripture = ($"{_reference.GetBook()} {_reference.GetChapter()}:{_reference.GetStartVerse()}-{_reference.GetEndVerse()} {_text}");
         }
-        // _words = new List<Word>();
-        // string[] words = _text.Split(" ");
-        // foreach (string word in words)
-        // {
-        //     _words.Add(new Word(word));
-        // }
     }
     public string GetHiddenWord()
     {
@@ -63,52 +57,21 @@ public class Scripture
     }
     public void SetHiddenWord()
     {
-
-        // add all words from text to list _words
-        _words = new List<Word>();
-        string[] words = _text.Split(" ");
-        foreach (string word in words)
-        {
-            _words.Add(new Word(word));
-        }
-
-
+        Random _random = new Random();
         // randomly select 4 words to hide
         // https://softdevpractice.com/blog/enumerable-range-by-example/
-        Random _random = new Random();
         foreach (int i in Enumerable.Range(0,4))
         {
-            // get index of any word that isn't hidden
-            // https://www.interviewbit.com/problems/sets-in-c/#:~:text=A%20set%20is%20a%20collection,%2Fli%3E
-
-            SortedSet<int> shownWordsIndex = new SortedSet<int>();
-            for (int j = 0; j < _words.Count; j++)
-            {
-                if (!_words[j].IsHidden())
-                {
-                    shownWordsIndex.Add(j);
-                }
-                // get words from random index from non hidden words
-                int selectedIndex = _random.Next(shownWordsIndex.Count);
-                // https://www.tutorialspoint.com/elementat-method-in-chash#:~:text=ElementAt()%20is%20a%20System,element%20at%20a%20particular%20index.
-                int selectedWordIndex = shownWordsIndex.ElementAt(selectedIndex);
-
-                Word _randomWord = _words[selectedWordIndex];
-                // replace each letter in the word with _
-                // https://learn.microsoft.com/en-us/dotnet/api/system.string.replace?view=net-7.0
-                _hiddenWord = _randomWord.GetIsHidden().Replace(_randomWord.GetIsHidden(), new string('_', _randomWord.GetIsHidden().Length));
-                // _hiddenWord = new string('_', _randomWord.GetIsHidden().Length);
-                // store hidden status in Word class
-                _randomWord.SetIsHidden(_hiddenWord);
-                // remove selected word index from set
-                shownWordsIndex.Remove(selectedWordIndex);
-            }
-
-
+            // select random words
+            int index = _random.Next(_words.Count);
+            Word _randomWord = _words[index];
+            // replace each letter in the word with _
+            // https://learn.microsoft.com/en-us/dotnet/api/system.string.replace?view=net-7.0
+            _hiddenWord = _randomWord.GetIsHidden().Replace(_randomWord.GetIsHidden(), new string('_', _randomWord.GetIsHidden().Length));
+            // store hidden status in Word class
+            _randomWord.SetIsHidden(_hiddenWord);
         }
     }
-
-
     public string GetRenderedText()
     {
         return _renderedText;
