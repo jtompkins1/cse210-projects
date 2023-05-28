@@ -79,14 +79,16 @@ public class Scripture
             _randomWord.SetIsHidden(_hiddenWord);
         }
     }
+
+
     // UNSUCCESSFULL ATTEMPT AT SELECTING ONLY FROM SHOWN WORDS
     // public void SetHiddenWord() 
     // {
     //     // randomly select 4 words to hide
     //     // https://softdevpractice.com/blog/enumerable-range-by-example/
     //     Random _random = new Random();
-    //     // List<Word> _remainingWords = _words.Where(word => !word.GetHiddenStatus()).ToList();
-    //     // List<Word> _selectedWords = new List<Word>();
+    //     List<Word> _remainingWords = _words.Where(word => !word.GetHiddenStatus()).ToList();
+    //     List<Word> _selectedWords = new List<Word>();
     //     // // keep track of number of random words chosen each loop
 
     //     // while (_selectedWords.Count < 4 && _remainingWords.Count > 0)
@@ -98,18 +100,15 @@ public class Scripture
     //         _selectedWords.Add(_randomWord);
     //         _remainingWords.RemoveAt(index);
 
-    //         string rw = _randomWord.SetHiddenStatus(_randomWord.GetIsHidden());
-    //         _hiddenWord = rw.Replace(rw, new string('_', rw.Length));
 
     //         // check if random word is already hidden
-    //         if (_randomWord.GetHiddenStatus() == false && !_selectedWords.Contains(index))
+    //         if (_randomWord.GetHiddenStatus() == false && !_selectedWords.Contains(_randomWord))
     //         {
-    //             _selectedWords.Add(index);
+    //             // _selectedWords.Add(index);
     //             // replace each letter in the word with _
     //             // https://www.programiz.com/csharp-programming/library/string/replace
     //             // https://learn.microsoft.com/en-us/dotnet/api/system.string.replace?view=net-7.0
-    //             string rw = _randomWord.GetIsHidden();
-    //             _hiddenWord = rw.Replace(rw, new string('_', rw.Length));
+    //             _hiddenWord = _randomWord.GetIsHidden().Replace(_randomWord.GetIsHidden(), new string('_', _randomWord.GetIsHidden().Length));
     //             // store hidden status in Word class
     //             _randomWord.SetIsHidden(_hiddenWord);
     //         }
