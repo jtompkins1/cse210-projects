@@ -1,5 +1,8 @@
 using System;
 using System.Collections.Generic;
+
+// Attempt made to exceed exceed core requirements to select random words to hide from the remaining shown words.  See Scripture.cs lines 84-123.  
+
 class Program
 {
     static void Main(string[] args)
