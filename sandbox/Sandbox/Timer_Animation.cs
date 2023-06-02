@@ -1,6 +1,6 @@
 using System;
 
-class Program
+class Timer_Anmiation
 {
     static void Main(string[] args)
     {
