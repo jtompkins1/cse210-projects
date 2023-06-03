@@ -11,7 +11,7 @@ public class Activity
     public Activity()
     {
         _activityName = GetActivityName();
-        _description = GetDescription(_activityName);
+        _description = GetDescription();
         _durationInt = GetDuration();
     }
 
@@ -32,30 +32,43 @@ public class Activity
         Console.WriteLine("Get Ready");
     }
 
-    // public GetActivityName() : string
-    public string GetActivityName()
+    public string GetMenuSelection()
     {
         Console.Write("Select an option from the menu (1-4): ");
         _menuSelection = Console.ReadLine();
+        return _menuSelection;
+    }
 
+    // public GetActivityName() : string
+    public string GetActivityName()
+    {
+        return _activityName;
+    }
+    public void SetActivityName(string menuSelection)
+    {
         if (_menuSelection == "1")
         {
             _activityName = "Breathing Activity";
-        }else if (_menuSelection == "2")
+        }
+        else if (_menuSelection == "2")
         {
             _activityName = "Reflection Activity";
-        }else if (_menuSelection == "3")
+        }
+        else if (_menuSelection == "3")
         {
             _activityName = "Listing Activity";
-        }else if (_menuSelection == "4");
-        {
-            _activityName = "Quit";
         }
-
-        return _activityName;
+        else if (_menuSelection == "4")
+        {
+            _menuSelection= "4";
+        }
     }
     // public GetDescription() : string
-    public string GetDescription(string activityName)
+    public string GetDescription()
+    {
+        return _description;
+    }
+    public void SetDescription(string activityName)
     {
         if (activityName == "Breathing Activity")
         {
@@ -66,24 +79,37 @@ public class Activity
         }else if (activityName == "Listing Activity")
         {
             _description = "This activity will help you reflect on the good things in your life by having you list as many things as you can in a certain area.";
+        }else
+        {
+            _description = "";
         }
-        return _description;
+        
     }
     // public DisplayStartMessage() : string
-    public void DisplayStartMessage(string activityName, string description, int durationInt)
+    public void DisplayStartMessage(string menuSelection, string activityName)
     {
-        Console.WriteLine($"Welcome to the {activityName}.");
-        Console.WriteLine();
-        Console.WriteLine(_description);
-        GetDuration();
+        if (_menuSelection != "4")
+        {
+            Console.WriteLine();
+            Console.WriteLine($"Welcome to the {_activityName}.");
+            Console.WriteLine();
+            SetDescription(_activityName);
+            _description = GetDescription();
+            Console.WriteLine(_description);
+        }
+
     }
 
     // public GetDuration() : int
     public int GetDuration()
     {
+        return _durationInt;
+    }
+    public void SetDuration()
+    {
         Console.Write("How long, in seconds, would you like for your session? ");
         _durationString = Console.ReadLine();
-        return _durationInt = int.Parse(_durationString);
+        _durationInt = int.Parse(_durationString);
 
     }
 
