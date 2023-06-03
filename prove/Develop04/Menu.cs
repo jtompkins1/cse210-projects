@@ -7,13 +7,15 @@ public class Menu
     protected List<string> _menu;
     protected string _activityName;
 
+
     public Menu()
     {
-         List<string> _menu = new List<string> {"Start Breathing Activity", "Start Reflection Activity", "Start Listing Activity", "Quit" };
+        _menu = GetMenu();
 
     }
-    public List<string> GetMenu(List<string> menu)
+    public List<string> GetMenu()
     {
+        List<string> _menu = new List<string> {"Start Breathing Activity", "Start Reflection Activity", "Start Listing Activity", "Quit" };
         return _menu;
     }
     public void DisplayMenu()
