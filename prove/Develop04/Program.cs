@@ -5,33 +5,27 @@ class Program
 {
     static void Main(string[] args)
     {
-        string menuSelection = "";
         string activityName = "";
-
-        
 
         do
         {
-            // Activity a = new Activity();
 
-            Menu menu = new Menu();
-            menu.DisplayMenu();
-            menuSelection = menu.GetMenuSelection();
+            List<string> _menu = new List<string> {"Start Breathing Activity", "Start Reflection Activity", "Start Listing Activity", "Quit" };
 
-            // string activityName;
+            // Menu menu = new Menu();
+            // menu.DisplayMenu();
+            // menuSelection = menu.GetMenuSelection();
 
-            // activityName = menu.GetActivityName();
+            Console.WriteLine("Menu Options:");
 
+            for (int i = 0; i < _menu.Count; i++)
+            {
+                string menuItem = _menu[i];
+                Console.WriteLine($" {i + 1}. {menuItem}");
+            }
 
-            // List<string> _menu = new List<string> {"Start Breathing Activity", "Start Reflection Activity", "Start Listing Activity", "Quit" };
-
-            // Console.WriteLine("Menu Options:");
-
-            // for (int i = 0; i < _menu.Count; i++)
-            // {
-            //     string menuItem = _menu[i];
-            //     Console.WriteLine($" {i + 1}. {menuItem}");
-            // }
+            Activity a = new Activity();
+            activityName = a.GetActivityName();
 
             // Console.Write("Select an option from the menu (1-4): ");
             // menuSelection = Console.ReadLine();
@@ -49,7 +43,7 @@ class Program
 
 
 
-        }while (menuSelection != "4");
+        }while (activityName != "Quit");
 
 
         
