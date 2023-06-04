@@ -12,14 +12,12 @@ public class Activity
     {
         _activityName = GetActivityName();
         _description = GetDescription();
-        _durationInt = GetDuration();
     }
 
-    public Activity(string activityName, string description, int durationInt)
+    public Activity(string activityName, string description)
     {
         _activityName = activityName;
         _description = description;
-        _durationInt = durationInt;
     }
 
 
@@ -103,14 +101,10 @@ public class Activity
     // public GetDuration() : int
     public int GetDuration()
     {
-        return _durationInt;
-    }
-    public void SetDuration()
-    {
         Console.Write("How long, in seconds, would you like for your session? ");
         _durationString = Console.ReadLine();
         _durationInt = int.Parse(_durationString);
-
+        return _durationInt;
     }
 
     // public DisplayEndMessage() : string

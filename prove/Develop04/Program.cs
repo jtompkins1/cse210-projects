@@ -5,8 +5,9 @@ class Program
 {
     static void Main(string[] args)
     {   
-        string menuSelection = "";
-        string activityName = "";
+        string menuSelection;
+        string activityName;
+        int durationInt;
 
         do
         {
@@ -25,10 +26,14 @@ class Program
             menuSelection = a.GetMenuSelection();
             a.SetActivityName(menuSelection);
             activityName = a.GetActivityName();
-            // a.SetDescription(activityName);
-            // description = a.GetDescription();
             a.DisplayStartMessage(menuSelection, activityName);
             Console.WriteLine();
+
+            if (menuSelection != "4")
+            {
+                durationInt = a.GetDuration();
+            }
+            
 
 
 
