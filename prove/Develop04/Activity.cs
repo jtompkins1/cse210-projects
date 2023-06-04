@@ -22,13 +22,7 @@ public class Activity
 
 
 
-    // public CountDownTimer() : void
-    // public PausingAnimation() : void
 
-    public void PausingAnimation()
-    {
-        Console.WriteLine("Get Ready");
-    }
 
     public string GetMenuSelection()
     {
@@ -88,7 +82,6 @@ public class Activity
     {
         if (_menuSelection != "4")
         {
-            Console.WriteLine();
             Console.WriteLine($"Welcome to the {_activityName}.");
             Console.WriteLine();
             SetDescription(_activityName);
@@ -107,6 +100,38 @@ public class Activity
         return _durationInt;
     }
 
+    // public PausingAnimation() : void
+
+    public void PausingAnimation()
+    {
+        List<string> animationStrings = new List<string>() {"|", "/", "-", "\\"};
+
+        DateTime startTime = DateTime.Now;
+        DateTime endTime = startTime.AddSeconds(5);
+
+        int i = 0;
+
+        Console.WriteLine("Get Ready...");
+
+        while (DateTime.Now < endTime)
+        {
+            // Console.Write(".");
+            // Thread.Sleep(1000);
+            string s = animationStrings[i];
+            Console.Write(s);
+            Thread.Sleep(500);
+            Console.Write("\b \b");
+            
+            i++;
+
+            if (i >= animationStrings.Count)
+            {
+                i = 0;
+            }
+
+        }
+    }
+    // public CountDownTimer() : void
     // public DisplayEndMessage() : string
     // public GetRandom(): string
 }

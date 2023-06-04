@@ -36,7 +36,7 @@ class Program
 
 
         DateTime startTime = DateTime.Now;
-        DateTime endTime = startTime.AddSeconds(10);
+        DateTime endTime = startTime.AddSeconds(20);
 
         int i = 0;
 

@@ -24,6 +24,7 @@ class Program
 
             Activity a = new Activity();
             menuSelection = a.GetMenuSelection();
+            Console.Clear();
             a.SetActivityName(menuSelection);
             activityName = a.GetActivityName();
             a.DisplayStartMessage(menuSelection, activityName);
@@ -32,7 +33,12 @@ class Program
             if (menuSelection != "4")
             {
                 durationInt = a.GetDuration();
+                Console.Clear();
+                a.PausingAnimation();
+                Console.Clear();
             }
+
+
             
 
 
