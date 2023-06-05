@@ -20,10 +20,6 @@ public class Activity
         _description = description;
     }
 
-
-
-
-
     public string GetMenuSelection()
     {
         Console.Write("Select an option from the menu (1-4): ");
@@ -111,7 +107,7 @@ public class Activity
 
         int i = 0;
 
-        Console.WriteLine("Get Ready...");
+        // Console.WriteLine("Get Ready...");
 
         while (DateTime.Now < endTime)
         {
@@ -131,7 +127,21 @@ public class Activity
 
         }
     }
-    // public CountDownTimer() : void
+    // // public DurationTimer() : void
+    // public void DurationTimer(int durationInt)
+    // {
+
+    // }
     // public DisplayEndMessage() : string
+    public void DisplayEndMessage(string activityName, int durationInt)
+    {
+        Console.Clear();
+        Console.WriteLine("Well done!");
+        Console.WriteLine();
+        PausingAnimation();
+        Console.WriteLine($"You performed the {_activityName} for {_durationInt.ToString()} seconds.");
+        Console.WriteLine();
+
+    }
     // public GetRandom(): string
 }

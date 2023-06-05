@@ -33,9 +33,24 @@ class Program
             if (menuSelection != "4")
             {
                 durationInt = a.GetDuration();
+                DateTime startTime = DateTime.Now;
+                DateTime endTime = startTime.AddSeconds(durationInt);
                 Console.Clear();
+
+                Console.WriteLine("Get Ready...");
                 a.PausingAnimation();
-                Console.Clear();
+                Console.WriteLine();
+
+                while (DateTime.Now < endTime)
+                {
+                    if (menuSelection == "1")
+                    {
+                        BreathingActivity b = new BreathingActivity();
+                        b.GetBreathing();
+                    }
+                }
+                a.DisplayEndMessage(activityName, durationInt);
+                
             }
 
 
