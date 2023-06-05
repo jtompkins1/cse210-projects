@@ -16,20 +16,17 @@ public class Activity
         _activityName = GetActivityName();
         _description = GetDescription();
     }
-
     public Activity(string activityName, string description)
     {
         _activityName = activityName;
         _description = description;
     }
-
     public string GetMenuSelection()
     {
         Console.Write("Select an option from the menu (1-4): ");
         _menuSelection = Console.ReadLine();
         return _menuSelection;
     }
-
     // public GetActivityName() : string
     public string GetActivityName()
     {
@@ -74,7 +71,6 @@ public class Activity
         {
             _description = "";
         }
-        
     }
     // public DisplayStartMessage() : string
     public void DisplayStartMessage(string menuSelection, string activityName)
@@ -87,9 +83,7 @@ public class Activity
             _description = GetDescription();
             Console.WriteLine(_description);
         }
-
     }
-
     // public GetDuration() : int
     public int GetDuration()
     {
@@ -98,9 +92,7 @@ public class Activity
         _durationInt = int.Parse(_durationString);
         return _durationInt;
     }
-
     // public PausingAnimation() : void
-
     public void PausingAnimation()
     {
         List<string> animationStrings = new List<string>() {"|", "/", "-", "\\"};
@@ -110,12 +102,8 @@ public class Activity
 
         int i = 0;
 
-        // Console.WriteLine("Get Ready...");
-
         while (DateTime.Now < endTime)
         {
-            // Console.Write(".");
-            // Thread.Sleep(1000);
             string s = animationStrings[i];
             Console.Write(s);
             Thread.Sleep(500);
@@ -127,14 +115,8 @@ public class Activity
             {
                 i = 0;
             }
-
         }
     }
-    // // public DurationTimer() : void
-    // public void DurationTimer(int durationInt)
-    // {
-
-    // }
     // public DisplayEndMessage() : string
     public void DisplayEndMessage(string activityName, int durationInt)
     {
@@ -151,7 +133,6 @@ public class Activity
     {
         int i = random.Next(prompts.Count);
         _randomPrompt = prompts[i];
-
         return _randomPrompt;
 
     }

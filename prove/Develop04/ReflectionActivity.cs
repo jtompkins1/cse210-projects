@@ -3,13 +3,20 @@ using System.Collections.Generic;
 
 public class ReflectionActivity : Activity
 {
-    private List<string> _thoughtPrompts = new List<string>(){
+
+    private List<string> _thoughtPrompts = new List<string>();
+    private List<string> _questions = new List<string>();
+
+    public ReflectionActivity()
+    {
+        _thoughtPrompts = new List<string>(){
         "Think of a time when you stood up for someone else.", 
         "Think of a time when you did something really difficult.", 
         "Think of a time when you helped someone in need.", 
         "Think of a time when you did something truly selfless."
-    };
-    private List<string> _questions = new List<string>(){
+        };
+
+        _questions = new List<string>(){
         "Why was this experience meaningful to you?", 
         "How did you feel when it was complete?", 
         "How did you get started?",
@@ -18,22 +25,45 @@ public class ReflectionActivity : Activity
         "What could you learn from this experience that applies to other situations?",
         "What did you learn about yourself through this experience?", 
         "How can you keep this experience in mind in the future?"
-    };
+        };
+    }
 
-    public ReflectionActivity(string activityName, string description) : base (activityName, description)
-    {
-        // inherits parameters from base class Activity
-    }
+    // public ReflectionActivity(string activityName, string description) : base (activityName, description)
+    // {
+    //     // inherits parameters from base class Activity
+    // }
+
+    // public ReflectionActivity(List<string> thoughtPrompts, List<string> questions)
+    // {
+    //     _thoughtPrompts = thoughtPrompts;
+    //     _questions = questions;
+    // }
     // Behaviors:
-    // private GetThoughtPrompt() : string
-    public string GetThoughtPrompt()
-    {
-        return _randomPrompt = GetRandom(_thoughtPrompts);
-    }
-    // private GetQuestion() : string
     public string GetQuestion()
     {
-        return _randomPrompt = GetRandom(_questions);
+        return GetRandom(_questions);
     }
+    public string GetThoughtPrompt()
+    {
+        return GetRandom(_thoughtPrompts);
+    }
+    public void DisplayThoughtPrompt(string thoughtPrompt)
+    {
+        Console.WriteLine("Consider the following prompt: ");
+        Console.WriteLine($"--- {thoughtPrompt} ---");
+        Console.WriteLine("When you have something in mind, press enter to continue.");
+
+  
+    }
+    public void DisplayQuestion(string question)
+    {
+        string enter = Console.ReadLine();
+        if (enter == "")
+        {
+            Console.WriteLine(question);
+        }
+        
+    }
+
 
 }

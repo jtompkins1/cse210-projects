@@ -1,4 +1,5 @@
 using System;
+using System.Threading;
 
 public class BreathingActivity : Activity
 {
@@ -12,7 +13,6 @@ public class BreathingActivity : Activity
 
     public void GetBreathing()
     {
-        // Console.WriteLine();
         Console.Write($"Breathe in...");
         for (int i = 4; i > 0; i--)
         {

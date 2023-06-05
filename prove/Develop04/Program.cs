@@ -8,6 +8,8 @@ class Program
         string menuSelection;
         string activityName;
         int durationInt;
+        string thoughtPrompt;
+        string question;
 
         do
         {
@@ -41,23 +43,27 @@ class Program
                 a.PausingAnimation();
                 Console.WriteLine();
 
-                while (DateTime.Now < endTime)
+                if (menuSelection == "1")
                 {
-                    if (menuSelection == "1")
+                    while (DateTime.Now < endTime)
                     {
                         BreathingActivity b = new BreathingActivity();
                         b.GetBreathing();
                     }
                 }
+                else if (menuSelection == "2")
+                {
+                    ReflectionActivity r = new ReflectionActivity();
+                    thoughtPrompt = r.GetThoughtPrompt();
+                    r.DisplayThoughtPrompt(thoughtPrompt);
+
+                    question = r.GetQuestion();
+                    r.DisplayQuestion(question);
+                }
+
                 a.DisplayEndMessage(activityName, durationInt);
                 
             }
-
-
-            
-
-
-
         }while (menuSelection != "4");
 
     Console.WriteLine("Thank you for using the Mindfulness program!  Goodbye!");
