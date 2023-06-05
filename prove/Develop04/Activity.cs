@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 public class Activity
 {
@@ -7,6 +8,8 @@ public class Activity
     private int _durationInt;
     private string _durationString;
     protected string _menuSelection;
+    public Random random = new Random();
+    public string _randomPrompt;
 
     public Activity()
     {
@@ -144,5 +147,13 @@ public class Activity
 
     }
     // public GetRandom(): string
-    
+    public string GetRandom(List<string> prompts)
+    {
+        int i = random.Next(prompts.Count);
+        _randomPrompt = prompts[i];
+
+        return _randomPrompt;
+
+    }
 }
+
