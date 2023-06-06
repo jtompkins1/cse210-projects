@@ -48,7 +48,7 @@ public class Activity
         }
         else if (_menuSelection == "4")
         {
-            _menuSelection= "4";
+            _menuSelection = "4";
         }
     }
     // public GetDescription() : string
@@ -83,6 +83,7 @@ public class Activity
             _description = GetDescription();
             Console.WriteLine(_description);
         }
+
     }
     // public GetDuration() : int
     public int GetDuration()
@@ -107,8 +108,7 @@ public class Activity
             string s = animationStrings[i];
             Console.Write(s);
             Thread.Sleep(500);
-            Console.Write("\b \b");
-            
+            Console.Write("\b \b"); 
             i++;
 
             if (i >= animationStrings.Count)
@@ -118,15 +118,13 @@ public class Activity
         }
     }
     // public DisplayEndMessage() : string
-    public void DisplayEndMessage(string activityName, int durationInt)
+    public void DisplayEndMessage(string menuSelection, string activityName, int durationInt)
     {
         Console.Clear();
         Console.WriteLine("Well done!");
-        Console.WriteLine();
         PausingAnimation();
         Console.WriteLine($"You performed the {_activityName} for {_durationInt.ToString()} seconds.");
         Console.WriteLine();
-
     }
     // public GetRandom(): string
     public string GetRandom(List<string> prompts)
@@ -134,7 +132,7 @@ public class Activity
         int i = random.Next(prompts.Count);
         _randomPrompt = prompts[i];
         return _randomPrompt;
-
+        // return prompts[i];
     }
 }
 
