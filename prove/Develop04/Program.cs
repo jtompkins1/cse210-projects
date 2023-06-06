@@ -10,6 +10,7 @@ class Program
         int durationInt;
         string thoughtPrompt;
         string question;
+        string listPrompt;
 
         do
         {
@@ -34,41 +35,40 @@ class Program
                 a.DisplayStartMessage(menuSelection, activityName);
                 Console.WriteLine();
 
-                if (menuSelection != "4")
-                {
-                    durationInt = a.GetDuration();
-                    DateTime startTime = DateTime.Now;
-                    DateTime endTime = startTime.AddSeconds(durationInt);
-                    Console.Clear();
+                // if (menuSelection != "4")
+                // {
+                //     durationInt = a.GetDuration();
+                //     DateTime startTime = DateTime.Now;
+                //     DateTime endTime = startTime.AddSeconds(durationInt);
+                //     Console.Clear();
 
-                    Console.WriteLine("Get Ready...");
-                    a.PausingAnimation();
-                    Console.WriteLine();
-
-                    if (menuSelection == "1")
-                    {
-                        while (DateTime.Now < endTime)
-                        {
-                            BreathingActivity b = new BreathingActivity();
-                            b.GetBreathing();
-                        }
-                    }else if (menuSelection == "2")
+                //     Console.WriteLine("Get Ready...");
+                //     a.PausingAnimation();
+                //     Console.WriteLine();
+                    
+                    if (menuSelection == "2")
                     {
                         ReflectionActivity r = new ReflectionActivity();
-                        thoughtPrompt = r.GetThoughtPrompt();
-                        r.DisplayThoughtPrompt(thoughtPrompt);
+                        // thoughtPrompt = r.GetThoughtPrompt();
+                        r.DisplayThoughtPrompt();
 
                         question = r.GetQuestion();
                         r.DisplayQuestion(question);
 
-                    }else if (menuSelection == "3")
-                    {
-                        //
                     }
+                    // else if (menuSelection == "1")
+                    // {
+                    //     // while (DateTime.Now < endTime)
+                    //     // do
+                    //     // {
+                    //     //     BreathingActivity b = new BreathingActivity();
+                    //     //     b.GetBreathing();
+                    //     // }while (DateTime.Now < endTime);
+                    // }
 
-                    a.DisplayEndMessage(menuSelection, activityName, durationInt);
+                    // a.DisplayEndMessage(menuSelection, activityName, durationInt);
 
-                }
+                // }    
             }else
             {
                 Console.WriteLine();
@@ -77,9 +77,12 @@ class Program
                 Console.ResetColor();
                 Console.WriteLine();
             }
+
  
         }while (menuSelection != "4");
-        
+
         Console.WriteLine("Thank you for using the Mindfulness program! Goodbye!");
+
+        
     }
 }
