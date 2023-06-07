@@ -95,12 +95,12 @@ public class Activity
         return _durationInt;
     }
     // public PausingAnimation() : void
-    public void PausingAnimation()
+    public void PausingAnimation(int seconds)
     {
         List<string> animationStrings = new List<string>() {"|", "/", "-", "\\"};
 
         DateTime startTime = DateTime.Now;
-        DateTime endTime = startTime.AddSeconds(5);
+        DateTime endTime = startTime.AddSeconds(seconds);
 
         int i = 0;
 
@@ -121,11 +121,10 @@ public class Activity
     // public DisplayEndMessage() : string
     public void DisplayEndMessage(string menuSelection, string activityName, int durationInt)
     {
-        Console.Clear();
+        // Console.Clear();
         Console.WriteLine("Well done!");
-        PausingAnimation();
+        PausingAnimation(5);
         Console.WriteLine($"You performed the {_activityName} for {_durationInt.ToString()} seconds.");
-        Console.WriteLine();
     }
     // public GetRandom(): string
     public string GetRandom(List<string> prompts)
@@ -135,5 +134,17 @@ public class Activity
         return _randomPrompt;
         // return prompts[i];
     }
+    public void GetCountdown(string myText, int i)
+    {
+        Console.Write($"{myText}");
+        for (i = 4; i > 0; i--)
+        {
+            Console.Write(i);
+            Thread.Sleep(1000);
+            Console.Write("\b \b");
+        }
+
+    }
+
 }
 

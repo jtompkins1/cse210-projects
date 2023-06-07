@@ -78,21 +78,29 @@ public class ReflectionActivity : Activity
         string thoughtPrompt = GetThoughtPrompt();
         Console.Clear();
         Console.WriteLine("Consider the following prompt: ");
+        Console.WriteLine();
         Console.WriteLine($"--- {thoughtPrompt} ---");
+        Console.WriteLine();
         Console.WriteLine("When you have something in mind, press enter to continue.");
         Console.ReadLine();
 
     }
+
+    public void QuestionCountdown()
+    {
+        Console.WriteLine();
+        Console.WriteLine("Ponder on the following questions as they relate to this experience.");
+
+        string text = "You may begin in: ";
+        int i = 4;
+        GetCountdown(text, i);
+        Console.Clear();
+    }
+
     public void DisplayQuestion(string question)
     {
-        // Console.WriteLine("When you have something in mind, press enter to continue.");
-        // string enter = Console.ReadLine();
-
-        // if (enter == "")
-        // {
-        //     Console.WriteLine(question);
-        // }
-
-        Console.WriteLine($"{question}");
+        Console.Write($"> {question} ");
+        PausingAnimation(10);
+        Console.WriteLine();
     }
 }

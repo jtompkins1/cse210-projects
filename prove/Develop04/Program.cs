@@ -33,17 +33,17 @@ class Program2
 
             if (menuSelection == "1" || menuSelection == "2" || menuSelection == "3")
             {
-                //Console.Clear();
+                Console.Clear();
                 a.DisplayStartMessage(menuSelection, activityName);
                 Console.WriteLine();
 
                 durationInt = a.GetDuration();
                 DateTime startTime = DateTime.Now;
                 DateTime endTime = startTime.AddSeconds(durationInt);
-                //Console.Clear();
+                Console.Clear();
 
                 Console.WriteLine("Get Ready...");
-                a.PausingAnimation();
+                a.PausingAnimation(5);
                 Console.WriteLine();
 
 
@@ -61,13 +61,12 @@ class Program2
                     ReflectionActivity r = new ReflectionActivity();
                     // thoughtPrompt = r.GetThoughtPrompt();
                     r.DisplayThoughtPrompt();
-
-                    question = r.GetQuestion();
-                    r.DisplayQuestion(question);
+                    r.QuestionCountdown();
 
                     do
                     {
-                        Console.Write("testing... ");
+                        question = r.GetQuestion();
+                        r.DisplayQuestion(question);
 
                     }while (DateTime.Now < endTime);
 
@@ -77,9 +76,18 @@ class Program2
                     ListingActivity l = new ListingActivity();
                     listPrompt = l.GetListPrompt();
                     l.DisplayListPrompt(listPrompt);
+
+                    do
+                    {
+                        //get user entries
+
+
+                    }while (DateTime.Now < endTime);
                 }
 
                 a.DisplayEndMessage(menuSelection, activityName, durationInt);
+                a.PausingAnimation(5);
+                Console.Clear();
 
             }
             else if (menuSelection == "4")
