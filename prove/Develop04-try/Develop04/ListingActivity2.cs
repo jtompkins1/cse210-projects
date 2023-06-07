@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-public class ListingActivity : Activity
+public class ListingActivity2 : Activity2
 {
     private List<string> _listPrompts = new List<string>();
     private List<string> _userEntries = new List<string>();

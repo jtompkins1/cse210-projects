@@ -77,6 +77,7 @@ public class Activity
     {
         if (_menuSelection != "4")
         {
+            Console.Clear();
             Console.WriteLine($"Welcome to the {_activityName}.");
             Console.WriteLine();
             SetDescription(_activityName);

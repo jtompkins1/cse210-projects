@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-public class Activity
+public class Activity2
 {
     protected string _activityName;
     private string _description;

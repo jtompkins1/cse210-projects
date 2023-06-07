@@ -53,12 +53,18 @@ class Program
                     // thoughtPrompt = r.GetThoughtPrompt();
                     r.DisplayThoughtPrompt();
 
-                    question = r.GetQuestion();
-                    r.DisplayQuestion(question);
+                    do
+                    {
+                        question = r.GetQuestion();
+                        r.DisplayQuestion(question);
+
+                    }while (DateTime.Now < endTime);
+
+
 
                 }else if (menuSelection == "1")
                 {
-                    while (DateTime.Now < endTime)
+                    
                     do
                     {
                         BreathingActivity b = new BreathingActivity();

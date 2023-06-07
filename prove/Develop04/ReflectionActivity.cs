@@ -76,9 +76,12 @@ public class ReflectionActivity : Activity
     public void DisplayThoughtPrompt()
     {
         string thoughtPrompt = GetThoughtPrompt();
+        Console.Clear();
         Console.WriteLine("Consider the following prompt: ");
         Console.WriteLine($"--- {thoughtPrompt} ---");
         Console.WriteLine("When you have something in mind, press enter to continue.");
+        Console.ReadLine();
+
     }
     public void DisplayQuestion(string question)
     {

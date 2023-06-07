@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-public class ReflectionActivity : Activity
+public class ReflectionActivity2 : Activity2
 {
     protected string _question;
     protected string _thoughtPrompt;

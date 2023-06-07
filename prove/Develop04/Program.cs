@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-class Program
+class Program2
 {
     static void Main(string[] args)
     {   
@@ -28,9 +28,8 @@ class Program
             a.SetActivityName(menuSelection);
             activityName = a.GetActivityName();
 
-            Console.WriteLine($"Menu Selection: {menuSelection} Activity Name: {activityName}");
-
-
+            // Console.WriteLine($"Menu Selection: {menuSelection}");
+            // Console.WriteLine($"Activity Name: {activityName}");
 
             if (menuSelection == "1" || menuSelection == "2" || menuSelection == "3")
             {
@@ -46,8 +45,18 @@ class Program
                 Console.WriteLine("Get Ready...");
                 a.PausingAnimation();
                 Console.WriteLine();
-                
-                if (menuSelection == "2")
+
+
+                if (menuSelection == "1")
+                {
+                    do
+                    {
+                        BreathingActivity b = new BreathingActivity();
+                        b.GetBreathing();
+                    }while (DateTime.Now < endTime);
+
+                }
+                else if (menuSelection == "2")
                 {
                     ReflectionActivity r = new ReflectionActivity();
                     // thoughtPrompt = r.GetThoughtPrompt();
@@ -56,16 +65,14 @@ class Program
                     question = r.GetQuestion();
                     r.DisplayQuestion(question);
 
-                }else if (menuSelection == "1")
-                {
-                    while (DateTime.Now < endTime)
                     do
                     {
-                        BreathingActivity b = new BreathingActivity();
-                        b.GetBreathing();
+                        Console.Write("testing... ");
+
                     }while (DateTime.Now < endTime);
 
-                }else if (menuSelection == "3")
+                }
+                else if (menuSelection == "3")
                 {
                     ListingActivity l = new ListingActivity();
                     listPrompt = l.GetListPrompt();
@@ -74,12 +81,11 @@ class Program
 
                 a.DisplayEndMessage(menuSelection, activityName, durationInt);
 
-            }else if (menuSelection == "4")
+            }
+            else if (menuSelection == "4")
             {
                 break;
-
             }
-            
             else
             {
                 Console.WriteLine();
@@ -96,3 +102,65 @@ class Program
         
     }
 }
+
+
+
+
+
+
+            // if (menuSelection == "1" || menuSelection == "2" || menuSelection == "3")
+            // {
+            //     //Console.Clear();
+            //     a.DisplayStartMessage(menuSelection, activityName);
+            //     Console.WriteLine();
+
+            //     durationInt = a.GetDuration();
+            //     DateTime startTime = DateTime.Now;
+            //     DateTime endTime = startTime.AddSeconds(durationInt);
+            //     //Console.Clear();
+
+            //     Console.WriteLine("Get Ready...");
+            //     a.PausingAnimation();
+            //     Console.WriteLine();
+                
+            //     if (menuSelection == "2")
+            //     {
+            //         ReflectionActivity r = new ReflectionActivity();
+            //         // thoughtPrompt = r.GetThoughtPrompt();
+            //         r.DisplayThoughtPrompt();
+
+            //         question = r.GetQuestion();
+            //         r.DisplayQuestion(question);
+
+            //     }else if (menuSelection == "1")
+            //     {
+            //         while (DateTime.Now < endTime)
+            //         do
+            //         {
+            //             BreathingActivity b = new BreathingActivity();
+            //             b.GetBreathing();
+            //         }while (DateTime.Now < endTime);
+
+            //     }else if (menuSelection == "3")
+            //     {
+            //         ListingActivity l = new ListingActivity();
+            //         listPrompt = l.GetListPrompt();
+            //         l.DisplayListPrompt(listPrompt);
+            //     }
+
+            //     a.DisplayEndMessage(menuSelection, activityName, durationInt);
+
+            // }else if (menuSelection == "4")
+            // {
+            //     break;
+
+            // }
+            
+            // else
+            // {
+            //     Console.WriteLine();
+            //     Console.ForegroundColor = ConsoleColor.Red;
+            //     Console.WriteLine("***Invalid selection, try again.***");
+            //     Console.ResetColor();
+            //     Console.WriteLine();
+            // }

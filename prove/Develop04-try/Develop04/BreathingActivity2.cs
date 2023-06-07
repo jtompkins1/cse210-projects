@@ -1,7 +1,7 @@
 using System;
 using System.Threading;
 
-public class BreathingActivity : Activity
+public class BreathingActivity2 : Activity2
 {
 //     private string _breatheIn = "Breathe in...";
 //     private string breatheOut = "Breathe out...";
