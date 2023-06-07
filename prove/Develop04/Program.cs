@@ -11,6 +11,8 @@ class Program2
         string thoughtPrompt;
         string question;
         string listPrompt;
+        string userEntry;
+        List<string> userEntries = new List<string>();
 
         do
         {
@@ -75,12 +77,12 @@ class Program2
                 {
                     ListingActivity l = new ListingActivity();
                     listPrompt = l.GetListPrompt();
-                    l.DisplayListPrompt(listPrompt);
+                    // l.DisplayListPrompt(listPrompt);
+                    l.ListCountdown();
 
                     do
                     {
-                        //get user entries
-
+                        l.GetEntries();
 
                     }while (DateTime.Now < endTime);
                 }

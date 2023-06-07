@@ -4,8 +4,9 @@ using System.Collections.Generic;
 public class ListingActivity : Activity
 {
     private List<string> _listPrompts = new List<string>();
-    private List<string> _userEntries = new List<string>();
+    protected List<string> _userEntries = new List<string>();
     private int _entryCount;
+    protected string _userEntry;
 
     // public ListingActivity(List<string> userEntries)
     public ListingActivity()
@@ -33,6 +34,15 @@ public class ListingActivity : Activity
         return GetRandom(_listPrompts);
 
     }
+    public void ListCountdown()
+    {
+        string listPrompt = GetListPrompt();
+        Console.WriteLine("List as many responses as you can to the following prompt:");
+        Console.WriteLine($"--- {listPrompt} ---");
+        GetCountdown("You may begin in: ", 4);
+        Console.WriteLine();
+    }
+
     public void DisplayListPrompt(string listPrompt)
     {
         Console.WriteLine(listPrompt);
@@ -43,5 +53,11 @@ public class ListingActivity : Activity
 //     // public DisplayEntryCount() : void
 
 //     // public GetEntries() : List<string>
+    public void GetEntries()
+    {
+        Console.Write("> ");
+        _userEntry = Console.ReadLine();
+        _userEntries.Add(_userEntry);
+    }
 
 }
