@@ -148,7 +148,7 @@ public class Activity
 
     }
 
-    private double DeltaTime()
+    private double GetDeltaTime()
     {
         TimeSpan ts = sw.Elapsed;
         double firstFrame = ts.TotalMilliseconds;
@@ -163,9 +163,11 @@ public class Activity
         double acc = 0.0;
         List<string> buf = new List<string>();
         double _durationMill = _durationInt / 1000;
+
+        //start counting here
         while (acc <= _durationMill)
         {
-            acc += DeltaTime();
+            acc += GetDeltaTime();
             if (!Console.KeyAvailable)
             {
                 continue;
@@ -180,6 +182,15 @@ public class Activity
             {
                 buf.Add(key.KeyChar.ToString());
             }
+        //time is up
+
+//         The run() method is the core of the program. It starts the stopwatch, initializes variables, and enters a loop that runs until the accumulated time (acc) exceeds 5000 milliseconds (5 seconds).
+
+// Within the loop, the deltaTime() method is called to calculate the time difference between frames. If no key is available in the console, the loop continues without performing any further actions.
+
+// If a key is available, the program reads the key using Console.ReadKey(). If the key is the Enter key, a newline character is added to the buf list. Otherwise, the typed character is converted to a string and added to the buf list.
+
+// After the loop ends, a message "Time's up!" is displayed in the console. The buf list is joined into a single string (bufStr) using String.Join(). Finally, the program outputs the string along with a message indicating what the user typed.
 
         }
 
