@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 
 class Program2
 {
@@ -85,7 +86,6 @@ class Program2
                 a.DisplayEndMessage(menuSelection, activityName, durationInt);
                 a.PausingAnimation(5);
                 Console.Clear();
-
             }
             else if (menuSelection == "4")
             {

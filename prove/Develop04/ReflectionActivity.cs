@@ -84,7 +84,6 @@ public class ReflectionActivity : Activity
     }
     public void QuestionCountdown()
     {
-        Console.WriteLine();
         Console.WriteLine("Ponder on the following questions as they relate to this experience.");
 
         string text = "You may begin in: ";
@@ -96,7 +95,7 @@ public class ReflectionActivity : Activity
     {
         string question = GetQuestion();
         Console.Write($"> {question} ");
-        PausingAnimation(10);
+        PausingAnimation(15);
         Console.WriteLine();
     }
 }

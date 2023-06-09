@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 
 public class Activity
 {
@@ -10,6 +11,10 @@ public class Activity
     protected string _menuSelection;
     public Random random = new Random();
     public string _randomPrompt;
+
+    protected Stopwatch sw = new Stopwatch();
+    protected double lastFrame;
+
 
     public Activity()
     {
@@ -142,6 +147,44 @@ public class Activity
         }
 
     }
+
+    private double DeltaTime()
+    {
+        TimeSpan ts = sw.Elapsed;
+        double firstFrame = ts.TotalMilliseconds;
+        double dt = firstFrame - lastFrame;
+        lastFrame = ts.TotalMilliseconds;
+        return dt;
+    }
+
+    public void Run(int _durationInt)
+    {
+        sw.Start();
+        double acc = 0.0;
+        List<string> buf = new List<string>();
+        double _durationMill = _durationInt / 1000;
+        while (acc <= _durationMill)
+        {
+            acc += DeltaTime();
+            if (!Console.KeyAvailable)
+            {
+                continue;
+            }
+            ConsoleKeyInfo key = Console.ReadKey();
+            if (key.Key == ConsoleKey.Enter)
+            {
+                Console.WriteLine("");
+                buf.Add("\n");
+            }
+            else
+            {
+                buf.Add(key.KeyChar.ToString());
+            }
+
+        }
+
+    }
+
 
 }
 
