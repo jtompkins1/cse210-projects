@@ -8,10 +8,7 @@ class Program2
         string menuSelection = "";
         string activityName;
         int durationInt;
-        string thoughtPrompt;
-        string question;
         string listPrompt;
-        // string userEntry;
         List<string> userEntries = new List<string>();
 
         do
@@ -48,7 +45,6 @@ class Program2
                 a.PausingAnimation(5);
                 Console.WriteLine();
 
-
                 if (menuSelection == "1")
                 {
                     do
@@ -61,14 +57,12 @@ class Program2
                 else if (menuSelection == "2")
                 {
                     ReflectionActivity r = new ReflectionActivity();
-                    // thoughtPrompt = r.GetThoughtPrompt();
                     r.DisplayThoughtPrompt();
                     r.QuestionCountdown();
 
                     do
                     {
-                        question = r.GetQuestion();
-                        r.DisplayQuestion(question);
+                        r.DisplayQuestion();
 
                     }while (DateTime.Now < endTime);
 
@@ -77,7 +71,6 @@ class Program2
                 {
                     ListingActivity l = new ListingActivity();
                     listPrompt = l.GetListPrompt();
-                    // l.DisplayListPrompt(listPrompt);
                     l.ListCountdown();
 
                     do
@@ -86,10 +79,7 @@ class Program2
 
                     }while (DateTime.Now < endTime);
 
-                    l.DisplayListCount(userEntries);
-
-               
-                    
+                    l.DisplayListCount(userEntries);   
                 }
 
                 a.DisplayEndMessage(menuSelection, activityName, durationInt);

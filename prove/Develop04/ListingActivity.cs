@@ -27,26 +27,18 @@ public class ListingActivity : Activity
         // inherits parameters from base class Activity
     }
 
-    // public GetListPrompt() : string
     public string GetListPrompt()
     {
         return GetRandom(_listPrompts);
-
     }
     public void ListCountdown()
     {
         string listPrompt = GetListPrompt();
         Console.WriteLine("List as many responses as you can to the following prompt:");
         Console.WriteLine($"--- {listPrompt} ---");
-        GetCountdown("You may begin in: ", 4);
+        DisplayCountdown("You may begin in: ", 4);
         Console.WriteLine();
     }
-
-    public void DisplayListPrompt(string listPrompt)
-    {
-        Console.WriteLine(listPrompt);
-    }
-
     public List<string> GetEntries()
     {
         Console.Write("> ");
@@ -54,7 +46,6 @@ public class ListingActivity : Activity
         _userEntries.Add(_userEntry);
         return _userEntries;
     }
-
     public void DisplayListCount(List<string> _userEntries)
     {
         Console.WriteLine($"You listed {_userEntries.Count} items.");

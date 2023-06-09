@@ -84,7 +84,6 @@ public class Activity
             _description = GetDescription();
             Console.WriteLine(_description);
         }
-
     }
     // public GetDuration() : int
     public int GetDuration()
@@ -121,7 +120,6 @@ public class Activity
     // public DisplayEndMessage() : string
     public void DisplayEndMessage(string menuSelection, string activityName, int durationInt)
     {
-        // Console.Clear();
         Console.WriteLine("Well done!");
         PausingAnimation(5);
         Console.WriteLine($"You performed the {_activityName} for {_durationInt.ToString()} seconds.");
@@ -132,9 +130,8 @@ public class Activity
         int i = random.Next(prompts.Count);
         _randomPrompt = prompts[i];
         return _randomPrompt;
-        // return prompts[i];
     }
-    public void GetCountdown(string myText, int i)
+    public void DisplayCountdown(string myText, int i)
     {
         Console.Write($"{myText}");
         for (i = 4; i > 0; i--)

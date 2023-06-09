@@ -53,8 +53,6 @@ public class ReflectionActivity : Activity
         // inherits parameters from base class Activity
     }
 
-
-    //Behaviors:
     public string GetQuestion()
     {
         SetQuestion(_questions);
@@ -83,9 +81,7 @@ public class ReflectionActivity : Activity
         Console.WriteLine();
         Console.WriteLine("When you have something in mind, press enter to continue.");
         Console.ReadLine();
-
     }
-
     public void QuestionCountdown()
     {
         Console.WriteLine();
@@ -93,12 +89,12 @@ public class ReflectionActivity : Activity
 
         string text = "You may begin in: ";
         int i = 4;
-        GetCountdown(text, i);
+        DisplayCountdown(text, i);
         Console.Clear();
     }
-
-    public void DisplayQuestion(string question)
+    public void DisplayQuestion()
     {
+        string question = GetQuestion();
         Console.Write($"> {question} ");
         PausingAnimation(10);
         Console.WriteLine();
