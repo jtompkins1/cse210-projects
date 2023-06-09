@@ -11,7 +11,7 @@ class Program2
         string thoughtPrompt;
         string question;
         string listPrompt;
-        string userEntry;
+        // string userEntry;
         List<string> userEntries = new List<string>();
 
         do
@@ -82,9 +82,14 @@ class Program2
 
                     do
                     {
-                        l.GetEntries();
+                        userEntries = l.GetEntries();
 
                     }while (DateTime.Now < endTime);
+
+                    l.DisplayListCount(userEntries);
+
+               
+                    
                 }
 
                 a.DisplayEndMessage(menuSelection, activityName, durationInt);

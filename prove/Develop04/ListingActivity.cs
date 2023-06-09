@@ -5,7 +5,6 @@ public class ListingActivity : Activity
 {
     private List<string> _listPrompts = new List<string>();
     protected List<string> _userEntries = new List<string>();
-    private int _entryCount;
     protected string _userEntry;
 
     // public ListingActivity(List<string> userEntries)
@@ -48,16 +47,18 @@ public class ListingActivity : Activity
         Console.WriteLine(listPrompt);
     }
 
-//     // Behaviors:
-//     // public GetEntryCount() : int
-//     // public DisplayEntryCount() : void
-
-//     // public GetEntries() : List<string>
-    public void GetEntries()
+    public List<string> GetEntries()
     {
         Console.Write("> ");
         _userEntry = Console.ReadLine();
         _userEntries.Add(_userEntry);
+        return _userEntries;
+    }
+
+    public void DisplayListCount(List<string> _userEntries)
+    {
+        Console.WriteLine($"You listed {_userEntries.Count} items.");
+        
     }
 
 }
