@@ -12,8 +12,8 @@ class Program
         int durationInt;
         string listPrompt;
         List<string> userEntries = new List<string>();
-        int elapsedSeconds;
         double acc = 0.0;
+        int elapsedSeconds;
 
         do
         {
@@ -49,11 +49,10 @@ class Program
 
                 if (menuSelection == "1")
                 {
-                    do
-                    {
-                        BreathingActivity b = new BreathingActivity(activityName, description, durationInt);
-                        b.GetBreathing();
-                    }while (DateTime.Now < endTime);
+
+                    BreathingActivity b = new BreathingActivity(activityName, description, durationInt);
+                    b.GetBreathingTime(durationInt);
+
 
                 }
                 else if (menuSelection == "2")
@@ -61,12 +60,7 @@ class Program
                     ReflectionActivity r = new ReflectionActivity(activityName, description, durationInt);
                     r.DisplayThoughtPrompt();
                     r.QuestionCountdown();
-
-                    do
-                    {
-                        r.DisplayQuestion();
-
-                    }while (DateTime.Now < endTime);
+                    acc = r.Questions(durationInt);
 
                 }
                 else if (menuSelection == "3")
@@ -76,10 +70,13 @@ class Program
 
                     l.ListCountdown();
                     acc = l.GetEntries(durationInt);
+
                     
                 }
-
+                
                 elapsedSeconds = a.GetElapsedTime(acc);
+
+                
 
                 a.DisplayEndMessage(activityName, elapsedSeconds);
                 a.PausingAnimation(5);

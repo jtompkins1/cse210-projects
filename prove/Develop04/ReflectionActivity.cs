@@ -75,11 +75,23 @@ public class ReflectionActivity : Activity
         DisplayCountdown(text, i);
         Console.Clear();
     }
-    public void DisplayQuestion()
+    public double Questions(int durationInt)
     {
-        string question = GetQuestion();
-        Console.Write($"> {question} ");
-        PausingAnimation(15);
-        Console.WriteLine();
+        StartActivity();
+        double _durationMill = _durationInt * 1000;
+        double acc = 0.0;
+
+        //start counting here
+        while (acc <= _durationMill)
+        {
+            acc += this.DeltaTime();
+
+            string question = GetQuestion();
+            Console.Write($"> {question} ");
+            PausingAnimation(10);
+            Console.WriteLine();
+        }
+
+        return acc;
     }
 }

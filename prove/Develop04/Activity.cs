@@ -138,10 +138,10 @@ public class Activity
         _randomPrompt = prompts[i];
         return _randomPrompt;
     }
-    public void DisplayCountdown(string myText, int i)
+    public void DisplayCountdown(string myText, int countdownStart)
     {
         Console.Write($"{myText}");
-        for (i = 4; i > 0; i--)
+        for (int i = countdownStart; i > 0; i--)
         {
             Console.Write(i);
             Thread.Sleep(1000);

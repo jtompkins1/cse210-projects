@@ -70,6 +70,7 @@ public class ListingActivity : Activity
             {
                 _userEntries.Add(key.KeyChar.ToString());
             }
+
         }
 
         Console.WriteLine();
