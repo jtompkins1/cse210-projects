@@ -28,9 +28,6 @@ class Program2
             a.SetActivityName(menuSelection);
             activityName = a.GetActivityName();
 
-            // Console.WriteLine($"Menu Selection: {menuSelection}");
-            // Console.WriteLine($"Activity Name: {activityName}");
-
             if (menuSelection == "1" || menuSelection == "2" || menuSelection == "3")
             {
                 Console.Clear();
@@ -74,13 +71,13 @@ class Program2
                     listPrompt = l.GetListPrompt();
                     l.ListCountdown();
 
-                    do
+                    userEntries = l.GetEntries(durationInt);
+
+                    l.DisplayListCount(userEntries); 
+                    foreach (string entry in userEntries)
                     {
-                        userEntries = l.GetEntries();
-
-                    }while (DateTime.Now < endTime);
-
-                    l.DisplayListCount(userEntries);   
+                        Console.WriteLine(entry);
+                    }
                 }
 
                 a.DisplayEndMessage(menuSelection, activityName, durationInt);

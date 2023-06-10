@@ -1,11 +1,15 @@
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.Threading;
 
 public class ListingActivity : Activity
 {
     private List<string> _listPrompts = new List<string>();
     protected List<string> _userEntries = new List<string>();
     protected string _userEntry;
+
+    protected Stopwatch sw2 = new Stopwatch();
 
     // public ListingActivity(List<string> userEntries)
     public ListingActivity()
@@ -39,13 +43,44 @@ public class ListingActivity : Activity
         DisplayCountdown("You may begin in: ", 4);
         Console.WriteLine();
     }
-    public List<string> GetEntries()
+    public List<string> GetEntries(int _durationInt)
     {
-        Console.Write("> ");
-        _userEntry = Console.ReadLine();
-        _userEntries.Add(_userEntry);
+
+
+        sw2.Start();
+        double acc = 0.0;
+        List<string> buf = new List<string>();
+        double _durationMill = _durationInt * 1000;
+
+
+        //start counting here
+        while (acc <= _durationMill)
+        {
+            acc += GetDeltaTime();
+            Console.Write("> ");
+            _userEntry = Console.ReadLine();
+            _userEntries.Add(_userEntry);
+
+            if (!Console.KeyAvailable)
+            {
+                continue;
+            }
+            ConsoleKeyInfo key = Console.ReadKey();
+            if (key.Key == ConsoleKey.Enter)
+            {
+                Console.WriteLine("");
+                buf.Add("\n");
+            }
+            else
+            {
+                buf.Add(key.KeyChar.ToString());
+            }
+            
+        }
         return _userEntries;
     }
+
+
     public void DisplayListCount(List<string> _userEntries)
     {
         Console.WriteLine($"You listed {_userEntries.Count} items.");
