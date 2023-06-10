@@ -75,15 +75,16 @@ public class ListingActivity : Activity
                 _userEntries.Add(key.KeyChar.ToString());
             }
         }
-        Console.WriteLine($"\nYou listed {total} items.");
+        Console.WriteLine();
         return total;
     }
 
 
-    // public void DisplayListCount()
-    // {
-    //     Console.WriteLine($"You listed {total} items.");
+    public void DisplayListCount(int total)
+    {
+        Console.WriteLine();
+        Console.WriteLine($"You listed {total} items.");
         
-    // }
+    }
 
 }

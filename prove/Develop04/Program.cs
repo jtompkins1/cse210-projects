@@ -11,6 +11,7 @@ class Program
         int durationInt;
         string listPrompt;
         List<string> userEntries = new List<string>();
+        int total;
 
         do
         {
@@ -71,7 +72,11 @@ class Program
                     listPrompt = l.GetListPrompt();
 
                     l.ListCountdown();
-                    l.GetEntries(durationInt);
+                    total = l.GetEntries(durationInt);
+
+                    l.DisplayListCount(total);
+
+
                 }
 
                 a.DisplayEndMessage(menuSelection, activityName, durationInt);
