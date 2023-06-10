@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 
-class Program2
+class Program
 {
     static void Main(string[] args)
     {   
@@ -69,15 +69,9 @@ class Program2
                 {
                     ListingActivity l = new ListingActivity();
                     listPrompt = l.GetListPrompt();
+
                     l.ListCountdown();
-
-                    userEntries = l.GetEntries(durationInt);
-
-                    l.DisplayListCount(userEntries); 
-                    foreach (string entry in userEntries)
-                    {
-                        Console.WriteLine(entry);
-                    }
+                    l.GetEntries(durationInt);
                 }
 
                 a.DisplayEndMessage(menuSelection, activityName, durationInt);

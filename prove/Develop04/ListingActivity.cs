@@ -1,15 +1,12 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Threading;
 
 public class ListingActivity : Activity
 {
     private List<string> _listPrompts = new List<string>();
     protected List<string> _userEntries = new List<string>();
     protected string _userEntry;
-
-    protected Stopwatch sw2 = new Stopwatch();
 
     // public ListingActivity(List<string> userEntries)
     public ListingActivity()
@@ -43,48 +40,50 @@ public class ListingActivity : Activity
         DisplayCountdown("You may begin in: ", 4);
         Console.WriteLine();
     }
-    public List<string> GetEntries(int _durationInt)
+    public int GetEntries(int _durationInt)
     {
+        Stopwatch sw = new Stopwatch();
 
-
-        sw2.Start();
+        this.sw.Start();
+        double _durationMill = _durationInt * 1000;
         double acc = 0.0;
         List<string> buf = new List<string>();
-        double _durationMill = _durationInt * 1000;
+        int total = 0;
 
+        Console.Write(">");
 
         //start counting here
         while (acc <= _durationMill)
         {
-            acc += GetDeltaTime();
-            Console.Write("> ");
-            _userEntry = Console.ReadLine();
-            _userEntries.Add(_userEntry);
-
+            acc += this.GetDeltaTime();
             if (!Console.KeyAvailable)
             {
                 continue;
             }
+
             ConsoleKeyInfo key = Console.ReadKey();
             if (key.Key == ConsoleKey.Enter)
             {
+                total ++;
+
                 Console.WriteLine("");
-                buf.Add("\n");
+                // buf.Add("\n");
+                Console.Write(">");
             }
             else
             {
-                buf.Add(key.KeyChar.ToString());
+                _userEntries.Add(key.KeyChar.ToString());
             }
-            
         }
-        return _userEntries;
+        Console.WriteLine($"\nYou listed {total} items.");
+        return total;
     }
 
 
-    public void DisplayListCount(List<string> _userEntries)
-    {
-        Console.WriteLine($"You listed {_userEntries.Count} items.");
+    // public void DisplayListCount()
+    // {
+    //     Console.WriteLine($"You listed {total} items.");
         
-    }
+    // }
 
 }

@@ -18,7 +18,10 @@ class Demo
         double acc = 0.0;
         List<string> buf = new List<string>();
         Console.WriteLine("Go!");
-        while (acc <= 5000)
+
+        Console.Write(">");
+
+        while (acc <= 30000)
         {
             acc += this.deltaTime();
             if (!Console.KeyAvailable)
@@ -28,8 +31,10 @@ class Demo
                 ConsoleKeyInfo key = Console.ReadKey();
                 if (key.Key == ConsoleKey.Enter)
             {
+                
                 Console.WriteLine("");
                 buf.Add("\n");
+                Console.Write(">");
             }
                 else
             {

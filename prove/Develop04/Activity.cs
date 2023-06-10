@@ -13,7 +13,7 @@ public class Activity
     public Random random = new Random();
     public string _randomPrompt;
 
-    protected Stopwatch sw1 = new Stopwatch();
+    protected Stopwatch sw = new Stopwatch();
     protected double lastFrame;
 
 
@@ -151,10 +151,10 @@ public class Activity
 
     public double GetDeltaTime()
     {
-        TimeSpan ts = sw1.Elapsed;
+        TimeSpan ts = this.sw.Elapsed;
         double firstFrame = ts.TotalMilliseconds;
         double dt = firstFrame - lastFrame;
-        lastFrame = ts.TotalMilliseconds;
+        this.lastFrame = ts.TotalMilliseconds;
         return dt;
     }
 
