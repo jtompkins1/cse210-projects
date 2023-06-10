@@ -21,11 +21,13 @@ public class Activity
     {
         _activityName = GetActivityName(_menuSelection);
         _description = GetDescription();
+        _durationInt = GetDuration();
     }
-    public Activity(string activityName, string description)
+    public Activity(string activityName, string description, int durationInt)
     {
         _activityName = activityName;
         _description = description;
+        _durationInt = durationInt;
     }
     public string GetMenuSelection()
     {

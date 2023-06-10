@@ -8,9 +8,9 @@ public class ReflectionActivity : Activity
     protected List<string> _thoughtPrompts = new List<string>();
     protected List<string> _questions = new List<string>();
     
-    public ReflectionActivity(string activityName, string description): base(activityName, description)
+    public ReflectionActivity(string activityName, string description, int durationInt): base(activityName, description, durationInt)
     {
-        // inherits activityName and description from Activity class
+        // inherits activityName, description, and durationInt from Activity class
 
         _thoughtPrompts = new List<string>(){
         "Think of a time when you stood up for someone else.", 
@@ -30,9 +30,9 @@ public class ReflectionActivity : Activity
         "How can you keep this experience in mind in the future?"
         };
     }
-    public ReflectionActivity(List<string> thoughtPrompts, List<string> questions, string activityName, string description): base(activityName, description)
+    public ReflectionActivity(List<string> thoughtPrompts, List<string> questions, string activityName, string description, int durationInt): base(activityName, description, durationInt)
     {
-        // inherits activityName and description from Activity class
+        // inherits activityName, description, and durationInt from Activity class
         _thoughtPrompts = thoughtPrompts;
         _questions = questions;
     }

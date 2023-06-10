@@ -3,22 +3,19 @@ using System.Threading;
 
 public class BreathingActivity : Activity
 {
-    private string _breatheIn = "Breathe in...";
-    private string _breatheOut = "Now breathe out...";
-
-    public BreathingActivity(string activityName, string description): base (activityName, description)
+    public BreathingActivity(string activityName, string description, int durationInt): base (activityName, description, durationInt)
     {
-        // inherits activityName and description from Activity class
+        // inherits activityName, description, and durationInt from Activity class
     }
-    
+
 
     public void GetBreathing()
     {
 
-        DisplayCountdown(_breatheIn, 4);
+        DisplayCountdown("Breathe in...", 4);
         Console.WriteLine();
 
-        DisplayCountdown(_breatheOut, 6);
+        DisplayCountdown("Now breathe out...", 6);
         Console.WriteLine();
         Console.WriteLine();
     }

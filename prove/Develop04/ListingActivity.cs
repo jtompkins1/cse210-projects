@@ -8,9 +8,9 @@ public class ListingActivity : Activity
     protected List<string> _userEntries = new List<string>();
     protected string _userEntry;
 
-    public ListingActivity(string activityName, string description): base (activityName, description)
+    public ListingActivity(string activityName, string description, int durationInt): base (activityName, description, durationInt)
     {
-        // inherits activityName and description from Activity class
+        // inherits activityName, description, and durationInt from Activity class
 
         _listPrompts = new List<string>(){
         "Who are people that you appreciate?",
@@ -20,9 +20,9 @@ public class ListingActivity : Activity
         "Who are some of your personal heroes?"
         };
     }
-    public ListingActivity(List<string> listPrompts, string activityName, string description): base (activityName, description)
+    public ListingActivity(List<string> listPrompts, string activityName, string description, int durationInt): base (activityName, description, durationInt)
     {
-        // inherits activityName and description from Activity class
+        // inherits activityName, description, and durationInt from Activity class
 
         _listPrompts = listPrompts;
     }

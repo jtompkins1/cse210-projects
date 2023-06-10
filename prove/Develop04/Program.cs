@@ -50,14 +50,14 @@ class Program
                 {
                     do
                     {
-                        BreathingActivity b = new BreathingActivity(activityName, description);
+                        BreathingActivity b = new BreathingActivity(activityName, description, durationInt);
                         b.GetBreathing();
                     }while (DateTime.Now < endTime);
 
                 }
                 else if (menuSelection == "2")
                 {
-                    ReflectionActivity r = new ReflectionActivity(activityName, description);
+                    ReflectionActivity r = new ReflectionActivity(activityName, description, durationInt);
                     r.DisplayThoughtPrompt();
                     r.QuestionCountdown();
 
@@ -70,7 +70,7 @@ class Program
                 }
                 else if (menuSelection == "3")
                 {
-                    ListingActivity l = new ListingActivity(activityName, description);
+                    ListingActivity l = new ListingActivity(activityName, description, durationInt);
                     listPrompt = l.GetListPrompt();
 
                     l.ListCountdown();
