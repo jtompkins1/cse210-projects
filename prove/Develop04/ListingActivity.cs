@@ -8,9 +8,9 @@ public class ListingActivity : Activity
     protected List<string> _userEntries = new List<string>();
     protected string _userEntry;
 
-    // public ListingActivity(List<string> userEntries)
-    public ListingActivity()
+    public ListingActivity(string activityName, string description): base (activityName, description)
     {
+        // inherits activityName and description from Activity class
 
         _listPrompts = new List<string>(){
         "Who are people that you appreciate?",
@@ -19,13 +19,12 @@ public class ListingActivity : Activity
         "When have you felt the Holy Ghost this month?",
         "Who are some of your personal heroes?"
         };
-
-        // _userEntries = userEntries;
     }
-
-    public ListingActivity(string activityName, string description): base (activityName, description)
+    public ListingActivity(List<string> listPrompts, string activityName, string description): base (activityName, description)
     {
-        // inherits parameters from base class Activity
+        // inherits activityName and description from Activity class
+
+        _listPrompts = listPrompts;
     }
 
     public string GetListPrompt()
@@ -55,7 +54,7 @@ public class ListingActivity : Activity
         //start counting here
         while (acc <= _durationMill)
         {
-            acc += this.GetDeltaTime();
+            acc += this.DeltaTime();
             if (!Console.KeyAvailable)
             {
                 continue;

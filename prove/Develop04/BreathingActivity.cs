@@ -6,10 +6,11 @@ public class BreathingActivity : Activity
     private string _breatheIn = "Breathe in...";
     private string _breatheOut = "Now breathe out...";
 
-    public BreathingActivity()//string activityName, string description)//: base (activityName, description)
+    public BreathingActivity(string activityName, string description): base (activityName, description)
     {
-        // inherits parameters from base class Activity
+        // inherits activityName and description from Activity class
     }
+    
 
     public void GetBreathing()
     {

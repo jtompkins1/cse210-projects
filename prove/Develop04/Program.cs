@@ -8,6 +8,7 @@ class Program
     {   
         string menuSelection = "";
         string activityName;
+        string description;
         int durationInt;
         string listPrompt;
         List<string> userEntries = new List<string>();
@@ -27,6 +28,8 @@ class Program
             Activity a = new Activity();
             menuSelection = a.GetMenuSelection();
             activityName = a.GetActivityName(menuSelection);
+            description = a.GetDescription();
+            
 
             if (menuSelection == "1" || menuSelection == "2" || menuSelection == "3")
             {
@@ -47,14 +50,14 @@ class Program
                 {
                     do
                     {
-                        BreathingActivity b = new BreathingActivity();
+                        BreathingActivity b = new BreathingActivity(activityName, description);
                         b.GetBreathing();
                     }while (DateTime.Now < endTime);
 
                 }
                 else if (menuSelection == "2")
                 {
-                    ReflectionActivity r = new ReflectionActivity();
+                    ReflectionActivity r = new ReflectionActivity(activityName, description);
                     r.DisplayThoughtPrompt();
                     r.QuestionCountdown();
 
@@ -67,7 +70,7 @@ class Program
                 }
                 else if (menuSelection == "3")
                 {
-                    ListingActivity l = new ListingActivity();
+                    ListingActivity l = new ListingActivity(activityName, description);
                     listPrompt = l.GetListPrompt();
 
                     l.ListCountdown();

@@ -147,7 +147,7 @@ public class Activity
 
     }
 
-    public double GetDeltaTime()
+    public double DeltaTime()
     {
         TimeSpan ts = this.sw.Elapsed;
         double firstFrame = ts.TotalMilliseconds;
