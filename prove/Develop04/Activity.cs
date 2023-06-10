@@ -19,7 +19,7 @@ public class Activity
 
     public Activity()
     {
-        _activityName = GetActivityName();
+        _activityName = GetActivityName(_menuSelection);
         _description = GetDescription();
     }
     public Activity(string activityName, string description)
@@ -34,11 +34,7 @@ public class Activity
         return _menuSelection;
     }
     // public GetActivityName() : string
-    public string GetActivityName()
-    {
-        return _activityName;
-    }
-    public void SetActivityName(string menuSelection)
+    public string GetActivityName(string menuSelection)
     {
         if (_menuSelection == "1")
         {
@@ -56,6 +52,8 @@ public class Activity
         {
             _menuSelection = "4";
         }
+
+        return _activityName;
     }
     // public GetDescription() : string
     public string GetDescription()

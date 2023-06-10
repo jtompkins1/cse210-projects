@@ -26,8 +26,7 @@ class Program
             
             Activity a = new Activity();
             menuSelection = a.GetMenuSelection();
-            a.SetActivityName(menuSelection);
-            activityName = a.GetActivityName();
+            activityName = a.GetActivityName(menuSelection);
 
             if (menuSelection == "1" || menuSelection == "2" || menuSelection == "3")
             {
