@@ -39,11 +39,9 @@ public class ListingActivity : Activity
         DisplayCountdown("You may begin in: ", 4);
         Console.WriteLine();
     }
-    public int GetEntries(int _durationInt)
+    public double GetEntries(int durationInt)
     {
-        Stopwatch sw = new Stopwatch();
-
-        this.sw.Start();
+        StartActivity();
         double _durationMill = _durationInt * 1000;
         double acc = 0.0;
         List<string> buf = new List<string>();
@@ -66,7 +64,6 @@ public class ListingActivity : Activity
                 total ++;
 
                 Console.WriteLine("");
-                // buf.Add("\n");
                 Console.Write(">");
             }
             else
@@ -74,16 +71,12 @@ public class ListingActivity : Activity
                 _userEntries.Add(key.KeyChar.ToString());
             }
         }
-        Console.WriteLine();
-        return total;
-    }
 
-
-    public void DisplayListCount(int total)
-    {
         Console.WriteLine();
+        Thread.Sleep(1000);
         Console.WriteLine($"You listed {total} items.");
-        
+
+        return acc;
     }
 
 }

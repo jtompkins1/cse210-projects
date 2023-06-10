@@ -7,7 +7,7 @@ public class Activity
 {
     protected string _activityName;
     private string _description;
-    private int _durationInt;
+    protected int _durationInt;
     private string _durationString;
     protected string _menuSelection;
     public Random random = new Random();
@@ -15,13 +15,14 @@ public class Activity
 
     protected Stopwatch sw = new Stopwatch();
     protected double lastFrame;
+    protected double dt;
+    public int _elapsedSeconds;
 
 
     public Activity()
     {
         _activityName = GetActivityName(_menuSelection);
         _description = GetDescription();
-        _durationInt = GetDuration();
     }
     public Activity(string activityName, string description, int durationInt)
     {
@@ -124,11 +125,11 @@ public class Activity
         }
     }
     // public DisplayEndMessage() : string
-    public void DisplayEndMessage(string menuSelection, string activityName, int durationInt)
+    public void DisplayEndMessage(string activityName, int elapsedSeconds)
     {
         Console.WriteLine("Well done!");
         PausingAnimation(5);
-        Console.WriteLine($"You performed the {_activityName} for {_durationInt.ToString()} seconds.");
+        Console.WriteLine($"You performed the {_activityName} for {_elapsedSeconds.ToString()} seconds.");
     }
     // public GetRandom(): string
     public string GetRandom(List<string> prompts)
@@ -157,5 +158,21 @@ public class Activity
         this.lastFrame = ts.TotalMilliseconds;
         return dt;
     }
+
+    public void StartActivity()
+    {
+        Stopwatch sw = new Stopwatch();
+        this.sw.Start();
+        dt = DeltaTime();
+    }
+
+    public int GetElapsedTime(double acc)
+    {
+        _elapsedSeconds = (int)acc / 1000;
+        return _elapsedSeconds;
+
+    }
+
+
 
 }

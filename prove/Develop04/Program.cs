@@ -12,7 +12,8 @@ class Program
         int durationInt;
         string listPrompt;
         List<string> userEntries = new List<string>();
-        int total;
+        int elapsedSeconds;
+        double acc = 0.0;
 
         do
         {
@@ -74,14 +75,13 @@ class Program
                     listPrompt = l.GetListPrompt();
 
                     l.ListCountdown();
-                    total = l.GetEntries(durationInt);
-
-                    l.DisplayListCount(total);
-
-
+                    acc = l.GetEntries(durationInt);
+                    
                 }
 
-                a.DisplayEndMessage(menuSelection, activityName, durationInt);
+                elapsedSeconds = a.GetElapsedTime(acc);
+
+                a.DisplayEndMessage(activityName, elapsedSeconds);
                 a.PausingAnimation(5);
                 Console.Clear();
             }
