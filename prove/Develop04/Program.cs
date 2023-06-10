@@ -49,10 +49,8 @@ class Program
 
                 if (menuSelection == "1")
                 {
-
                     BreathingActivity b = new BreathingActivity(activityName, description, durationInt);
                     b.GetBreathingTime(durationInt);
-
 
                 }
                 else if (menuSelection == "2")
@@ -69,14 +67,10 @@ class Program
                     listPrompt = l.GetListPrompt();
 
                     l.ListCountdown();
-                    acc = l.GetEntries(durationInt);
-
-                    
+                    acc = l.GetEntries(durationInt);    
                 }
                 
                 elapsedSeconds = a.GetElapsedTime(acc);
-
-                
 
                 a.DisplayEndMessage(activityName, elapsedSeconds);
                 a.PausingAnimation(5);

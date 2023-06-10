@@ -7,6 +7,9 @@ public class ListingActivity : Activity
     private List<string> _listPrompts = new List<string>();
     protected List<string> _userEntries = new List<string>();
     protected string _userEntry;
+    private double _durationMill;
+    private double acc = 0.0;
+    private int total = 0;
 
     public ListingActivity(string activityName, string description, int durationInt): base (activityName, description, durationInt)
     {
@@ -39,12 +42,13 @@ public class ListingActivity : Activity
         DisplayCountdown("You may begin in: ", 4);
         Console.WriteLine();
     }
+
     public double GetEntries(int durationInt)
     {
         StartActivity();
         double _durationMill = _durationInt * 1000;
         double acc = 0.0;
-        List<string> buf = new List<string>();
+        // List<string> buf = new List<string>();
         int total = 0;
 
         Console.Write(">");
@@ -73,8 +77,7 @@ public class ListingActivity : Activity
 
         }
 
-        Console.WriteLine();
-        Thread.Sleep(1000);
+        Console.WriteLine("Time's up.");
         Console.WriteLine($"You listed {total} items.");
 
         return acc;

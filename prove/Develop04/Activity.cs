@@ -168,6 +168,7 @@ public class Activity
 
     public int GetElapsedTime(double acc)
     {
+        
         _elapsedSeconds = (int)acc / 1000;
         return _elapsedSeconds;
 
