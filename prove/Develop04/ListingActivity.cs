@@ -6,10 +6,6 @@ public class ListingActivity : Activity
 {
     private List<string> _listPrompts = new List<string>();
     protected List<string> _userEntries = new List<string>();
-    protected string _userEntry;
-    private double _durationMill;
-    private double acc = 0.0;
-    private int total = 0;
 
     public ListingActivity(string activityName, string description, int durationInt): base (activityName, description, durationInt)
     {
@@ -26,7 +22,6 @@ public class ListingActivity : Activity
     public ListingActivity(List<string> listPrompts, string activityName, string description, int durationInt): base (activityName, description, durationInt)
     {
         // inherits activityName, description, and durationInt from Activity class
-
         _listPrompts = listPrompts;
     }
 
@@ -50,7 +45,6 @@ public class ListingActivity : Activity
         dt = DeltaTime();
         double _durationMill = _durationInt * 1000;
         double acc = 0.0;
-        // List<string> buf = new List<string>();
         int total = 0;
 
         Console.Write(">");

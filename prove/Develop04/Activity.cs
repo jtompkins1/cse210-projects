@@ -12,13 +12,10 @@ public class Activity
     protected string _menuSelection;
     public Random random = new Random();
     public string _randomPrompt;
-
     protected Stopwatch sw = new Stopwatch();
     protected double lastFrame;
     protected double dt;
     public int _elapsedAcc;
-    public int _elapsedSeconds;
-
 
     public Activity()
     {
@@ -148,9 +145,7 @@ public class Activity
             Thread.Sleep(1000);
             Console.Write("\b \b");
         }
-
     }
-
     public double DeltaTime()
     {
         TimeSpan ts = this.sw.Elapsed;
@@ -159,15 +154,10 @@ public class Activity
         this.lastFrame = ts.TotalMilliseconds;
         return dt;
     }
-
-
     public int GetAccumulatedTime(double acc)
     {
         _elapsedAcc = (int)acc / 1000;
         return _elapsedAcc;
     }
-
-
-
 
 }

@@ -6,15 +6,13 @@ class Program
 {
     static void Main(string[] args)
     {   
-        string menuSelection = "";
+        string menuSelection;
         string activityName;
         string description;
         int durationInt;
         string listPrompt;
-        List<string> userEntries = new List<string>();
+        // List<string> userEntries = new List<string>();
         double acc = 0.0;
-        int elapsedSeconds;
-        int elapsedAcc;
 
         do
         {
@@ -32,7 +30,6 @@ class Program
             activityName = a.GetActivityName(menuSelection);
             description = a.GetDescription();
             
-
             if (menuSelection == "1" || menuSelection == "2" || menuSelection == "3")
             {
                 Console.Clear();
@@ -66,7 +63,6 @@ class Program
                         r.DisplayQuestions();
 
                     }while (DateTime.Now < endTime);
-
                 }
                 else if (menuSelection == "3")
                 {
@@ -76,7 +72,6 @@ class Program
                     l.ListCountdown();
                     acc = l.GetEntries(durationInt); 
                     durationInt = a.GetAccumulatedTime(acc);  
-                    
                 }
 
                 a.DisplayEndMessage(activityName, durationInt);
@@ -101,6 +96,5 @@ class Program
 
         Console.WriteLine("Thank you for using the Mindfulness program! Goodbye!");
 
-        
     }
 }
