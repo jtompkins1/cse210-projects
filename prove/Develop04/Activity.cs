@@ -65,13 +65,13 @@ public class Activity
     {
         if (activityName == "Breathing Activity")
         {
-            _description = "This activity will help you relax by walking you through breathing in and out slowly. Clear your mind and focus on your breathing.";
+            _description = "This activity will help you relax by guiding you through breathing in and out slowly. Clear your mind and prepare to focus on your breathing.";
         }else if (activityName == "Reflection Activity")
         {
-            _description = "This activity will help you reflect on times in your life when you have shown strength and resilience. This will help you recognize the power you have and how you can use it in other aspects of your life.";
+            _description = "This activity will help you reflect on times in your life when you have shown strength and resilience. This will help you recognize your strengths and how you can use them in other aspects of your life.";
         }else if (activityName == "Listing Activity")
         {
-            _description = "This activity will help you reflect on the good things in your life by having you list as many things as you can in a certain area.";
+            _description = "This activity will help you reflect on the good things in your life by prompting you list as many things as you can in a specific area.";
         }else
         {
             _description = "";
