@@ -2,6 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 
+
+// Exceeds requirements with a feature that handles invalid menu selections. If user enters an invalid entry, "Invalid selection, try again." is displayed and the menu is displayed again.
+
 class Program
 {
     static void Main(string[] args)
