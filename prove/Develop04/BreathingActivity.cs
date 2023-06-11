@@ -19,22 +19,6 @@ public class BreathingActivity : Activity
         Console.WriteLine();
     }
 
-    public double GetBreathingTime(int durationInt)
-    {
-        StartActivity();
-        double _durationMill = _durationInt * 1000;
-        double acc = 0.0;
-
-        //start counting here
-        while (acc <= _durationMill)
-        {
-            acc += this.DeltaTime();
-            DisplayBreathing();
-        }
-
-        return acc;
-
-    }
 
 }
 

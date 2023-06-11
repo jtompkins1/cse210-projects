@@ -16,6 +16,7 @@ public class Activity
     protected Stopwatch sw = new Stopwatch();
     protected double lastFrame;
     protected double dt;
+    public int _elapsedAcc;
     public int _elapsedSeconds;
 
 
@@ -125,11 +126,11 @@ public class Activity
         }
     }
     // public DisplayEndMessage() : string
-    public void DisplayEndMessage(string activityName, int elapsedSeconds)
+    public void DisplayEndMessage(string activityName, int durationInt)
     {
         Console.WriteLine("Well done!");
         PausingAnimation(5);
-        Console.WriteLine($"You performed the {_activityName} for {_elapsedSeconds.ToString()} seconds.");
+        Console.WriteLine($"You performed the {_activityName} for {_durationInt.ToString()} seconds.");
     }
     // public GetRandom(): string
     public string GetRandom(List<string> prompts)
@@ -159,20 +160,13 @@ public class Activity
         return dt;
     }
 
-    public void StartActivity()
+
+    public int GetAccumulatedTime(double acc)
     {
-        Stopwatch sw = new Stopwatch();
-        this.sw.Start();
-        dt = DeltaTime();
+        _elapsedAcc = (int)acc / 1000;
+        return _elapsedAcc;
     }
 
-    public int GetElapsedTime(double acc)
-    {
-        
-        _elapsedSeconds = (int)acc / 1000;
-        return _elapsedSeconds;
-
-    }
 
 
 

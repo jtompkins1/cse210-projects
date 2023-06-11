@@ -45,7 +45,9 @@ public class ListingActivity : Activity
 
     public double GetEntries(int durationInt)
     {
-        StartActivity();
+        Stopwatch sw = new Stopwatch();
+        this.sw.Start();
+        dt = DeltaTime();
         double _durationMill = _durationInt * 1000;
         double acc = 0.0;
         // List<string> buf = new List<string>();
