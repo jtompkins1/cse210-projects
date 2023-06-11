@@ -3,10 +3,10 @@ using System.Collections.Generic;
 
 public class ReflectionActivity : Activity
 {
-    protected string _question;
-    protected string _thoughtPrompt;
-    protected List<string> _thoughtPrompts = new List<string>();
-    protected List<string> _questions = new List<string>();
+    private string _question;
+    private string _thoughtPrompt;
+    private List<string> _thoughtPrompts = new List<string>();
+    private List<string> _questions = new List<string>();
     
     public ReflectionActivity(string activityName, string description, int durationInt): base(activityName, description, durationInt)
     {
@@ -57,11 +57,11 @@ public class ReflectionActivity : Activity
     }
     public void DisplayThoughtPrompt()
     {
-        string thoughtPrompt = GetThoughtPrompt();
+        _thoughtPrompt = GetThoughtPrompt();
         Console.Clear();
         Console.WriteLine("Consider the following prompt: ");
         Console.WriteLine();
-        Console.WriteLine($"--- {thoughtPrompt} ---");
+        Console.WriteLine($"--- {_thoughtPrompt} ---");
         Console.WriteLine();
         Console.WriteLine("When you have something in mind, press enter to continue.");
         Console.ReadLine();

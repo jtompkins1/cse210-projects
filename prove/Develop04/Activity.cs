@@ -5,17 +5,17 @@ using System.Threading;
 
 public class Activity
 {
-    protected string _activityName;
+    private string _activityName;
     private string _description;
     protected int _durationInt;
     private string _durationString;
-    protected string _menuSelection;
-    public Random random = new Random();
-    public string _randomPrompt;
+    private string _menuSelection;
+    private Random random = new Random();
+    private string _randomPrompt;
     protected Stopwatch sw = new Stopwatch();
-    protected double lastFrame;
+    private double lastFrame;
     protected double dt;
-    public int _elapsedAcc;
+    private int _elapsedAcc;
 
     public Activity()
     {

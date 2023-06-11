@@ -6,6 +6,8 @@ public class ListingActivity : Activity
 {
     private List<string> _listPrompts = new List<string>();
     protected List<string> _userEntries = new List<string>();
+    
+    private string _listPrompt;
 
     public ListingActivity(string activityName, string description, int durationInt): base (activityName, description, durationInt)
     {
@@ -27,13 +29,14 @@ public class ListingActivity : Activity
 
     public string GetListPrompt()
     {
-        return GetRandom(_listPrompts);
+        _listPrompt = GetRandom(_listPrompts);
+        return _listPrompt;
     }
     public void ListCountdown()
     {
-        string listPrompt = GetListPrompt();
+        _listPrompt = GetListPrompt();
         Console.WriteLine("List as many responses as you can to the following prompt:");
-        Console.WriteLine($"--- {listPrompt} ---");
+        Console.WriteLine($"--- {_listPrompt} ---");
         DisplayCountdown("You may begin in: ", 4);
         Console.WriteLine();
     }
@@ -70,10 +73,11 @@ public class ListingActivity : Activity
             {
                 _userEntries.Add(key.KeyChar.ToString());
             }
-
+        
         }
 
-        Console.WriteLine("Time's up.");
+        Console.WriteLine();
+        Console.WriteLine("Time's up!");
         Console.WriteLine($"You listed {total} items.");
 
         return acc;
