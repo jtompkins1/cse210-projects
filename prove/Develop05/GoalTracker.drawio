@@ -1,0 +1,121 @@
+<mxfile host="app.diagrams.net" modified="2023-06-17T01:36:37.015Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36" etag="CjI7zSrmhSIwcw7_Vs2m" version="21.3.7" type="github">
+  <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
+    <mxGraphModel dx="1434" dy="699" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="WIyWlLk6GJQsqaUBKTNV-0" />
+        <mxCell id="WIyWlLk6GJQsqaUBKTNV-1" parent="WIyWlLk6GJQsqaUBKTNV-0" />
+        <mxCell id="zkfFHV4jXpPFQw0GAbJ--6" value="public class SimpleGoal : Goal" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;rounded=0;shadow=0;strokeWidth=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="16" y="417" width="216" height="244" as="geometry">
+            <mxRectangle x="130" y="380" width="160" height="26" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zkfFHV4jXpPFQw0GAbJ--7" value="private _complete : bool" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="zkfFHV4jXpPFQw0GAbJ--6" vertex="1">
+          <mxGeometry y="26" width="216" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="zkfFHV4jXpPFQw0GAbJ--9" value="" style="line;html=1;strokeWidth=1;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="zkfFHV4jXpPFQw0GAbJ--6" vertex="1">
+          <mxGeometry y="52" width="216" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="c2g-B70HKf2SZwhT3Vft-8" value="&lt;table style=&quot;border-collapse:&lt;br/&gt; collapse;width:174pt&quot; width=&quot;233&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot; border=&quot;0&quot;&gt; &lt;colgroup&gt;&lt;col style=&quot;mso-width-source:userset;mso-width-alt:7936;width:174pt&quot; width=&quot;233&quot;&gt;&lt;/colgroup&gt; &lt;tbody&gt;&lt;tr style=&quot;height:14.25pt&quot; height=&quot;19&quot;&gt;  &lt;td style=&quot;height:14.25pt;width:174pt&quot; width=&quot;233&quot; class=&quot;xl63&quot; height=&quot;19&quot;&gt;Public SimpleGoal(string name,&amp;nbsp;&lt;/td&gt; &lt;/tr&gt; &lt;tr style=&quot;height:14.25pt&quot; height=&quot;19&quot;&gt;  &lt;td style=&quot;height:14.25pt&quot; height=&quot;19&quot;&gt;string descripton, int points,&lt;/td&gt; &lt;/tr&gt; &lt;tr style=&quot;height:14.25pt&quot; height=&quot;19&quot;&gt;  &lt;td style=&quot;height:14.25pt&quot; height=&quot;19&quot;&gt;bool complete)&lt;/td&gt; &lt;/tr&gt; &lt;tr style=&quot;height:14.25pt&quot; height=&quot;19&quot;&gt;  &lt;td style=&quot;height:14.25pt&quot; height=&quot;19&quot;&gt;: base(name, description,&lt;/td&gt; &lt;/tr&gt; &lt;tr style=&quot;height:14.25pt&quot; height=&quot;19&quot;&gt;  &lt;td style=&quot;height:14.25pt&quot; height=&quot;19&quot;&gt;points)&lt;/td&gt; &lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="zkfFHV4jXpPFQw0GAbJ--6">
+          <mxGeometry y="60" width="216" height="107" as="geometry" />
+        </mxCell>
+        <mxCell id="c2g-B70HKf2SZwhT3Vft-9" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="zkfFHV4jXpPFQw0GAbJ--6">
+          <mxGeometry y="167" width="216" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="c2g-B70HKf2SZwhT3Vft-10" value="&lt;table style=&quot;border-collapse: collapse; width: 174pt;&quot; width=&quot;233&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot; border=&quot;0&quot;&gt; &lt;colgroup&gt;&lt;col style=&quot;mso-width-source:userset;mso-width-alt:7936;width:174pt&quot; width=&quot;233&quot;&gt;&lt;/colgroup&gt; &lt;tbody&gt;&lt;tr style=&quot;height:14.25pt&quot; height=&quot;19&quot;&gt;  &lt;td style=&quot;height:14.25pt;width:174pt&quot; width=&quot;233&quot; class=&quot;xl65&quot; height=&quot;19&quot;&gt;Public Override bool IsCompleted()&lt;/td&gt; &lt;/tr&gt; &lt;tr style=&quot;height:14.25pt&quot; height=&quot;19&quot;&gt;  &lt;td style=&quot;height:14.25pt&quot; class=&quot;xl65&quot; height=&quot;19&quot;&gt;Public Override int RecordEvent()&lt;/td&gt; &lt;/tr&gt; &lt;tr style=&quot;height:14.25pt&quot; height=&quot;19&quot;&gt;  &lt;td style=&quot;height:14.25pt&quot; height=&quot;19&quot;&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="zkfFHV4jXpPFQw0GAbJ--6">
+          <mxGeometry y="175" width="216" height="69" as="geometry" />
+        </mxCell>
+        <mxCell id="zkfFHV4jXpPFQw0GAbJ--12" value="" style="endArrow=block;endSize=10;endFill=0;shadow=0;strokeWidth=1;rounded=0;edgeStyle=elbowEdgeStyle;elbow=vertical;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="zkfFHV4jXpPFQw0GAbJ--6" edge="1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="192" y="85" as="sourcePoint" />
+            <mxPoint x="414" y="341" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="645" y="382" />
+              <mxPoint x="785" y="382" />
+              <mxPoint x="425" y="397" />
+              <mxPoint x="425" y="397" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c2g-B70HKf2SZwhT3Vft-1" value="public class Goal (base)" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="293" y="11" width="250" height="330" as="geometry" />
+        </mxCell>
+        <mxCell id="c2g-B70HKf2SZwhT3Vft-2" value="private _name : string&lt;br&gt;private _description : string&lt;br&gt;private _points : int&lt;br&gt;private _goalType : string" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="c2g-B70HKf2SZwhT3Vft-1">
+          <mxGeometry y="26" width="250" height="74" as="geometry" />
+        </mxCell>
+        <mxCell id="c2g-B70HKf2SZwhT3Vft-3" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="c2g-B70HKf2SZwhT3Vft-1">
+          <mxGeometry y="100" width="250" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="c2g-B70HKf2SZwhT3Vft-7" value="&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(251, 251, 251); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;&quot;&gt;public Goal(string name, string description,&lt;/span&gt;&lt;br style=&quot;border-color: var(--border-color); color: rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(251, 251, 251); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;&quot;&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(251, 251, 251); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;&quot;&gt;int points)&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="c2g-B70HKf2SZwhT3Vft-1">
+          <mxGeometry y="108" width="250" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="c2g-B70HKf2SZwhT3Vft-6" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="c2g-B70HKf2SZwhT3Vft-1">
+          <mxGeometry y="148" width="250" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c2g-B70HKf2SZwhT3Vft-4" value="public string GetName()&lt;br&gt;public string GetDescription()&lt;br&gt;public int GetPoints()&lt;br&gt;public string GetType()&lt;br&gt;public void LoadGoals()&lt;br&gt;public void SaveGoals()&lt;br&gt;public void DisplayGoals(list goals)&lt;br&gt;&lt;br&gt;virtual int RecordEvent()&lt;br&gt;virtual bool IsCompleted()" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="c2g-B70HKf2SZwhT3Vft-1">
+          <mxGeometry y="166" width="250" height="164" as="geometry" />
+        </mxCell>
+        <mxCell id="c2g-B70HKf2SZwhT3Vft-13" value="public class EternalGoal : Goal" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;rounded=0;shadow=0;strokeWidth=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="263" y="415" width="260" height="263" as="geometry">
+            <mxRectangle x="130" y="380" width="160" height="26" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c2g-B70HKf2SZwhT3Vft-15" value="" style="line;html=1;strokeWidth=1;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="c2g-B70HKf2SZwhT3Vft-13">
+          <mxGeometry y="26" width="260" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="c2g-B70HKf2SZwhT3Vft-16" value="&lt;table style=&quot;border-collapse:&lt;br/&gt; collapse;width:174pt&quot; width=&quot;233&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot; border=&quot;0&quot;&gt; &lt;colgroup&gt;&lt;col style=&quot;mso-width-source:userset;mso-width-alt:7936;width:174pt&quot; width=&quot;233&quot;&gt;&lt;/colgroup&gt; &lt;tbody&gt;&lt;tr style=&quot;height:14.25pt&quot; height=&quot;19&quot;&gt;  &lt;td style=&quot;height:14.25pt;width:174pt&quot; width=&quot;233&quot; class=&quot;xl63&quot; height=&quot;19&quot;&gt;Public EternalGoal(string name,&amp;nbsp;&lt;/td&gt; &lt;/tr&gt; &lt;tr style=&quot;height:14.25pt&quot; height=&quot;19&quot;&gt;  &lt;td style=&quot;height:14.25pt&quot; height=&quot;19&quot;&gt;string descripton, int points,&lt;/td&gt; &lt;/tr&gt; &lt;tr style=&quot;height:14.25pt&quot; height=&quot;19&quot;&gt;  &lt;td style=&quot;height:14.25pt&quot; height=&quot;19&quot;&gt;bool complete)&lt;/td&gt; &lt;/tr&gt; &lt;tr style=&quot;height:14.25pt&quot; height=&quot;19&quot;&gt;  &lt;td style=&quot;height:14.25pt&quot; height=&quot;19&quot;&gt;: base(name, description,&lt;/td&gt; &lt;/tr&gt; &lt;tr style=&quot;height:14.25pt&quot; height=&quot;19&quot;&gt;  &lt;td style=&quot;height:14.25pt&quot; height=&quot;19&quot;&gt;points)&lt;/td&gt; &lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="c2g-B70HKf2SZwhT3Vft-13">
+          <mxGeometry y="54" width="260" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="c2g-B70HKf2SZwhT3Vft-17" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="c2g-B70HKf2SZwhT3Vft-13">
+          <mxGeometry y="164" width="260" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c2g-B70HKf2SZwhT3Vft-18" value="&lt;table style=&quot;border-collapse: collapse; width: 174pt;&quot; width=&quot;233&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot; border=&quot;0&quot;&gt;&lt;colgroup&gt;&lt;col style=&quot;mso-width-source:userset;mso-width-alt:7936;width:174pt&quot; width=&quot;233&quot;&gt;&lt;/colgroup&gt;&lt;tbody&gt;&lt;tr style=&quot;height:14.25pt&quot; height=&quot;19&quot;&gt;&lt;td style=&quot;height:14.25pt;width:174pt&quot; width=&quot;233&quot; class=&quot;xl65&quot; height=&quot;19&quot;&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr style=&quot;height:14.25pt&quot; height=&quot;19&quot;&gt;&lt;td style=&quot;height:14.25pt&quot; class=&quot;xl65&quot; height=&quot;19&quot;&gt;Public Override int RecordEvent()&lt;/td&gt; &lt;/tr&gt; &lt;tr style=&quot;height:14.25pt&quot; height=&quot;19&quot;&gt;  &lt;td style=&quot;height:14.25pt&quot; height=&quot;19&quot;&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="c2g-B70HKf2SZwhT3Vft-13">
+          <mxGeometry y="194" width="260" height="69" as="geometry" />
+        </mxCell>
+        <mxCell id="c2g-B70HKf2SZwhT3Vft-19" value="public class ChecklistGoal : Goal" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;rounded=0;shadow=0;strokeWidth=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="537" y="415" width="260" height="329" as="geometry">
+            <mxRectangle x="130" y="380" width="160" height="26" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c2g-B70HKf2SZwhT3Vft-20" value="private _complete : bool&#xa;private _requiredCount : int&#xa;private _completedCount : int&#xa;private _bonusPoints : int" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="c2g-B70HKf2SZwhT3Vft-19">
+          <mxGeometry y="26" width="260" height="67" as="geometry" />
+        </mxCell>
+        <mxCell id="c2g-B70HKf2SZwhT3Vft-21" value="" style="line;html=1;strokeWidth=1;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="c2g-B70HKf2SZwhT3Vft-19">
+          <mxGeometry y="93" width="260" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="c2g-B70HKf2SZwhT3Vft-22" value="&lt;table style=&quot;border-collapse:&lt;br/&gt; collapse;width:174pt&quot; width=&quot;233&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot; border=&quot;0&quot;&gt;&lt;colgroup&gt;&lt;col style=&quot;mso-width-source:userset;mso-width-alt:7936;width:174pt&quot; width=&quot;233&quot;&gt;&lt;/colgroup&gt;&lt;tbody&gt;&lt;tr style=&quot;height:14.25pt&quot; height=&quot;19&quot;&gt;&lt;td style=&quot;height:14.25pt;width:174pt&quot; width=&quot;233&quot; class=&quot;xl63&quot; height=&quot;19&quot;&gt;Public ChecklistGoal(string name,&amp;nbsp;&lt;/td&gt; &lt;/tr&gt; &lt;tr style=&quot;height:14.25pt&quot; height=&quot;19&quot;&gt;  &lt;td style=&quot;height:14.25pt&quot; height=&quot;19&quot;&gt;string descripton, int points,&lt;/td&gt; &lt;/tr&gt; &lt;tr style=&quot;height:14.25pt&quot; height=&quot;19&quot;&gt;  &lt;td style=&quot;height:14.25pt&quot; height=&quot;19&quot;&gt;bool complete, int requiredCount,&lt;br&gt;int completedCount,&amp;nbsp; int bonus)&lt;/td&gt; &lt;/tr&gt; &lt;tr style=&quot;height:14.25pt&quot; height=&quot;19&quot;&gt;  &lt;td style=&quot;height:14.25pt&quot; height=&quot;19&quot;&gt;: base(name, description,&lt;/td&gt; &lt;/tr&gt; &lt;tr style=&quot;height:14.25pt&quot; height=&quot;19&quot;&gt;  &lt;td style=&quot;height:14.25pt&quot; height=&quot;19&quot;&gt;points)&lt;/td&gt; &lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="c2g-B70HKf2SZwhT3Vft-19">
+          <mxGeometry y="101" width="260" height="117" as="geometry" />
+        </mxCell>
+        <mxCell id="c2g-B70HKf2SZwhT3Vft-23" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="c2g-B70HKf2SZwhT3Vft-19">
+          <mxGeometry y="218" width="260" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="c2g-B70HKf2SZwhT3Vft-24" value="&lt;br&gt;&lt;table style=&quot;border-collapse: collapse; width: 174pt;&quot; width=&quot;233&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot; border=&quot;0&quot;&gt; &lt;colgroup&gt;&lt;col style=&quot;mso-width-source:userset;mso-width-alt:7936;width:174pt&quot; width=&quot;233&quot;&gt;&lt;/colgroup&gt; &lt;tbody&gt;&lt;tr style=&quot;height:14.25pt&quot; height=&quot;19&quot;&gt;  &lt;td style=&quot;height:14.25pt;width:174pt&quot; width=&quot;233&quot; class=&quot;xl65&quot; height=&quot;19&quot;&gt;public int GetRequiredCount()&lt;br&gt;public int GetBonus()&lt;br&gt;&lt;br&gt;Public Override bool IsCompleted()&lt;/td&gt; &lt;/tr&gt; &lt;tr style=&quot;height:14.25pt&quot; height=&quot;19&quot;&gt;  &lt;td style=&quot;height:14.25pt&quot; class=&quot;xl65&quot; height=&quot;19&quot;&gt;Public Override int RecordEvent()&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="c2g-B70HKf2SZwhT3Vft-19">
+          <mxGeometry y="226" width="260" height="103" as="geometry" />
+        </mxCell>
+        <mxCell id="c2g-B70HKf2SZwhT3Vft-27" value="" style="endArrow=block;endSize=10;endFill=0;shadow=0;strokeWidth=1;rounded=0;edgeStyle=elbowEdgeStyle;elbow=vertical;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="668" y="415" as="sourcePoint" />
+            <mxPoint x="414" y="340" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="646" y="382" />
+              <mxPoint x="878" y="367" />
+              <mxPoint x="1238" y="352" />
+              <mxPoint x="848" y="342" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c2g-B70HKf2SZwhT3Vft-29" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="417" y="415" as="sourcePoint" />
+            <mxPoint x="417" y="382" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c2g-B70HKf2SZwhT3Vft-30" value="Jennifer Tompkins&lt;br&gt;Eternal Quest Program" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="31" y="19" width="204" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="c2g-B70HKf2SZwhT3Vft-31" value="Program Flow:&lt;br style=&quot;font-size: 12px;&quot;&gt;&lt;br style=&quot;font-size: 12px;&quot;&gt;The Eternal Quest is a program that allows the user to track different types of goals and earn rewards for completion.&amp;nbsp; The program begins by displaying the users total score and a menu with options to create a new goal, list goals, save goals, load goals, record an event, or quit.&lt;br style=&quot;font-size: 12px;&quot;&gt;&lt;br style=&quot;font-size: 12px;&quot;&gt;When the user chooses to create a goal they will then choose from a Simple Goal which is completed one time, an Eternal Goal which the user can complete any number of times an never ends, or a Checklist Goal which is to be completed a set number of times.&amp;nbsp; Points are earned each time a goal is completed and bonus points are awarded when checklist goals are completed to the required amount.&lt;br style=&quot;font-size: 12px;&quot;&gt;&lt;br style=&quot;font-size: 12px;&quot;&gt;The base Goal class gets and stores the type, name, description and points associated with each goal. It also handles displaying a list of the goals, saving the goals and loading the goals from a file.&amp;nbsp; It has virtual methods for storing the completion status and recording when a goal has been completed and calculating the points earned for that goal.&amp;nbsp; When the user creates a goal it is added to a list of their goals and can goals can be saved to a .txt file.&amp;nbsp; The user can then load that file to come back and make changes to the status of their goals and add new goals.&amp;nbsp; Each time points are recorded the total score is updated and displays when the saved file is loaded.&lt;br style=&quot;font-size: 12px;&quot;&gt;&lt;br style=&quot;font-size: 12px;&quot;&gt;Each derived class (SimpleGoal, Eternal Goal, ChecklistGoal) inherits the name, descriptoin and points attributes from the base class.&amp;nbsp; They also override the IsCompleted() and RecordEvent() methods so they can handle those methods differently as required for those individual specifications.&lt;br style=&quot;font-size: 12px;&quot;&gt;&lt;br style=&quot;font-size: 12px;&quot;&gt;The SimpleGoal class handles the completion status of simple goals by marking an &quot;x&quot; for completed goals and the record event method handles adding the points earned.&amp;nbsp; The EternalGoal class is never ending and therefore does not mark an &quot;x&quot; when the goal is completed.&amp;nbsp; Each time the user completes the goal the RecordEvent method is called to handle calculating the points earned.&amp;nbsp; The CheckList class has additional attributes to store the required amount of times needed to complete a goal, the actual amount of times completed, and bonus points earned when the required amount is met.&amp;nbsp; The methods handle getting the users chosen required completion number and chosen amount of bonus points for the goal.&amp;nbsp; The IsCompleted for the Checklist goals will mark an &quot;x&quot; for completed when the required number is met.&amp;nbsp; The record event&amp;nbsp; method will add points each time the goal is tracked and will also add bonus points once the requred number is completed.&lt;br style=&quot;font-size: 12px;&quot;&gt;&lt;br style=&quot;font-size: 12px;&quot;&gt;The program ends when the user selects &quot;quit&quot; from the menu." style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="31" y="809" width="751" height="280" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
