@@ -8,8 +8,7 @@ class Program
         List<string> mainMenu = new List<string> {"Create New Goal", "List Goals", "Save Goals", "Load Goals", "Record Event", "Quit" };
         string menuSelection; 
 
-        string goalType;
-
+        Goal g1 = new Goal();
         List<Goal> goals = new List<Goal>();
        
         do
