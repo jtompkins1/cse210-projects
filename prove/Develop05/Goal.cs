@@ -2,11 +2,18 @@ using System;
 
 public class Goal
 {
-    private string _goalType;
+    protected string _goalType;
     private string _name;
     private string _description;
     protected int _points;
+    protected bool _complete;
+    protected string _status;
+    protected string _goal;
 
+    public Goal()
+    {
+
+    }
     public Goal(string goalType, string name, string description, int points)
     {
         _goalType = goalType;
@@ -18,41 +25,52 @@ public class Goal
 
     public string GetName()
     {
-        Console.Write("What is the name of your goal? ");
-        _name = Console.ReadLine();
         return _name;
+    }
+    public void SetName(string name)
+    {
+        _name = name;
     }
     public string GetDescription()
     {
-        Console.Write("Briefly describe this goal: ");
-        _description = Console.ReadLine();
         return _description;
+    }
+    public void SetDescription(string description)
+    {
+        _description = description;
     }
     public int GetPoints()
     {
-        Console.Write("How many points are associated with this goal? ");
-        string pointsStr = Console.ReadLine();
-        _points = int.Parse(pointsStr);
         return _points;
     }
-    public string GetType()
+    public void SetPoints(int points)
     {
-        Console.WriteLine("Types of goals:");
-
-        List<string> goalMenu = new List<string> {"Simple Goal", "Eternal Goal", "Checklist Goal"};
-
-        for (int i = 0; i < goalMenu.Count; i++)
-        {
-            string goalItem = goalMenu[i];
-            Console.WriteLine($" {i + 1}. {goalItem}");
-        }
-
-        Console.Write("Which type of goal would you like to create (1-3): ");
-        _goalType = Console.ReadLine();
+        _points = points;
+    }
+    public string GetGoalType()
+    {
         return _goalType;
     }
+    public void SetGoalType(string goalType)
+    {
+        _goalType = goalType;
+    }
+    public string IsComplete()
+    {
+        if (_complete == true)
+        {   
+            _status = "[x]";
+        }else
+        {
+            _status = "[ ]";
+        }
+        return _status;
+    }
 
+    public virtual string CompiledGoal(string name, string description)
+    {
+        return _goal = $"status {_name} ({_description})";
 
-
+    }
 
 }
