@@ -113,5 +113,7 @@ class Program
 
         }while (menuSelection != "6");
 
+    Console.WriteLine("Thank you for using the Eternal Quest program!");
+
     }
 }

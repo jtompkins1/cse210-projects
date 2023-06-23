@@ -2,7 +2,7 @@ using System;
 
 public class SimpleGoal: Goal
 {
-    private bool _complete;
+    private bool _complete = false;
 
     public SimpleGoal(string name, string description, int points, bool complete) : base (name, description, points)
     {
@@ -14,7 +14,11 @@ public class SimpleGoal: Goal
     }
     public override bool IsComplete()
     {
-        return true;
+        return _complete;
+    }
+    public void SetComplete(bool complete)
+    {
+        _complete = complete;
     }
 }
 
