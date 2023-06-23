@@ -1,6 +1,8 @@
 using System;
+using System.Collections.Generic;
+using System.IO;
 
-public abstract class Goal
+public class Goal
 {
     //protected string _goalType;
     private string _name;
@@ -63,11 +65,41 @@ public abstract class Goal
 
     }
 
+
     public virtual int RecordEvent()
     {
         return GetPoints();
     }
-    public abstract bool IsComplete();
+    public virtual bool IsComplete()
+    {
+        return true;
+    }
+    public void SaveGoals(string filename, int totalScore, List<Goal> goals)
+    {
+        using (StreamWriter outputFile = new StreamWriter(filename))
+        {
+            outputFile.WriteLine(totalScore);
 
+            foreach(Goal goal in goals)
+            {
+                if(goal is SimpleGoal){
+                    if (goal.IsComplete()== true)
+                    {
+                        outputFile.WriteLine($"Simple Goal: {goal.GetName} | {goal.GetDescription()} | {goal.GetPoints()}, True");
+                    }else
+                    {
+                        outputFile.WriteLine($"Simple Goal: {goal.GetName} | {goal.GetDescription()} | {goal.GetPoints()}, False");
+                    }
+                }else if (goal is EternalGoal)
+                {
+                    outputFile.WriteLine($"Eternal Goal: {goal.GetName} | {goal.GetDescription()} | {goal.GetPoints()}");
+                }else if (goal is ChecklistGoal)
+                {
+                    outputFile.WriteLine($"Checklist Goal: {goal.GetName} | {goal.GetDescription()} | {goal.GetPoints()}, {((ChecklistGoal)goal).GetBonus()} | {((ChecklistGoal)goal).GetCompletedCount()} | {((ChecklistGoal)goal).GetRequiredCount()}");
+                }
+            }
+        }
+
+    }
 
 }
