@@ -1,6 +1,6 @@
 using System;
 
-public class Goal
+public abstract class Goal
 {
     //protected string _goalType;
     private string _name;
@@ -67,9 +67,7 @@ public class Goal
     {
         return GetPoints();
     }
-    public virtual bool IsComplete()
-    {
-        return true;
-    }
+    public abstract bool IsComplete();
+
 
 }
