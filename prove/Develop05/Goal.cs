@@ -2,27 +2,20 @@ using System;
 
 public class Goal
 {
-    protected string _goalType;
+    //protected string _goalType;
     private string _name;
     private string _description;
     protected int _points;
-    protected bool _complete;
-    protected string _status;
-    protected string _goal;
+    // protected bool _complete = false;
+    //protected string _status;
+    //protected string _goal;
 
-    public Goal()
-    {
-
-    }
-    public Goal(string goalType, string name, string description, int points)
-    {
-        _goalType = goalType;
+    public Goal(string name, string description, int points)
+    { 
         _name = name;
         _description = description;
         _points = points;
-
     }
-
     public string GetName()
     {
         return _name;
@@ -47,30 +40,36 @@ public class Goal
     {
         _points = points;
     }
-    public string GetGoalType()
+    // public string GetGoalType()
+    // {
+    //     return _goalType;
+    // }
+    // public virtual bool IsComplete(bool complete)
+    // {
+    //     _complete = complete;
+
+    // }
+
+
+    // public virtual string ToString()
+    // {
+
+    //     //IsComplete();
+    //     return _goal = $"[] {_name} ({_description})";
+
+    // }
+    public void ListGoals()
     {
-        return _goalType;
-    }
-    public void SetGoalType(string goalType)
-    {
-        _goalType = goalType;
-    }
-    public string IsComplete()
-    {
-        if (_complete == true)
-        {   
-            _status = "[x]";
-        }else
-        {
-            _status = "[ ]";
-        }
-        return _status;
+
     }
 
-    public virtual string CompiledGoal(string name, string description)
+    public virtual int RecordEvent()
     {
-        return _goal = $"status {_name} ({_description})";
-
+        return GetPoints();
+    }
+    public virtual bool IsComplete()
+    {
+        return true;
     }
 
 }

@@ -12,10 +12,12 @@ class Program
         string name;
         string description;
         int points;
-        int requiredCount;
-        int bonus;
+        int requiredCount = 0;
+        int bonus = 0;
  
         List<Goal> goals = new List<Goal>();
+
+        Goal goal = null;
 
         do
         {
@@ -47,16 +49,6 @@ class Program
                 Console.Write("Which type of goal would you like to create (1-3): ");
                 string selection = Console.ReadLine();
 
-                if (selection == "1")
-                {
-                    goalType = "Simple Goal";
-                }else if (selection == "2")
-                {
-                    goalType = "Eternal Goal";
-                }else if (selection == "3")
-                {
-                    goalType = "Checklist Goal";
-                }
 
                 Console.Write("What is the name of your goal? ");
                 name = Console.ReadLine();
@@ -68,8 +60,19 @@ class Program
                 string pointsStr = Console.ReadLine();
                 points = int.Parse(pointsStr);
 
-                if (goalType == "Checklist Goal")
+                if (selection == "1")
                 {
+                    goalType = "Simple Goal";
+                    goal = new SimpleGoal(name, description, points, false);
+                    
+                }else if (selection == "2")
+                {
+                    goalType = "Eternal Goal";
+                    goal = new EternalGoal(name, description, points);
+
+                }else if (selection == "3")
+                {
+                    goalType = "Checklist Goal";
                     Console.Write("How many times does this goal need to be accomplished for a bonus? ");
                     string countStr = Console.ReadLine();
                     requiredCount = int.Parse(countStr);
@@ -78,33 +81,34 @@ class Program
                     string bonusStr = Console.ReadLine();
                     bonus = int.Parse(bonusStr);
 
-                    ChecklistGoal newGoal = new ChecklistGoal(goalType, name, description, points, bonus, requiredCount);
-                    goals.Add(newGoal);
-                }else
-                {
-                    Goal newGoal = new Goal(goalType, name, description, points);
-                    goals.Add(newGoal);
+                    goal = new ChecklistGoal(name, description, points, bonus, requiredCount);
                 }
-                
-
-
-
+                goals.Add(goal);
             }
             else if (menuSelection == "2")
             {
-                //
+                //List Goals
+                int counter = 0;
+                foreach (Goal goalItem in goals)
+                {
+                    counter += 1;
+                    string checkComplete = goal.IsComplete() ? "[x]" : "[ ]";
+                    string completedStatus = goal is ChecklistGoal ? $"--- Currently Completed: {((ChecklistGoal)goal).GetCompletedCount()}/{((ChecklistGoal)goal).GetRequiredCount()}": "";
+                    Console.WriteLine($"{counter}. {checkComplete} {goal.GetName()} ({goal.GetDescription()}) {completedStatus}");
+                }
+
             }
             else if (menuSelection == "3")
             {
-                //
+                //Save Goals
             }
             else if (menuSelection == "4")
             {
-                //
+                //Load Goals
             }
             else if (menuSelection == "5")
             {
-                //
+                //Record Event
             }
 
         }while (menuSelection != "6");
