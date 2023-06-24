@@ -38,7 +38,7 @@ public abstract class Goal
     {
         _points = points;
     }
-    // public abstract string GoalToString();
+    public abstract string GoalToString();
     public abstract int RecordEvent();
 
     public abstract bool IsComplete();

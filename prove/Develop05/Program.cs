@@ -88,7 +88,6 @@ class Program
             else if (menuSelection == "2")
             {
 
-                // Console.WriteLine("The goals are: ");
                 //List Goals
                 int counter = 0;
                 foreach (Goal goalItem in goals)
