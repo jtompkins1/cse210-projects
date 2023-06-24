@@ -4,6 +4,7 @@ using System.IO;
 
 public class FileManagement
 {
+    protected int _totalScore;
     public void SaveGoals(string filename, int totalScore, List<Goal> goals)
     {
         using (StreamWriter outputFile = new StreamWriter(filename))
@@ -17,7 +18,7 @@ public class FileManagement
             }
         }
     }
-    public void LoadGoals(string fileName, List<Goal> goals)
+    public int LoadGoals(string fileName, List<Goal> goals)
     {
         // List<Goal> goals = new List<Goal>();
         goals.Clear();
@@ -25,12 +26,13 @@ public class FileManagement
         {
             string totalLine = inputFile.ReadLine();
             int totalScore = int.Parse(totalLine);
-            //_totalScore = totalScore;
+            _totalScore = totalScore;
+
 
             string line = inputFile.ReadLine();
             while (line != null)
             {
-                string [] goalInfo = line.Split(":");
+                string [] goalInfo = line.Split(": ");
                 string goalType = goalInfo[0];
                 string [] goalDetails = goalInfo[1].Split(" | ");
                 string name = goalDetails[0];
@@ -54,10 +56,14 @@ public class FileManagement
                     int completedCount = int.Parse(goalDetails[4]);
                     int requiredCount = int.Parse(goalDetails[5]);
                     ChecklistGoal goal3 = new ChecklistGoal(name, description, points, bonus, completedCount, requiredCount);
+                    goals.Add(goal3);
 
                 }
+                line = inputFile.ReadLine();
             }
+            return _totalScore;
         }
+        
     }
 
 

@@ -20,17 +20,9 @@ public class ChecklistGoal: Goal
     {
         return _requiredCount;
     }
-    public void SetRequiredCount(int requiredCount)
-    {
-        _requiredCount = requiredCount;
-    }
     public int GetBonus()
     {
         return _bonus;
-    }
-    public void SetBonus(int bonus)
-    {
-        _bonus = bonus;
     }
     public int GetCompletedCount()
     {
@@ -56,7 +48,7 @@ public class ChecklistGoal: Goal
     }
     public override string GoalToString()
     {
-        _goalStr = ($"Checklist Goal: {_goal.GetName} | {_goal.GetDescription()} | {_goal.GetPoints()}, {((ChecklistGoal)_goal).GetBonus()} | {((ChecklistGoal)_goal).GetCompletedCount()} | {((ChecklistGoal)_goal).GetRequiredCount()}");
+        _goalStr = ($"Checklist Goal: {_goal.GetName()} | {_goal.GetDescription()} | {_goal.GetPoints()} | {((ChecklistGoal)_goal).GetBonus()} | {((ChecklistGoal)_goal).GetCompletedCount()} | {((ChecklistGoal)_goal).GetRequiredCount()}");
 
         return _goalStr;
     }

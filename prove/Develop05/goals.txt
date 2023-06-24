@@ -1,0 +1,4 @@
+220
+Simple Goal: sg | simple | 10 | True
+Eternal Goal: eg | eternal | 20
+Checklist Goal: cg | checklist | 30 | 100 | 3 | 3

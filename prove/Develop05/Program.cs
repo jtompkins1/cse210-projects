@@ -8,7 +8,6 @@ class Program
         int totalScore = 0;
         List<string> mainMenu = new List<string> {"Create New Goal", "List Goals", "Save Goals", "Load Goals", "Record Event", "Quit" };
         string menuSelection = "";
-        //string goalType = "";
         string name;
         string description;
         int points;
@@ -37,43 +36,66 @@ class Program
 
             if (menuSelection == "1")
             {
+                Console.WriteLine();
                 Console.WriteLine("Types of goals:");
 
                 List<string> goalMenu = new List<string> {"Simple Goal", "Eternal Goal", "Checklist Goal"};
 
                 for (int i = 0; i < goalMenu.Count; i++)
                 {
-                    string goalItem = goalMenu[i];
-                    Console.WriteLine($" {i + 1}. {goalItem}");
+                    string menuItem2 = goalMenu[i];
+                    Console.WriteLine($" {i + 1}. {menuItem2}");
                 }
 
                 Console.Write("Which type of goal would you like to create (1-3): ");
                 string selection = Console.ReadLine();
 
 
-                Console.Write("What is the name of your goal? ");
-                name = Console.ReadLine();
-                
-                Console.Write("Briefly describe this goal: ");
-                description = Console.ReadLine();
-                
-                Console.Write("How many points are associated with this goal? ");
-                string pointsStr = Console.ReadLine();
-                points = int.Parse(pointsStr);
 
                 if (selection == "1")
                 {
                    //goalType = "Simple Goal";
-                    goal = new SimpleGoal(name, description, points, false);
+                    Console.Write("What is the name of your goal? ");
+                    name = Console.ReadLine();
+                    
+                    Console.Write("Briefly describe this goal: ");
+                    description = Console.ReadLine();
+                    
+                    Console.Write("How many points are associated with this goal? ");
+                    string pointsStr = Console.ReadLine();
+                    points = int.Parse(pointsStr);
+                    SimpleGoal sg = new SimpleGoal(name, description, points, false);
+                    goals.Add(sg);
+
                     
                 }else if (selection == "2")
                 {
                     //goalType = "Eternal Goal";
-                    goal = new EternalGoal(name, description, points);
+                    Console.Write("What is the name of your goal? ");
+                    name = Console.ReadLine();
+                    
+                    Console.Write("Briefly describe this goal: ");
+                    description = Console.ReadLine();
+                    
+                    Console.Write("How many points are associated with this goal? ");
+                    string pointsStr = Console.ReadLine();
+                    points = int.Parse(pointsStr);
+                    EternalGoal eg = new EternalGoal(name, description, points);
+                    goals.Add(eg);
+
 
                 }else if (selection == "3")
                 {
                     //goalType = "Checklist Goal";
+                    Console.Write("What is the name of your goal? ");
+                    name = Console.ReadLine();
+                    
+                    Console.Write("Briefly describe this goal: ");
+                    description = Console.ReadLine();
+                    
+                    Console.Write("How many points are associated with this goal? ");
+                    string pointsStr = Console.ReadLine();
+                    points = int.Parse(pointsStr);
                     Console.Write("How many times does this goal need to be accomplished for a bonus? ");
                     string countStr = Console.ReadLine();
                     requiredCount = int.Parse(countStr);
@@ -82,23 +104,27 @@ class Program
                     string bonusStr = Console.ReadLine();
                     bonus = int.Parse(bonusStr);
 
-                    goal = new ChecklistGoal(name, description, points, bonus, completedCount, requiredCount);
+                    ChecklistGoal cg = new ChecklistGoal(name, description, points, bonus, completedCount, requiredCount);
+                    goals.Add(cg);
+
                 }
-                goals.Add(goal);
+                
             }
             else if (menuSelection == "2")
             {
+                Console.WriteLine("The goals are: ");
                 //List Goals
                 int counter = 0;
-                string checkComplete = goal.IsComplete() ? "[x]" : "[ ]";
-                
-                string completedStatus = goal is ChecklistGoal ? $"--- Currently Completed: {((ChecklistGoal)goal).GetCompletedCount()}/{((ChecklistGoal)goal).GetRequiredCount()}": "";
 
                 foreach (Goal goalItem in goals)
                 {
+                    string checkComplete = goalItem.IsComplete() ? "[x]" : "[ ]";
+                
+                    string completedStatus = goalItem is ChecklistGoal ? $"--- Currently Completed: {((ChecklistGoal)goalItem).GetCompletedCount()}/{((ChecklistGoal)goalItem).GetRequiredCount()}": "";
+
                     counter += 1;
                     
-                    Console.WriteLine($"{counter}. {checkComplete} {goal.GetName()} ({goal.GetDescription()}) {completedStatus}");
+                    Console.WriteLine($"{counter}. {checkComplete} {goalItem.GetName()} ({goalItem.GetDescription()}) {completedStatus}");
                 }
             }
             else if (menuSelection == "3")
@@ -115,7 +141,9 @@ class Program
                 Console.Write("What is the filename for the goal file? ");
                 string fileName = Console.ReadLine();
                 FileManagement f2 = new FileManagement();
-                f2.LoadGoals(fileName, goals);
+                totalScore = f2.LoadGoals(fileName, goals);
+                // Console.WriteLine($"The {fileName} file has loaded. ");
+
             }
             else if (menuSelection == "5")
             {
