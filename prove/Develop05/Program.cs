@@ -149,10 +149,18 @@ class Program
             {
                 //Record Event
                 Console.WriteLine("The goals are: ");
+                Console.WriteLine("(Completed goals are crossed out.)");
                 for (int i = 0; i < goals.Count; i++)
                 {
                     goal = goals[i];
-                    Console.WriteLine($"{i+1}. {goal.GetName()}");
+
+                    if (goal.IsComplete() == true)
+                    {
+                        Console.WriteLine($"{i+1}. \u001b[9m{goal.GetName()}\u001b[0m");
+                    }else
+                    {
+                        Console.WriteLine($"{i+1}. {goal.GetName()}");
+                    }
                 }
                 Console.WriteLine("What goal did you accomplish? ");
                 string choice = Console.ReadLine();
