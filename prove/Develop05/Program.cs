@@ -8,7 +8,7 @@ class Program
         int totalScore = 0;
         List<string> mainMenu = new List<string> {"Create New Goal", "List Goals", "Save Goals", "Load Goals", "Record Event", "Quit" };
         string menuSelection = "";
-        string goalType = "";
+        //string goalType = "";
         string name;
         string description;
         int points;
@@ -62,17 +62,17 @@ class Program
 
                 if (selection == "1")
                 {
-                    goalType = "Simple Goal";
+                   //goalType = "Simple Goal";
                     goal = new SimpleGoal(name, description, points, false);
                     
                 }else if (selection == "2")
                 {
-                    goalType = "Eternal Goal";
+                    //goalType = "Eternal Goal";
                     goal = new EternalGoal(name, description, points);
 
                 }else if (selection == "3")
                 {
-                    goalType = "Checklist Goal";
+                    //goalType = "Checklist Goal";
                     Console.Write("How many times does this goal need to be accomplished for a bonus? ");
                     string countStr = Console.ReadLine();
                     requiredCount = int.Parse(countStr);
@@ -105,16 +105,18 @@ class Program
                 //Save Goals
                 Console.Write("What is the filename for the goal file? ");
                 string fileName = Console.ReadLine();
-                FileManagement f = new FileManagement();
-                f.SaveGoals(fileName, totalScore, goals);
+                FileManagement f1 = new FileManagement();
+                f1.SaveGoals(fileName, totalScore, goals);
             }
             else if (menuSelection == "4")
             {
                 //Load Goals
+                goals.Clear();
                 Console.Write("What is the filename for the goal file? ");
                 string fileName = Console.ReadLine();
+                FileManagement f2 = new FileManagement();
+                f2.LoadGoals(fileName);
                 
-
             }
             else if (menuSelection == "5")
             {
@@ -127,8 +129,9 @@ class Program
                 }
                 Console.WriteLine("What goal did you accomplish? ");
                 string choice = Console.ReadLine();
-                
-                if(int.TryParse(choice, out int index))
+
+                int index;
+                if(int.TryParse(choice, out index))
                 {
                     if (index > 0 && index <= goals.Count)
                     {
