@@ -2,15 +2,11 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 
-public class Goal
+public abstract class Goal
 {
-    //protected string _goalType;
     private string _name;
     private string _description;
-    protected int _points;
-    // protected bool _complete = false;
-    //protected string _status;
-    //protected string _goal;
+    protected int _points = 0;
 
     public Goal(string name, string description, int points)
     { 
@@ -42,64 +38,13 @@ public class Goal
     {
         _points = points;
     }
-    // public string GetGoalType()
-    // {
-    //     return _goalType;
-    // }
-    // public virtual bool IsComplete(bool complete)
-    // {
-    //     _complete = complete;
+    // public abstract string GoalToString();
+    public abstract int RecordEvent();
 
-    // }
+    public abstract bool IsComplete();
 
 
-    // public virtual string ToString()
-    // {
-
-    //     //IsComplete();
-    //     return _goal = $"[] {_name} ({_description})";
-
-    // }
-    public void ListGoals()
-    {
-
-    }
 
 
-    public virtual int RecordEvent()
-    {
-        return GetPoints();
-    }
-    public virtual bool IsComplete()
-    {
-        return true;
-    }
-    public void SaveGoals(string filename, int totalScore, List<Goal> goals)
-    {
-        using (StreamWriter outputFile = new StreamWriter(filename))
-        {
-            outputFile.WriteLine(totalScore);
-
-            foreach(Goal goal in goals)
-            {
-                if(goal is SimpleGoal){
-                    if (goal.IsComplete()== true)
-                    {
-                        outputFile.WriteLine($"Simple Goal: {goal.GetName} | {goal.GetDescription()} | {goal.GetPoints()}, True");
-                    }else
-                    {
-                        outputFile.WriteLine($"Simple Goal: {goal.GetName} | {goal.GetDescription()} | {goal.GetPoints()}, False");
-                    }
-                }else if (goal is EternalGoal)
-                {
-                    outputFile.WriteLine($"Eternal Goal: {goal.GetName} | {goal.GetDescription()} | {goal.GetPoints()}");
-                }else if (goal is ChecklistGoal)
-                {
-                    outputFile.WriteLine($"Checklist Goal: {goal.GetName} | {goal.GetDescription()} | {goal.GetPoints()}, {((ChecklistGoal)goal).GetBonus()} | {((ChecklistGoal)goal).GetCompletedCount()} | {((ChecklistGoal)goal).GetRequiredCount()}");
-                }
-            }
-        }
-
-    }
 
 }

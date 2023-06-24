@@ -87,6 +87,8 @@ class Program
             }
             else if (menuSelection == "2")
             {
+
+                // Console.WriteLine("The goals are: ");
                 //List Goals
                 int counter = 0;
                 foreach (Goal goalItem in goals)
@@ -101,14 +103,42 @@ class Program
             else if (menuSelection == "3")
             {
                 //Save Goals
+                Console.Write("What is the filename for the goal file? ");
+                string fileName = Console.ReadLine();
+                FileManagement f = new FileManagement();
+                f.SaveGoals(fileName, totalScore, goals);
             }
             else if (menuSelection == "4")
             {
                 //Load Goals
+                Console.Write("What is the filename for the goal file? ");
+                string fileName = Console.ReadLine();
+                
+
             }
             else if (menuSelection == "5")
             {
                 //Record Event
+                Console.WriteLine("The goals are: ");
+                for (int i = 0; i < goals.Count; i++)
+                {
+                    goal = goals[i];
+                    Console.WriteLine($"{i+1}. {goal.GetName()}");
+                }
+                Console.WriteLine("What goal did you accomplish? ");
+                string choice = Console.ReadLine();
+                
+                if(int.TryParse(choice, out int index))
+                {
+                    if (index > 0 && index <= goals.Count)
+                    {
+                        Goal selectedGoal = goals[index - 1];
+                        int earnedPoints = selectedGoal.RecordEvent();
+                        totalScore += earnedPoints;
+                        Console.WriteLine($"Congratulations! You earned {earnedPoints} points!");
+                    }
+                }
+
             }
 
         }while (menuSelection != "6");

@@ -10,6 +10,7 @@ public class SimpleGoal: Goal
     }
     public override int RecordEvent()
     {
+        _complete = true;
         return GetPoints();
     }
     public override bool IsComplete()
