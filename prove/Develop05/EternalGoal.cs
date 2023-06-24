@@ -4,11 +4,11 @@ using System;
 public class EternalGoal: Goal
 {
     private string _goalStr;
-    private Goal goal;
+    private Goal _goal;
 
     public EternalGoal(string name, string description, int points) : base (name, description, points)
     {
-
+        _goal = this;
     }
     public override bool IsComplete()
     {
@@ -21,7 +21,7 @@ public class EternalGoal: Goal
     }
     public override string GoalToString()
     {
-        _goalStr = ($"Eternal Goal | {goal.GetName} | {goal.GetDescription()} | {goal.GetPoints()}");
+        _goalStr = ($"Eternal Goal | {_goal.GetName} | {_goal.GetDescription()} | {_goal.GetPoints()}");
 
         return _goalStr;
     }

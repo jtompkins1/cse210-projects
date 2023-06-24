@@ -6,13 +6,14 @@ public class ChecklistGoal: Goal
     private int _requiredCount = 0;
     private int _completedCount = 0;
     private string _goalStr;
-    private Goal goal;
+    private Goal _goal;
 
     public ChecklistGoal (string name, string description, int points, int bonus, int completedCount, int requiredCount) : base (name, description, points)
     {
         _bonus = bonus;
         _completedCount = completedCount;
         _requiredCount = requiredCount;
+        _goal = this;
         
     }
     public int GetRequiredCount()
@@ -55,7 +56,7 @@ public class ChecklistGoal: Goal
     }
     public override string GoalToString()
     {
-        _goalStr = ($"Checklist Goal: {goal.GetName} | {goal.GetDescription()} | {goal.GetPoints()}, {((ChecklistGoal)goal).GetBonus()} | {((ChecklistGoal)goal).GetCompletedCount()} | {((ChecklistGoal)goal).GetRequiredCount()}");
+        _goalStr = ($"Checklist Goal: {_goal.GetName} | {_goal.GetDescription()} | {_goal.GetPoints()}, {((ChecklistGoal)_goal).GetBonus()} | {((ChecklistGoal)_goal).GetCompletedCount()} | {((ChecklistGoal)_goal).GetRequiredCount()}");
 
         return _goalStr;
     }

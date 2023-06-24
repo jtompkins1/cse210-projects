@@ -4,11 +4,12 @@ public class SimpleGoal: Goal
 {
     private bool _complete = false;
     private string _goalStr;
-    private Goal goal;
+    private Goal _goal;
 
     public SimpleGoal(string name, string description, int points, bool complete) : base (name, description, points)
     {
         _complete = complete;
+        _goal = this;
     }
     public override int RecordEvent()
     {
@@ -25,12 +26,12 @@ public class SimpleGoal: Goal
     }
     public override string GoalToString()
     {
-        if (goal.IsComplete()== true)
+        if (_goal.IsComplete()== true)
         {
-            _goalStr = ($"Simple Goal | {goal.GetName} | {goal.GetDescription()} | {goal.GetPoints()}, True");
+            _goalStr = ($"Simple Goal | {_goal.GetName} | {_goal.GetDescription()} | {_goal.GetPoints()}, True");
         }else
         {
-            _goalStr = ($"Simple Goal | {goal.GetName} | {goal.GetDescription()} | {goal.GetPoints()}, False");
+            _goalStr = ($"Simple Goal | {_goal.GetName} | {_goal.GetDescription()} | {_goal.GetPoints()}, False");
         }
         return _goalStr;
     }

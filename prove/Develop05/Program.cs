@@ -90,11 +90,14 @@ class Program
             {
                 //List Goals
                 int counter = 0;
+                string checkComplete = goal.IsComplete() ? "[x]" : "[ ]";
+                
+                string completedStatus = goal is ChecklistGoal ? $"--- Currently Completed: {((ChecklistGoal)goal).GetCompletedCount()}/{((ChecklistGoal)goal).GetRequiredCount()}": "";
+
                 foreach (Goal goalItem in goals)
                 {
                     counter += 1;
-                    string checkComplete = goal.IsComplete() ? "[x]" : "[ ]";
-                    string completedStatus = goal is ChecklistGoal ? $"--- Currently Completed: {((ChecklistGoal)goal).GetCompletedCount()}/{((ChecklistGoal)goal).GetRequiredCount()}": "";
+                    
                     Console.WriteLine($"{counter}. {checkComplete} {goal.GetName()} ({goal.GetDescription()}) {completedStatus}");
                 }
             }
