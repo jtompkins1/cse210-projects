@@ -27,10 +27,10 @@ public class SimpleGoal: Goal
     {
         if (goal.IsComplete()== true)
         {
-            _goalStr = ($"Simple Goal: {goal.GetName} | {goal.GetDescription()} | {goal.GetPoints()}, True");
+            _goalStr = ($"Simple Goal | {goal.GetName} | {goal.GetDescription()} | {goal.GetPoints()}, True");
         }else
         {
-            _goalStr = ($"Simple Goal: {goal.GetName} | {goal.GetDescription()} | {goal.GetPoints()}, False");
+            _goalStr = ($"Simple Goal | {goal.GetName} | {goal.GetDescription()} | {goal.GetPoints()}, False");
         }
         return _goalStr;
     }

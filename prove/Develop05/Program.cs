@@ -13,6 +13,7 @@ class Program
         string description;
         int points;
         int requiredCount = 0;
+        int completedCount = 0;
         int bonus = 0;
  
         List<Goal> goals = new List<Goal>();
@@ -81,13 +82,12 @@ class Program
                     string bonusStr = Console.ReadLine();
                     bonus = int.Parse(bonusStr);
 
-                    goal = new ChecklistGoal(name, description, points, bonus, requiredCount);
+                    goal = new ChecklistGoal(name, description, points, bonus, completedCount, requiredCount);
                 }
                 goals.Add(goal);
             }
             else if (menuSelection == "2")
             {
-
                 //List Goals
                 int counter = 0;
                 foreach (Goal goalItem in goals)
@@ -97,7 +97,6 @@ class Program
                     string completedStatus = goal is ChecklistGoal ? $"--- Currently Completed: {((ChecklistGoal)goal).GetCompletedCount()}/{((ChecklistGoal)goal).GetRequiredCount()}": "";
                     Console.WriteLine($"{counter}. {checkComplete} {goal.GetName()} ({goal.GetDescription()}) {completedStatus}");
                 }
-
             }
             else if (menuSelection == "3")
             {
@@ -110,12 +109,10 @@ class Program
             else if (menuSelection == "4")
             {
                 //Load Goals
-                goals.Clear();
                 Console.Write("What is the filename for the goal file? ");
                 string fileName = Console.ReadLine();
                 FileManagement f2 = new FileManagement();
-                f2.LoadGoals(fileName);
-                
+                f2.LoadGoals(fileName, goals);
             }
             else if (menuSelection == "5")
             {
@@ -140,7 +137,6 @@ class Program
                         Console.WriteLine($"Congratulations! You earned {earnedPoints} points!");
                     }
                 }
-
             }
 
         }while (menuSelection != "6");

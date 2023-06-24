@@ -2,15 +2,16 @@ using System;
 
 public class ChecklistGoal: Goal
 {
-    protected int _bonus;
-    private int _requiredCount;
-    private int _completedCount;
+    protected int _bonus = 0;
+    private int _requiredCount = 0;
+    private int _completedCount = 0;
     private string _goalStr;
     private Goal goal;
 
-    public ChecklistGoal (string name, string description, int points, int bonus, int requiredCount) : base (name, description, points)
+    public ChecklistGoal (string name, string description, int points, int bonus, int completedCount, int requiredCount) : base (name, description, points)
     {
         _bonus = bonus;
+        _completedCount = completedCount;
         _requiredCount = requiredCount;
         
     }

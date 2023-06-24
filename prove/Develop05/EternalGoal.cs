@@ -21,7 +21,7 @@ public class EternalGoal: Goal
     }
     public override string GoalToString()
     {
-        _goalStr = ($"Eternal Goal: {goal.GetName} | {goal.GetDescription()} | {goal.GetPoints()}");
+        _goalStr = ($"Eternal Goal | {goal.GetName} | {goal.GetDescription()} | {goal.GetPoints()}");
 
         return _goalStr;
     }
