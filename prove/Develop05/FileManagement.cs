@@ -8,7 +8,7 @@ public class FileManagement
 
     public FileManagement()
     {
-        
+
     }
     public void SaveGoals(string filename, int totalScore, List<Goal> goals)
     {
@@ -66,8 +66,5 @@ public class FileManagement
             }
             return _totalScore;
         }
-        
     }
-
-
 }
