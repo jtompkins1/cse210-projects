@@ -54,48 +54,31 @@ class Program
                 Console.Write("Which type of goal would you like to create (1-3): ");
                 string selection = Console.ReadLine();
 
+                Console.Write("What is the name of your goal? ");
+                name = Console.ReadLine();
+                
+                Console.Write("Briefly describe this goal: ");
+                description = Console.ReadLine();
+                
+                Console.Write("How many points are associated with this goal? ");
+                string pointsStr = Console.ReadLine();
+                points = int.Parse(pointsStr);
+
                 if (selection == "1")
                 {
-                   //goalType = "Simple Goal";
-                    Console.Write("What is the name of your goal? ");
-                    name = Console.ReadLine();
-                    
-                    Console.Write("Briefly describe this goal: ");
-                    description = Console.ReadLine();
-                    
-                    Console.Write("How many points are associated with this goal? ");
-                    string pointsStr = Console.ReadLine();
-                    points = int.Parse(pointsStr);
+                   //"Simple Goal"
                     SimpleGoal sg = new SimpleGoal(name, description, points, false);
                     goals.Add(sg);
              
                 }else if (selection == "2")
                 {
-                    //goalType = "Eternal Goal";
-                    Console.Write("What is the name of your goal? ");
-                    name = Console.ReadLine();
-                    
-                    Console.Write("Briefly describe this goal: ");
-                    description = Console.ReadLine();
-                    
-                    Console.Write("How many points are associated with this goal? ");
-                    string pointsStr = Console.ReadLine();
-                    points = int.Parse(pointsStr);
+                    //"Eternal Goal"
                     EternalGoal eg = new EternalGoal(name, description, points);
                     goals.Add(eg);
 
                 }else if (selection == "3")
                 {
-                    //goalType = "Checklist Goal";
-                    Console.Write("What is the name of your goal? ");
-                    name = Console.ReadLine();
-                    
-                    Console.Write("Briefly describe this goal: ");
-                    description = Console.ReadLine();
-                    
-                    Console.Write("How many points are associated with this goal? ");
-                    string pointsStr = Console.ReadLine();
-                    points = int.Parse(pointsStr);
+                    //"Checklist Goal"
                     Console.Write("How many times does this goal need to be accomplished for a bonus? ");
                     string countStr = Console.ReadLine();
                     requiredCount = int.Parse(countStr);
@@ -136,7 +119,7 @@ class Program
                 FileManagement f1 = new FileManagement();
                 f1.SaveGoals(fileName, totalScore, goals);
                 Console.WriteLine($"Your goals have been saved to the {fileName} file.");
-                //Console.WriteLine();
+
             }
             else if (menuSelection == "4")
             {
@@ -146,7 +129,6 @@ class Program
                 FileManagement f2 = new FileManagement();
                 totalScore = f2.LoadGoals(fileName, goals);
                 Console.WriteLine($"The {fileName} file has loaded. ");
-                //Console.WriteLine();
 
             }
             else if (menuSelection == "5")

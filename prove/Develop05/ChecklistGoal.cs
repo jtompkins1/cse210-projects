@@ -47,7 +47,6 @@ public class ChecklistGoal: Goal
         {
             return false;
         }
-        
     }
     public override string GoalToString()
     {

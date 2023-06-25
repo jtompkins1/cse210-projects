@@ -1,6 +1,5 @@
 using System;
 
-
 public class EternalGoal: Goal
 {
     private string _goalStr;

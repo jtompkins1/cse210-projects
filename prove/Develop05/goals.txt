@@ -1,4 +1,4 @@
-240
-Simple Goal: simple | simple goal | 50 | True
-Eternal Goal: eternal | eternal goal | 30
-Checklist Goal: checklist | checklist goal | 50 | 1000 | 2 | 100
+51
+Simple Goal: working goal | create a working goal object | 50 | True
+Checklist Goal: new goal | newest checklist goal | 50 | 3 | 0 | 100
+Eternal Goal: eternal goal | et | 1
