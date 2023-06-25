@@ -20,10 +20,6 @@ public class SimpleGoal: Goal
     {
         return _complete;
     }
-    public void SetComplete(bool complete)
-    {
-        _complete = complete;
-    }
     public override string GoalToString()
     {
         if (_goal.IsComplete()== true)

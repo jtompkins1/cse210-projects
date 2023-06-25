@@ -5,6 +5,11 @@ using System.IO;
 public class FileManagement
 {
     protected int _totalScore;
+
+    public FileManagement()
+    {
+        
+    }
     public void SaveGoals(string filename, int totalScore, List<Goal> goals)
     {
         using (StreamWriter outputFile = new StreamWriter(filename))
@@ -20,14 +25,12 @@ public class FileManagement
     }
     public int LoadGoals(string fileName, List<Goal> goals)
     {
-        // List<Goal> goals = new List<Goal>();
         goals.Clear();
         using (StreamReader inputFile = new StreamReader(fileName))
         {
             string totalLine = inputFile.ReadLine();
             int totalScore = int.Parse(totalLine);
             _totalScore = totalScore;
-
 
             string line = inputFile.ReadLine();
             while (line != null)

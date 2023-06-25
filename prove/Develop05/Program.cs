@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
 
+
+//To exceed requirements I added the Animation() method which displays blinking words of encouragement when the user accomplishes a goal. Also, when the goal names are shown for the user to record an event, already completed goal names are crossed out.
 class Program
 {
     static void Main(string[] args)
@@ -21,8 +23,8 @@ class Program
 
         do
         {
-            Console.WriteLine($"You have {totalScore} points.");
             Console.WriteLine();
+            Console.WriteLine($"You have {totalScore} points.");
             Console.WriteLine("Menu Options:");
 
             for (int i = 0; i < mainMenu.Count; i++)
@@ -50,8 +52,6 @@ class Program
                 Console.Write("Which type of goal would you like to create (1-3): ");
                 string selection = Console.ReadLine();
 
-
-
                 if (selection == "1")
                 {
                    //goalType = "Simple Goal";
@@ -66,8 +66,7 @@ class Program
                     points = int.Parse(pointsStr);
                     SimpleGoal sg = new SimpleGoal(name, description, points, false);
                     goals.Add(sg);
-
-                    
+             
                 }else if (selection == "2")
                 {
                     //goalType = "Eternal Goal";
@@ -82,7 +81,6 @@ class Program
                     points = int.Parse(pointsStr);
                     EternalGoal eg = new EternalGoal(name, description, points);
                     goals.Add(eg);
-
 
                 }else if (selection == "3")
                 {
@@ -112,6 +110,7 @@ class Program
             }
             else if (menuSelection == "2")
             {
+                Console.WriteLine();
                 Console.WriteLine("The goals are: ");
                 //List Goals
                 int counter = 0;
@@ -134,6 +133,8 @@ class Program
                 string fileName = Console.ReadLine();
                 FileManagement f1 = new FileManagement();
                 f1.SaveGoals(fileName, totalScore, goals);
+                Console.WriteLine($"Your goals have been saved to the {fileName} file.");
+                //Console.WriteLine();
             }
             else if (menuSelection == "4")
             {
@@ -142,12 +143,14 @@ class Program
                 string fileName = Console.ReadLine();
                 FileManagement f2 = new FileManagement();
                 totalScore = f2.LoadGoals(fileName, goals);
-                // Console.WriteLine($"The {fileName} file has loaded. ");
+                Console.WriteLine($"The {fileName} file has loaded. ");
+                //Console.WriteLine();
 
             }
             else if (menuSelection == "5")
             {
                 //Record Event
+                Console.WriteLine();
                 Console.WriteLine("The goals are: ");
                 Console.WriteLine("(Completed goals are crossed out.)");
                 for (int i = 0; i < goals.Count; i++)
@@ -162,7 +165,7 @@ class Program
                         Console.WriteLine($"{i+1}. {goal.GetName()}");
                     }
                 }
-                Console.WriteLine("What goal did you accomplish? ");
+                Console.Write("What goal did you accomplish? ");
                 string choice = Console.ReadLine();
 
                 int index;
@@ -173,7 +176,12 @@ class Program
                         Goal selectedGoal = goals[index - 1];
                         int earnedPoints = selectedGoal.RecordEvent();
                         totalScore += earnedPoints;
+
+                        goal.Animation();
+
+                        Console.WriteLine();
                         Console.WriteLine($"Congratulations! You earned {earnedPoints} points!");
+                        Console.WriteLine($"You now have a total of {totalScore} points.");
                     }
                 }
             }

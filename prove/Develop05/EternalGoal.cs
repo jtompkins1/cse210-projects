@@ -25,4 +25,5 @@ public class EternalGoal: Goal
 
         return _goalStr;
     }
+    
 }

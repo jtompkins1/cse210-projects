@@ -2,7 +2,7 @@ using System;
 
 public class ChecklistGoal: Goal
 {
-    protected int _bonus = 0;
+    private int _bonus = 0;
     private int _requiredCount = 0;
     private int _completedCount = 0;
     private string _goalStr;
@@ -44,7 +44,10 @@ public class ChecklistGoal: Goal
         {
             return true;
         }else
-        return false;
+        {
+            return false;
+        }
+        
     }
     public override string GoalToString()
     {
