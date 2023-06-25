@@ -1,4 +1,4 @@
-130
+240
 Simple Goal: simple | simple goal | 50 | True
 Eternal Goal: eternal | eternal goal | 30
-Checklist Goal: checklist | checklist goal | 50 | 1000 | 1 | 100
+Checklist Goal: checklist | checklist goal | 50 | 1000 | 2 | 100

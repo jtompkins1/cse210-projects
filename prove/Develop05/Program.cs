@@ -21,6 +21,8 @@ class Program
 
         Goal goal = null;
 
+        Console.WriteLine("Welcome to the Eternal Quest program!");
+
         do
         {
             Console.WriteLine();
