@@ -4,18 +4,24 @@ public class Customer
 {
     private string _custName;
     private Address _address;
-    private bool _usa;
 
-    public Customer(string custName, Address address, bool usa)
+    public Customer(string custName, Address address)
     {
         _custName = custName;
         _address = address;
-        _usa = usa;
+    }
+    public string GetName(string name)
+    {
+        return _custName;
+    }
+    public Address GetAddress(string address)
+    {
+        return _address;
     }
 
     public bool IsUSA()
     {
-        return true;
+        return _address.IsUSA();
     }
 }
 

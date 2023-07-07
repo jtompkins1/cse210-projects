@@ -7,20 +7,20 @@ public class Order
     private Customer _customer;
     private int shipCost;
 
-    public Order (List<Product> products, Customer customer)
+    public Order (Customer customer)
     {
-        _products = products;
+        _products = new List<Product>();
         _customer = customer;
     }
 
-    public int CalculateTotal()
+    public double CalculateTotal()
     {
-        int total = 0;
+        double total = 0;
         foreach (Product product in _products)
         {
-            // int price =
-            // total += 
+            total += product.CalculateQtyPrice();
         }
+        total += _customer.IsUSA() ? 5 : 35;
         return total;
     }
     public string GetPackingLabel(string prodName, string prodId)
@@ -33,17 +33,17 @@ public class Order
         string shipLabel = ($"{custName} \n{address}");
         return shipLabel;
     }
-    public int GetShippingCost(bool usa)
-    {
-        if (usa == true)
-        {
-            shipCost = 5;
-        }else
-        {
-            shipCost = 35;
-        }
-        return shipCost;
-    }
+    // public int GetShippingCost(bool usa)
+    // {
+    //     if (usa == true)
+    //     {
+    //         shipCost = 5;
+    //     }else
+    //     {
+    //         shipCost = 35;
+    //     }
+    //     return shipCost;
+    // }
     public void AddProduct(Product product)
     {
         _products.Add(product);

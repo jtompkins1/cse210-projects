@@ -7,6 +7,7 @@ public class Product
     private double _price;
     private double _qty;
 
+
     public Product(string prodName, string id, double price, double qty)
     {
         _prodName = prodName;
@@ -16,23 +17,23 @@ public class Product
     }
     public double CalculateQtyPrice()
     {
-        double qtyPrice = _price * _qty;
-        return qtyPrice;
+        return _price * _qty;
     }
-    public string GetName()
-    {
-        return _prodName;
-    }
-    public string GetId()
-    {
-        return _id;
-    }
-    public double GetQty()
-    {
-        return _qty;
-    }
-    public double GetPrice()
-    {
-        return _price;
-    }
+    // public string GetName(string prodName)
+    // {
+    //     return _prodName;
+    // }
+    // public string GetId(string id)
+    // {
+    //     return _id;
+    // }
+    // public double GetQty(double qty)
+    // {
+    //     return _qty;
+    // }
+    // public double GetPrice(double price)
+    // {
+    //     return _price;
+    // }
+    
 }
