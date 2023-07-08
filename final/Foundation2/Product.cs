@@ -19,21 +19,12 @@ public class Product
     {
         return _price * _qty;
     }
-    // public string GetName(string prodName)
-    // {
-    //     return _prodName;
-    // }
-    // public string GetId(string id)
-    // {
-    //     return _id;
-    // }
-    // public double GetQty(double qty)
-    // {
-    //     return _qty;
-    // }
-    // public double GetPrice(double price)
-    // {
-    //     return _price;
-    // }
-    
+    public string GetName()
+    {
+        return _prodName;
+    }
+    public string GetId()
+    {
+        return _id;
+    }
 }

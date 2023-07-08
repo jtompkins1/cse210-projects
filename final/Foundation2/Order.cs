@@ -5,7 +5,6 @@ public class Order
 
     private List<Product> _products = new List<Product>();
     private Customer _customer;
-    private int shipCost;
 
     public Order (Customer customer)
     {
@@ -13,7 +12,7 @@ public class Order
         _customer = customer;
     }
 
-    public double CalculateTotal()
+    public void DisplayTotal()
     {
         double total = 0;
         foreach (Product product in _products)
@@ -21,29 +20,27 @@ public class Order
             total += product.CalculateQtyPrice();
         }
         total += _customer.IsUSA() ? 5 : 35;
-        return total;
+        total = Math.Round(total, 2);
+        Console.WriteLine($"Total: ${total}");
     }
-    public string GetPackingLabel(string prodName, string prodId)
+    public void DisplayPackingLabel()
     {
-        string packLabel = ($"{prodName} - {prodId}");
-        return packLabel;
+        Console.WriteLine("Product Label:");
+
+        foreach (Product product in _products)
+        {
+            Console.WriteLine($"{product.GetName()}({product.GetId()})");
+
+        }
+
     }
-    public string GetShippingLabel(string custName, Address address)
+    public void DisplayShippingLabel()
     {
-        string shipLabel = ($"{custName} \n{address}");
-        return shipLabel;
+        Console.WriteLine("Shipping Label:");
+        Console.WriteLine($"{_customer.GetCustomerName()}\n{_customer.GetAddress().GetCompleteAddress()}");
+
     }
-    // public int GetShippingCost(bool usa)
-    // {
-    //     if (usa == true)
-    //     {
-    //         shipCost = 5;
-    //     }else
-    //     {
-    //         shipCost = 35;
-    //     }
-    //     return shipCost;
-    // }
+
     public void AddProduct(Product product)
     {
         _products.Add(product);

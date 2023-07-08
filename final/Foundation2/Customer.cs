@@ -10,11 +10,11 @@ public class Customer
         _custName = custName;
         _address = address;
     }
-    public string GetName(string name)
+    public string GetCustomerName()
     {
         return _custName;
     }
-    public Address GetAddress(string address)
+    public Address GetAddress()
     {
         return _address;
     }

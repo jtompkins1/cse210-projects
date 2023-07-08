@@ -16,7 +16,7 @@ public class Address
         _country = country;
     }
 
-    public string GetAddress(string street, string city, string state, string postCode, string country)
+    public string GetCompleteAddress()
     {
         return $"{_street} \n{_city}, {_state}\n{_country}";
     }
