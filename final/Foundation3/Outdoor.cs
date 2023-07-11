@@ -4,13 +4,26 @@ public class Outdoor : Event
 {
     private string _weather;
 
-    public Outdoor(string weather, string title, string description, DateTime date, DateTime time, Address address) : base (title, description, date, time, address)
+    public Outdoor(string weather, string title, string description, string date, string time, Address address) : base (title, description, date, time, address)
     {
         _weather = weather;
     }
-    public string GetWeatherInfo()
+    // public string GetWeatherInfo()
+    // {
+    //     return _weather;
+    // }
+    public override void DisplayFullDetails()
     {
-        return _weather;
+
+        Console.WriteLine("Event Type: Outdoor");
+        Console.WriteLine($"Weather: {_weather}");
+        DisplayStandardDetails();
+
+    }
+    public override void DisplayShortDescription()
+    {
+        Console.WriteLine("Event Type: Outdoor");
+        ShowTitleDate();
     }
 
 }
