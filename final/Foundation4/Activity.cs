@@ -2,16 +2,24 @@ using System;
 
 public abstract class Activity
 {
-    private int _minutes;
-    private DateTime _date;
+    private double _minutes;
+    private string _date;
 
-    public Activity(int minutes, DateTime date)
+    public Activity(double minutes)
     {
         _minutes = minutes;
-        _date = date;
+        _date = DateTime.Now.ToString("dd MMM yyyy");
+    }
+    public double GetMinutes()
+    {
+        return _minutes;
+    }
+    public string GetDate()
+    {
+        return _date;
     }
     public abstract double GetDistance();
     public abstract double GetSpeed();
     public abstract double GetPace();
-    public abstract string GetSummary();
+    public abstract void DisplaySummary();
 }
