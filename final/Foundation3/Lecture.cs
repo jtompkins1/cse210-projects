@@ -2,8 +2,8 @@ using System;
 
 public class Lecture : Event
 {
-    public string _speaker;
-    public int _capacity;
+    private string _speaker;
+    private int _capacity;
 
     public Lecture(string speaker, int capacity, string title, string description, string date, string time, Address address) : base (title, description, date, time, address)
     {
